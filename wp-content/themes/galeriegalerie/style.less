@@ -1,0 +1,732 @@
+/*
+Theme Name: Galerie Galerie
+Description: 
+Author: Gabi & Sophie
+Author URI: http://www.galeriegalerie.com
+*/
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+/* Handle box-sizing while better addressing child elements:
+   http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+img,
+object,
+embed {max-width: 100%;}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+	don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* =Fonts
+-------------------------------------------------------------- */
+
+@font-face {
+		font-family: 'Futura light';
+		src: url('fonts/futura_light-webfont.eot');
+		src: url('fonts/futura_light-webfont.eot?#iefix') format('embedded-opentype'),
+			url('fonts/futura_light-webfont.woff2') format('woff2'),
+			url('fonts/futura_light-webfont.woff') format('woff'),
+			url('fonts/futura_light-webfont.ttf') format('truetype'),
+			url('fonts/futura_light-webfont.svg#futura_lightregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+
+/* =Variables
+-------------------------------------------------------------- */
+
+@murFond: red;
+@murCote: darken(@murFond, 4%);
+@sol: darken(@murCote, 10%);
+
+@blanc: #fff;
+@noir: #000;
+
+@futura: 'Futura light';
+
+/* =Int
+-------------------------------------------------------------- */
+
+//html, a:hover { cursor: url("/img/foo169.gif"), pointer; }
+body, html, #page {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+#zone-menu {
+
+
+	&.visible {
+
+		.menu-content {
+			left: 0;
+			transition: left 0.75s ease;
+			
+
+		}
+
+		.overlay {
+			display: block;
+		}
+
+	}
+
+	.menu-content {
+		z-index: 990;
+		width: 17em;
+		top: 0;
+		left: -17em;
+		background-image: url('images/sol.jpg');
+		height: 100%;
+		position: fixed;
+		transition: left 0.75s ease;
+
+		padding: 2em 1em 1em 1em;
+
+		ul {
+			
+			li {
+				padding-bottom: 0.5em;
+
+				a {
+					text-decoration: none;
+					font-weight: bold;
+					color: @noir;
+					text-transform: uppercase;
+					font-family: @futura;
+					letter-spacing: 1px;
+					font-size: 0.9135em;
+					line-height: 1.25;
+				}
+
+			}
+		}
+	}
+
+	.bt-menu {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 999;
+	}
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: fade(@blanc, 50%);
+		display: none;
+		z-index: 980;
+
+	}
+}
+
+
+#page {
+	position: relative;
+	//left: 2em;
+}
+
+.landscape-gif {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: fade(@noir, 80%);
+	z-index: 9999;
+	text-align: center;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+}
+
+#pre-accueil {
+	background-image: url('images/pre-accueil-blur.jpg');
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	font-family: arial;
+	padding: 2em;
+
+	.intro {
+		background-color: fade(@noir, 75%);
+		color: @blanc;
+		float: right;
+		width: 50%;
+		padding: 2em;
+		box-sizing: border-box;
+
+		h1 {
+			font-size: 2.5em;
+			margin-bottom: 0.4em;
+		}
+
+		h2 {
+			font-size: 1.75em;
+			margin-bottom: 0.4em;
+
+		}
+
+		p, form {
+			font-size: 1em;
+			line-height: 1.5em;
+			margin-bottom: 1em;
+		}
+
+		form {
+			input {
+				
+			}
+
+		}
+
+
+	}
+
+	.bt {
+		width: 50%;
+		float: left;
+		text-align: center;
+
+			.enter {
+				display: inline-block;
+				font-size: 1.5em;
+				line-height: 1;
+				border-radius: 100%;
+				padding: 2.75em 1em;
+				background-color: @noir;
+				border: 0.5em solid yellow;
+				text-align: center;
+				margin-top: 20%;
+				color: @blanc;
+				text-decoration: none;
+				font-family: arial black;
+				text-transform: uppercase;
+				opacity: 0.6;
+				transition: all 0.25s ease;
+
+				&:hover {
+					opacity: 0.8;
+				}
+
+		} 
+
+	}
+	
+}
+
+.mur {
+	position: absolute;
+	z-index: 25;
+	bottom: 9%;
+	height: 100%;
+	width: 12%;
+
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: bottom;
+
+	&.droit {
+		right: -2%;
+		background-image: url('images/mur-droit.png');
+		&.sorti {
+			bottom: 8.5%;
+			background-image: url('images/mur-porte-droit.png');
+		}
+
+	}
+	&.gauche {
+		left: -2%; 
+		background-image: url('images/mur-gauche.png');
+		&.sorti {
+			bottom: 8.5%;
+			background-image: url('images/mur-porte-gauche.png');
+		} 
+	}
+}
+
+#murFond {
+	position: absolute;
+	background-color: #E4E4E4;
+	height: 60%;
+	width: 100%;
+	z-index: 15;
+	//padding: 2em 12em 15em 12em;
+
+	h1 {
+		text-align: center;
+		font-size: 1.75em;
+		margin-top: 0.5em;
+		font-family: 'Futura light';
+		line-height: 1.5em;
+		color: @noir;
+		text-transform: uppercase;
+	}
+}
+
+.objet {
+	position: absolute;
+	display: block;
+	pointer-events: none;
+	img { 
+		width: 100%; 
+		height: auto; 
+		vertical-align: bottom;
+	}
+
+	&.click {
+		pointer-events: auto;
+	}
+
+	/** Salle d'entrée **/
+
+	&.table {
+		top: 5%;
+		width: 30%;
+		left:0;
+		right:0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.chaise {
+		top: -25%;
+		width: 10%;
+		right: 25%;
+	}
+
+	&.plante {
+		top: -70%;
+		width: 9%;
+		left: 12%;
+		z-index: 5;
+	}
+
+	&.fontaine {
+		top: 20%;
+		width: 10%;
+		left: 5%;
+		z-index: 10;
+	}
+
+	&.baraeau {
+		top: -50%;
+		width: 10%;
+		right: 12%;
+		z-index: 10;
+	}
+
+	&.octane {
+		top: 22%;
+		width: 10%;
+		right: 12%;
+		z-index: 3;
+		transform: rotate(-3deg);
+	}
+
+	/** Bureau **/
+
+	&.bureau {
+		top: -54%;
+		width: 35%;
+		left: 35%;
+		z-index: 15;
+	}
+
+	&.bureau2 {
+		top: -70%;
+		width: 22%;
+		left: -4%;
+		z-index: 15;
+	}
+
+	&.conference {
+		z-index: 10;
+		width: 50%;
+		bottom: 0;
+		left: -5%;
+	}
+
+	&.chaise2 {
+		z-index: 10;
+		width: 12%;
+		top: -60%;
+		left: 28%;
+	}
+
+	&.gabrielle {
+		width: 24%;
+		left: 8%;
+		top: 28%;
+		z-index: 888;
+	}
+
+	&.deco {
+		top: 10%;
+		width: 12%;
+		right: 40%;
+	}
+
+	&.peinture {
+		top: 5%;
+		width: 17%;
+		right: 16%;
+	}
+
+
+	&.stagiaire {
+		right: 2%;
+		width: 14%;
+		top: 47%;
+		z-index: 888;
+	}
+
+	&.sophie {
+		width: 14%;
+		left: 33%;
+		top: -106%;
+		z-index: 10;
+	}
+
+	/** Toilette **/
+
+	&.miroire {
+		width: 15%;
+		top: 10%;
+		left: 52%;
+	}
+
+	&.lavabo {
+		width: 20%;
+		left: 50%;
+		top: -50%;
+	}
+
+	&.toilette1 {
+		width: 14%;
+		left: 5%;
+		bottom: 10%;
+		z-index: 888;
+	}
+
+	&.toilette2 {
+		width: 13%;
+		right: 8%;
+		bottom: 15%;
+		z-index: 888;
+	}
+
+	&.fenetre {
+		width: 20%;
+		left: 20%;
+		top: 12%;
+	}
+
+
+	/** Salle d'archive **/
+
+	&.bureau-archive {
+		width: 42%;
+		left: 15%;
+		bottom: 63%;
+	}
+
+	&.divan-archive {
+		width: 20%;
+		right: 1%;
+		bottom: 12%;
+		z-index: 888;
+	}
+
+	&.livre {
+		width: 23%;
+		left: 13%;
+		bottom: 3%;
+		z-index: 888;
+	}
+
+	&.livre2 {
+		width: 12%;
+		right: 16%;
+		bottom: -2%;
+		z-index: 888;
+	}
+
+	&.deco-gif {
+		width: 15%;
+		right: 12%;
+		top: 12%;
+		 
+	}
+
+}
+
+.porte {
+	bottom: 0;
+	width: 10%;
+	text-decoration: none;
+	transition: all 0.5s ease;
+	&#porte1 { left: 25%; }
+	&#porte2 { left: 45%; }
+	&#porte3 { left: 65%; }
+
+	&#porteT {
+		width: 11%;
+		left: 60%;
+		text-align: center;
+		.signe {
+			margin-bottom: 0.75em;
+			width: 75%;
+
+		} 
+	}
+
+	h2 {
+		text-align: center;
+		font-family: 'Futura light';
+		text-transform: lowercase;
+		margin-bottom: 0.5em;
+		font-size: 1.5em;
+		color: @noir;
+	}
+
+	&:hover img {
+		box-shadow: 0 0 4em -0.5em #777;
+
+	}
+}
+
+
+
+
+#sol {
+	position: absolute;
+	height: 40%;
+	width: 100%;
+	z-index: 20;
+	bottom: 0;
+	left: 0;
+	//background-color: @sol;
+	background-image: url('images/sol.jpg');
+
+/* &:before, &:after {
+		content: "";
+		width: 0;
+		height: 0;
+		display: block;
+		border-bottom: 12em solid transparent;
+		position: absolute;
+		bottom: 0;
+	}
+
+	&.coin-droit {
+		&:after {
+			border-right: 10em solid @murCote;
+			right: 0;
+		}
+
+	}
+
+	&.coin-gauche {
+		&:before {
+			border-left: 10em solid @murCote;
+			bottom: 0;
+		}
+	}
+ */
+ 
+}
+
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	display: none;
+
+	&.visible {
+		display: block;
+		.overlay {
+			opacity: 1;
+		}
+	}
+
+	.close {
+		float: right;
+		font-weight: bold;
+		text-decoration: none;
+		padding: 0.25em;
+		background-color: @noir;
+		box-shadow: -3px 3px 0 0 @noir;
+		color: @blanc;
+		margin: 0 0 1em 1em;
+		display: block;
+
+		&:hover {
+			margin-top: 1px;
+			margin-right: 1px;
+			box-shadow: -2px 2px 0 0 @noir;
+		}
+
+	}
+
+	h2 {
+		font-size: 1.5em;
+		line-height: 1.5;
+		padding-bottom: 1em;
+	}
+
+	p {
+		padding-bottom: 1em;
+		line-height: 1.5;
+		font-weight: 300;
+		letter-spacing: 0.5px;
+	}
+
+	.content {
+		padding: 1.5em;
+		background-color: rgba(186, 237, 255, 0.8);
+		width: 75%;
+		margin: 2em auto 0 auto;
+		position: relative;
+		z-index: 20;
+		box-shadow: -10px 10px 10px -5px fade(@noir, 80%);
+	}
+
+	.overlay {
+		background-color: fade(@blanc, 50%);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+	}
+
+} 
