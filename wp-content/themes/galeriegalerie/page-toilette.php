@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="mur gauche"></div>
 
-<div id="murFond">
+<div id="mur-fond">
 
 	<div class="objet fenetre">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/fenetre.jpg" alt="">

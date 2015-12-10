@@ -18,9 +18,9 @@ get_header(); ?>
 	<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/livres2.png">
 </div>
 
-<div id="murFond">
+<div id="mur-fond">
 
-	<a href="<?php echo get_template_directory_uri(); ?>/toilette" title="Aller à la salle de bain" id="porteT" class="objet porte click">
+	<a href="<?php echo get_template_directory_uri(); ?>/toilette" title="Aller à la salle de bain" id="portet" class="objet porte click">
 		<img class="signe" src="<?php echo get_template_directory_uri(); ?>/images/signe-toilette.jpg" alt="">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/porte-toilette.jpg" alt="">
 	</a>
@@ -29,7 +29,7 @@ get_header(); ?>
 		<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/gif-décoratif.gif">
 	</div>
 
-</div><!-- #murFond -->
+</div><!-- #mur-fond -->
 
 <div class="mur droit"></div>
 

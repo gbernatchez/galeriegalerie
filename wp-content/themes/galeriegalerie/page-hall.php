@@ -6,7 +6,7 @@ get_header(); ?>
 
 <a title="Salle gauche" href="<?php echo get_template_directory_uri(); ?>/bureau" class="mur gauche sorti"></a>
 
-<div id="murFond">
+<div id="mur-fond">
 
 	<h1>Exposition Collective</h1>
 
@@ -25,7 +25,7 @@ get_header(); ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg">
 	</a>
 
-</div><!-- #murFond -->
+</div><!-- #mur-fond -->
 
 <a title="Salle droite" href="<?php echo get_template_directory_uri(); ?>/archives" class="mur droit sorti"></a>
 

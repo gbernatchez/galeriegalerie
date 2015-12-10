@@ -1,0 +1,31 @@
+{
+  "name": "galeriegalerie",
+  "version": "1.0.0",
+  "description": "Centre de diffusion en ligne",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbernatchez/galeriegalerie.git"
+  },
+  "author": "Gabrielle Bernatchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbernatchez/galeriegalerie/issues"
+  },
+  "homepage": "https://github.com/gbernatchez/galeriegalerie#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.1.2",
+    "cssnano": "^3.4.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csslint": "^0.2.0",
+    "gulp-favicons": "^2.1.5",
+    "gulp-postcss": "^6.0.1",
+    "gulp-scss-lint": "^0.3.8",
+    "nano": "^6.1.5",
+    "precss": "^1.3.0"
+  }
+}

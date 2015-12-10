@@ -12,7 +12,7 @@ get_header(); ?>
 	<img src="<?php echo get_template_directory_uri(); ?>/images/avatar_gab.png" alt="">
 </a>
 
-<div id="murFond">
+<div id="mur-fond">
 
 	<div class="objet deco">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/cubeplant.png" alt="">
@@ -26,7 +26,7 @@ get_header(); ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/conferenceroom.png" alt="">
 	</div>
 
-</div><!-- #murFond -->
+</div><!-- #mur-fond -->
 
 <a title="Accueil" href="<?php echo get_template_directory_uri(); ?>/hall" class="mur droit sorti"></a>
 
