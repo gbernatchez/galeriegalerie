@@ -57,9 +57,11 @@ wp_head();
 <div class="landscape-gif"><img src="<?php echo get_template_directory_uri(); ?>/images/rotate.gif"></div>
 <div id="zone-menu">
 	<div class="overlay"></div>
-	<a href="#" class="bt-menu">menu</a>
+	<a href="#" class="bt-menu">
+		Menu
+	</a>
 	<div class="menu-content">
-		<?php wp_nav_menu(array('theme_location' => 'Navigation', 'container' => false)); ?>
+		<?php wp_nav_menu(array('theme_location' => 'navigation', 'container' => false)); ?>
 	</div><!-- .menu-content -->
 </div><!-- #zone-menu -->
 <div id="page"></div></body></html>

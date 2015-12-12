@@ -16,18 +16,17 @@
 }
 
 #video {
-    position: fixed;
-    width: 56%;
     height: 62%;
-    z-index: 5;
-    top: 12%;
     left: 10%;
-}
+    position: fixed;
+    top: 12%;
+    width: 56%;
+    z-index: 5;
 
-#video iframe {
-	width: 100%;
-	height: 100%;
-
+    iframe {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 </style>

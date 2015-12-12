@@ -13,16 +13,15 @@ var preprocessor = [
 ]
 
 var path = {
-	styles_theme_scss: 'wp-content/themes/galeriegalerie/scss',
-    styles_theme_css: 'wp-content/themes/galeriegalerie/css'
+	styles_theme: 'wp-content/themes/galeriegalerie/',
 }
 
 gulp.task('styles', function() {
-	return gulp.src(path.styles_theme_scss + '*.scss')
+	return gulp.src(path.styles_theme + '/scss/style.scss')
+	//.pipe(scsslint())
 	.pipe(postcss(preprocessor))
-	.pipe(gulp.dest(path.styles_theme_css));
-    //.pipe(scsslint())
-    //.pipe(concat('style.css'))
+	.pipe(concat('style.css'))
+	.pipe(gulp.dest(path.styles_theme));
 });
 
 gulp.task('favicons', function () {
