@@ -1,24 +1,31 @@
 <?php get_header(); ?>
 
-<?php if(have_posts()) while(have_posts) : the_post(); ?>
+<?php if(have_posts()) while(have_posts()) : the_post(); ?>
 
-	<div class="popup visible">
+	<div class="page">
 
-		<div class="content">
+		<div class="feuille">
 
-			<h1><?php the_title(); ?></h1>
-			<?php the_content(); ?>
+			<div class="top">
+				
+				<div class="coin"></div>
+				<div class="gauche"></div>
 
+			</div>
+
+			<div class="bottom">
+
+				<div class="entry-content">
+				
+					<h1><?php the_title(); ?></h1>
+					<?php the_content(); ?>
+
+				</div>
+
+			</div>
 		</div>
 
-		<div class="overlay"></div>
-
-	</div><!-- .popup -->
-
-	<div class="mur gauche"></div>
-	<div id="mur-fond"></div>
-	<div class="mur droit"></div>
-	<div id="sol" class="coin-droit coin-gauche"></div>
+	</div><!-- .preaccueil -->
 
 <?php endwhile; ?>
 

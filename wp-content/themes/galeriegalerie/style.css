@@ -165,6 +165,57 @@ body {
   cursor: pointer;
 }
 
+.preaccueil {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: 100%;
+  padding-top: 3em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+}
+
+.preaccueil img {
+  margin-bottom: -1.5em;
+  position: relative;
+  width: 15em;
+  z-index: 2;
+}
+
+.preaccueil h1 {
+  color: #fff;
+  font-size: 4em;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+  position: relative;
+  text-shadow: -0.025em 0.025em 0px #777;
+  z-index: 0;
+}
+
+.preaccueil h2 {
+  color: #fff;
+  font-size: 1.75em;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+  text-transform: none;
+}
+
+.preaccueil p {
+  color: lighten(#000, 10%);
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.page {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
 #zone-menu.visible .menu-content {
   left: 0;
   transition: left .75s ease;
@@ -178,7 +229,7 @@ body {
   background-image: url('images/sol.jpg');
   height: 100%;
   left: -17em;
-  padding: 2em 1em 1em;
+  padding: 2.5em 1em 1em;
   position: fixed;
   top: 0;
   transition: left .75s ease;
@@ -192,22 +243,41 @@ body {
 
 #zone-menu a {
   color: #000;
-  font-family: 'Futura light';
+  font-family: 'Signika',sans-serif;
   font-size: .9135em;
   font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.25;
   text-decoration: none;
   text-transform: uppercase;
+  transition: all 0.2s ease;/*&:before {
+      content: "» ";
+      display: inline-block;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.2s ease;
+      width: 0;
+    }*/
+}
+
+#zone-menu a:hover {
+  color: #fff;/*&:before {
+        opacity: 1;
+        width: 1.25em;
+      }*/
 }
 
 #zone-menu .bt-menu {
   left: .5em;
   padding-left: 1.5em;
   position: absolute;
-  text-shadow: -1px -1px 1px #fff;
+  text-shadow: 1px -1px 1px #fff;
   top: .5em;
   z-index: 999;
+}
+
+#zone-menu .bt-menu:hover {
+  text-shadow: none;
 }
 
 #zone-menu .bt-menu::before {
@@ -233,7 +303,71 @@ body {
 }
 
 #page {
+  height: 100%;
   position: relative;
+  width: 100%;
+}
+
+.feuille {
+  float: right;
+  margin: 2em;
+  position: relative;
+  width: 60%;
+
+
+}
+
+.feuille .top {
+  position: relative;
+  height: 3.5em;
+  z-index: 0;
+}
+
+.feuille .top .gauche {
+  background-color: #fff;
+  height: 100%;
+  overflow: auto;
+  width: auto;
+}
+
+.feuille .top .coin {
+  float: left;
+  height: 100%;
+  width: 2em;
+}
+
+.feuille .top .coin:before {
+  content: "";
+  border-right: 2em solid #eee;
+  border-top: 3.5em solid transparent;
+  display: block;
+}
+
+.feuille .bottom {
+  background-color: #fff;
+  padding: 0 3em 3em;
+  position: relative;
+  z-index: 2;
+}
+
+.feuille .bottom .entry-content h1 {
+  margin-bottom: -0.5em;
+  position: relative;
+  top: -1em;
+}
+
+.entry-content h1 {
+  font-family: 'Signika',sans-serif;
+  font-size: 1.75em;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
+.entry-content p {
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5em;
+  padding-bottom: 1em;
 }
 
 .landscape-gif {
@@ -719,4 +853,22 @@ body {
   right: 26%;
   width: 27%;
   z-index: 888;
+}
+
+@media screen and (max-width: 640px) {
+  .preaccueil {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .preaccueil {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .preaccueil h1 {
+    font-size: 3.5em;
+  }
 }

@@ -37,6 +37,57 @@ body {
   cursor: pointer;
 }
 
+.preaccueil {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: 100%;
+  padding-top: 3em;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  img {
+    margin-bottom: -1.5em;
+    position: relative;
+    width: 15em;
+    z-index: 2;
+  }
+
+  h1 {
+    color: $blanc;
+    font-size: 4em;
+    font-weight: 500;
+    margin-bottom: 0.2em;
+    position: relative;
+    text-shadow: -0.025em 0.025em 0px $gris;
+    z-index: 0;
+  }
+
+  h2 {
+    color: $blanc;
+    font-size: 1.75em;
+    font-weight: 500;
+    margin-bottom: 1.5em;
+    text-transform: none;
+  }
+
+  p {
+    color: lighten($noir, 10%);
+    font-size: 1.7em;
+    font-weight: 500;
+  }
+
+}
+
+.page {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
 #zone-menu {
   &.visible {
     .menu-content {
@@ -53,7 +104,7 @@ body {
     background-image: url('images/sol.jpg');
     height: 100%;
     left: -17em;
-    padding: 2em 1em 1em;
+    padding: 2.5em 1em 1em;
     position: fixed;
     top: 0;
     transition: left .75s ease;
@@ -67,13 +118,32 @@ body {
 
   a {
     color: $noir;
-    font-family: 'Futura light';
+    font-family: $signika;
     font-size: .9135em;
     font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: $blanc;
+
+      /*&:before {
+        opacity: 1;
+        width: 1.25em;
+      }*/
+    }
+
+    /*&:before {
+      content: "» ";
+      display: inline-block;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.2s ease;
+      width: 0;
+    }*/
   }
 
   .bt-menu {
@@ -83,6 +153,10 @@ body {
     text-shadow: 1px -1px 1px $blanc;
     top: .5em;
     z-index: 999;
+
+    &:hover {
+      text-shadow: none;
+    }
 
     &::before {
       background: $noir;
@@ -109,7 +183,73 @@ body {
 }
 
 #page {
+  height: 100%;
   position: relative;
+  width: 100%;
+}
+
+.feuille {
+  float: right;
+  margin: 2em;
+  position: relative;
+  width: 60%;
+
+  .top {
+    position: relative;
+    height: 3.5em;
+    z-index: 0;
+
+    .gauche {
+      background-color: $blanc;
+      height: 100%;
+      overflow: auto;
+      width: auto;
+    }
+
+    .coin {
+      float: left;
+      height: 100%;
+      width: 2em;
+      &:before {
+        content: "";
+        border-right: 2em solid #eee;
+        border-top: 3.5em solid transparent;
+        display: block;
+      }
+    }
+  }
+
+  .bottom {
+    background-color: $blanc;
+    padding: 0 3em 3em;
+    position: relative;
+    z-index: 2;
+
+    .entry-content h1 {
+      margin-bottom: -0.5em;
+      position: relative;
+      top: -1em;
+    }
+  }
+
+
+}
+
+.entry-content {
+
+  h1 {
+    font-family: $signika;
+    font-size: 1.75em;
+    font-weight: bold;
+    margin-bottom: 0.75em;
+  }
+
+  p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    padding-bottom: 1em;
+  }
 }
 
 .landscape-gif {
@@ -596,4 +736,24 @@ body {
   right: 26%;
   width: 27%;
   z-index: 888;
+}
+
+@media screen and (max-width: 640px) {
+  .preaccueil {
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .preaccueil {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .preaccueil {
+    h1 { 
+      font-size: 3.5em;
+    }
+  }
 }
