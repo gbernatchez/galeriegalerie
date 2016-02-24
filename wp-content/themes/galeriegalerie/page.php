@@ -2,30 +2,26 @@
 
 <?php if(have_posts()) while(have_posts()) : the_post(); ?>
 
-	<div class="page">
+	<div class="feuille">
 
-		<div class="feuille">
+		<div class="top">
+			
+			<div class="coin"></div>
+			<div class="gauche"></div>
 
-			<div class="top">
-				
-				<div class="coin"></div>
-				<div class="gauche"></div>
-
-			</div>
-
-			<div class="bottom">
-
-				<div class="entry-content">
-				
-					<h1><?php the_title(); ?></h1>
-					<?php the_content(); ?>
-
-				</div>
-
-			</div>
 		</div>
 
-	</div><!-- .preaccueil -->
+		<div class="bottom">
+
+			<div class="entry-content">
+			
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+
+			</div>
+
+		</div>
+	</div>
 
 <?php endwhile; ?>
 

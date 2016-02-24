@@ -149,7 +149,7 @@ button, input[type=button] {
   font-style: normal;
 }
 
-body, html {
+html.scene {
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -158,7 +158,19 @@ body, html {
 
 body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+body.page-template-default {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: auto;
+  position: relative;
+  overflow: auto;
 }
 
 .clickable {
@@ -208,14 +220,6 @@ body {
   font-weight: 500;
 }
 
-.page {
-  background-image: url('images/carreaumarbre300px.jpg');
-  background-size: contain;
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-
 #zone-menu.visible .menu-content {
   left: 0;
   transition: left .75s ease;
@@ -231,6 +235,7 @@ body {
   left: -17em;
   padding: 2.5em 1em 1em;
   position: fixed;
+  overflow: scroll;
   top: 0;
   transition: left .75s ease;
   width: 17em;
@@ -241,11 +246,25 @@ body {
   padding-bottom: .5em;
 }
 
+#zone-menu .subtitle ul {
+  padding-left: 0.5em;
+}
+
+#zone-menu .subtitle > a {
+  cursor: default;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+#zone-menu .subtitle > a:hover {
+  color: #000;
+}
+
 #zone-menu a {
   color: #000;
   font-family: 'Signika',sans-serif;
   font-size: .9135em;
-  font-weight: bold;
   letter-spacing: 1px;
   line-height: 1.25;
   text-decoration: none;
@@ -268,26 +287,32 @@ body {
 }
 
 #zone-menu .bt-menu {
+  background-image: url('images/sol.jpg');
+  box-shadow: -3px 3px 0 0 #000;
+  color: #fff;
+  font-weight: bold;
   left: .5em;
-  padding-left: 1.5em;
+  padding: 0.15em 0.15em 0.15em 1.55em;
   position: absolute;
-  text-shadow: 1px -1px 1px #fff;
+  //text-shadow: 1px -1px 1px #fff;
   top: .5em;
   z-index: 999;
 }
 
 #zone-menu .bt-menu:hover {
-  text-shadow: none;
+  box-shadow: -2px 2px 0 0 #000;
+  margin-right: 1px;
+  margin-top: 1px;
 }
 
 #zone-menu .bt-menu::before {
-  background: #000;
-  box-shadow: 0 .25em 0 0 #000, 0 .5em 0 0 #000;
+  background: #fff;
+  box-shadow: 0 .25em 0 0 #fff, 0 .5em 0 0 #fff;
   content: "";
   height: .15em;
-  left: 0;
+  left: 0.25em;
   position: absolute;
-  top: .25em;
+  top: .4em;
   width: 1em;
 }
 
@@ -351,9 +376,13 @@ body {
 }
 
 .feuille .bottom .entry-content h1 {
-  margin-bottom: -0.5em;
+  margin-bottom: -0.6em;
   position: relative;
-  top: -1em;
+  top: -0.8em;
+}
+
+.entry-content em {
+  font-weight: 300;
 }
 
 .entry-content h1 {
@@ -363,15 +392,150 @@ body {
   margin-bottom: 0.75em;
 }
 
-.entry-content p {
+.entry-content h1, .entry-content .h1, .entry-content h2, .entry-content .h2, .entry-content h3, .entry-content .h3, .entry-content h4, .entry-content .h4, .entry-content h5, .entry-content .h5, .entry-content h6, .entry-content .h6 {
+  line-height: 1em;
+  padding-bottom: 0.25em;
+  display: block;
+}
+
+.entry-content h1 a, .entry-content .h1 a, .entry-content h2 a, .entry-content .h2 a, .entry-content h3 a, .entry-content .h3 a, .entry-content h4 a, .entry-content .h4 a, .entry-content h5 a, .entry-content .h5 a, .entry-content h6 a, .entry-content .h6 a {
+  text-decoration: none;
+  color: @rose;
+}
+
+.entry-content h1 a:hover, .entry-content .h1 a:hover, .entry-content h2 a:hover, .entry-content .h2 a:hover, .entry-content h3 a:hover, .entry-content .h3 a:hover, .entry-content h4 a:hover, .entry-content .h4 a:hover, .entry-content h5 a:hover, .entry-content .h5 a:hover, .entry-content h6 a:hover, .entry-content .h6 a:hover {
+   color: @rose;
+}
+
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+  margin-bottom: 0.5em;
+  clear: both;
+  font-family: 'Signika',sans-serif;
+}
+
+.entry-content h1, .entry-content .h1 {
+  font-size: 2.5em;
+  line-height: 1.1em;
+}
+
+.entry-content h2, .entry-content .h2 {
+  font-size: 1.75em;
+  font-weight: 200;
+  line-height: 1.25em;
+}
+
+.entry-content h3, .entry-content .h3 {
+  font-size: 1.5em;
+  font-weight: 200;
+  line-height: 1.25em;
+}
+
+.entry-content h4, .entry-content .h4 {
+  font-size: 1.25em;
+  font-weight: 200;
+  line-height: 1.25em;
+}
+
+.entry-content h5, .entry-content .h5 {
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 200;
+  line-height: 1.25em;
+}
+
+.entry-content h6, .entry-content .h6 {
+  font-size: 0.75em;
+  font-weight: bold;
+  line-height: 1.25em;
+  text-transform: uppercase;
+}
+
+.entry-content p, .entry-content ol, .entry-content ul, .entry-content td, .entry-content pre {
   line-height: 1.5em;
-  padding-bottom: 1em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+
+.entry-content p a, .entry-content ol a, .entry-content ul a, .entry-content td a, .entry-content pre a {
+  border-bottom: thin dotted #000;
+  color: #000;
+  font-size: .8125em;
+  letter-spacing: 1px;
+  line-height: 1.25;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.entry-content p a:hover, .entry-content ol a:hover, .entry-content ul a:hover, .entry-content td a:hover, .entry-content pre a:hover {
+  border-bottom: none;
+}
+
+.entry-content ul, .entry-content ol {
+  list-style-type: hangul-consonant;
+  padding-left: 1.5em;
+}
+
+.entry-content ul li, .entry-content ol li {
+  padding-bottom: 0.5em;
+  font-weight: 300;
+}
+
+.entry-content ul ul, .entry-content ol ul {
+  list-style-type: circle;
+  margin-top: 0.5em;
+}
+
+.entry-content ol {
+  list-style-type: lower-roman;
+}
+
+.entry-content .alignleft {
+  float: left;
+  padding: .5em 1.15em 1em 0;
+}
+
+.entry-content .alignright {
+  float: right;
+  padding: .5em 0 1em 1.15em;
+}
+
+.entry-content .aligncenter {
+  clear: both;
+  display: block;
+  margin: 1em auto 1em auto;
+}
+
+.entry-content .alignnone {
+  padding: .5em 1em 0 0;
+}
+
+.entry-content .alignleft, .entry-content .alignright, .entry-content .aligncenter, .entry-content .alignnone {
+  max-width: 100%;
+  height: auto;
+}
+
+.entry-content .alignleft img, .entry-content .alignright img, .entry-content .aligncenter img, .entry-content .alignnone img {
+  width: 100%;
+  height: auto;
+}
+
+.entry-content .wp-caption p {
+  font-size: 0.65em;
+  letter-spacing: 0.1em;
+  padding-top: 0.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.entry-content pre {
+  background-color: #eee;
+  font-size: .8em;
+  margin-bottom: 2em;
+  padding: 1em;
 }
 
 .landscape-gif {
-  background-color: fade(#000, 80%);
+  background-color: rgba(0,0,0,.8);
   display: none;
   height: 100%;
   position: fixed;
@@ -499,8 +663,13 @@ body {
   text-transform: uppercase;
 }
 
+.tous {
+  font-size: 1.3vw;
+}
+
 .objet {
   display: block;
+  height: auto;
   pointer-events: none;
   position: absolute;
 }
@@ -516,38 +685,38 @@ body {
 }
 
 .objet.table {
+  bottom: 4em;
   left: 0;
   margin-left: auto;
   margin-right: auto;
   right: 0;
-  top: 5%;
-  width: 30%;
+  width: 22.8125em;
 }
 
 .objet.chaise {
-  right: 25%;
-  top: -25%;
-  width: 10%;
+  bottom: 10em;
+  left: 44em;
+  width: 7.5625em;
 }
 
 .objet.plante {
-  left: 12%;
-  top: -70%;
-  width: 9%;
+  bottom: 6em;
+  left: 10em;
+  width: 6.875em;
   z-index: 5;
 }
 
 .objet.fontaine {
-  left: 5%;
-  top: 20%;
-  width: 10%;
+  bottom: 1em;
+  left: 4em;
+  width: 8em;
   z-index: 10;
 }
 
 .objet.baraeau {
-  right: 12%;
-  top: -50%;
-  width: 10%;
+  bottom: 12em;
+  left: 60em;
+  width: 8em;
   z-index: 10;
 }
 
@@ -559,137 +728,150 @@ body {
   z-index: 3;
 }
 
+/*BUREAU*/
+
 .objet.bureau {
-  left: 35%;
-  top: -54%;
-  width: 35%;
-  z-index: 15;
+  bottom: 2em;
+  left: 26em;
+  width: 27.9375em;
+  z-index: 24;
 }
 
 .objet.bureau2 {
-  left: -4%;
-  top: -70%;
-  width: 22%;
-  z-index: 15;
-}
-
-.objet.conference {
-  bottom: 0;
-  left: -5%;
-  width: 50%;
-  z-index: 10;
+  bottom: 4em;
+  left: -2em;
+  width: 17.5625em;
+  z-index: 21;
 }
 
 .objet.chaise2 {
-  left: 28%;
-  top: -60%;
-  width: 12%;
-  z-index: 10;
+  bottom: 8em;
+  left: 22em;
+  width: 9.5625em;
+  z-index: 21;
 }
 
 .objet.gabrielle {
-  left: 8%;
-  top: 28%;
-  width: 24%;
+  left: 7em;
+  bottom: 2em;
+  width: 19.125em;
   z-index: 888;
 }
 
-.objet.deco {
-  right: 40%;
-  top: 10%;
-  width: 12%;
-}
-
-.objet.peinture {
-  right: 16%;
-  top: 5%;
-  width: 17%;
-}
-
 .objet.stagiaire {
-  right: 2%;
-  top: 47%;
-  width: 14%;
+  bottom: 1em;
+  left: 57em;
+  width: 11.125em;
   z-index: 888;
 }
 
 .objet.sophie {
-  left: 33%;
-  top: -106%;
-  width: 14%;
+  bottom: 7em;
+  left: 26em;
+  width: 11.125em;
+  z-index: 22;
+}
+
+.objet.charlotte {
+  bottom: 8em;
+  left: 41em;
+  width: 15.125em;
+  z-index: 25;
+}
+
+.objet.deco {
+  bottom: 10em;
+  left: 36em;
+  width: 9em;
+}
+
+.objet.conference {
+  bottom: 0;
+  left: -1em;
+  width: 35em;
   z-index: 10;
 }
 
+.objet.peinture {
+  bottom: 4em;
+  left: 51em;
+  width: 13em;
+}
+
+/*Toilette*/
+
 .objet.miroire {
-  left: 52%;
-  top: 10%;
-  width: 15%;
+  bottom: 10em;
+  left: 42em;
+  width: 11.9375em;
 }
 
 .objet.lavabo {
-  left: 50%;
-  top: -50%;
-  width: 20%;
+  bottom: 10em;
+  left: 40em;
+  width: 15.9375em;
 }
 
 .objet.toilette1 {
-  bottom: 10%;
-  left: 5%;
-  width: 14%;
+  bottom: 3em;
+  left: 3em;
+  width: 11.125em;
   z-index: 888;
 }
 
 .objet.toilette2 {
-  bottom: 15%;
-  right: 8%;
-  width: 13%;
+  bottom: 3em;
+  left: 66em;
+  width: 10.375em;
   z-index: 888;
 }
 
 .objet.fenetre {
-  left: 20%;
-  top: 12%;
-  width: 20%;
+  left: 15em;
+  bottom: 4em;
+  width: 15.9375em;
 }
 
+/*Archive*/
+
 .objet.bureau-archive {
-  bottom: 63%;
-  left: 15%;
-  width: 42%;
+  bottom: 10em;
+  left: 9em;
+  width: 31.25em;
 }
 
 .objet.divan-archive {
-  bottom: 12%;
-  right: 1%;
-  width: 20%;
+  bottom: 4em;
+  left: 60em;
+  width: 14.875em;
   z-index: 888;
 }
 
 .objet.livre {
-  bottom: 3%;
-  left: 13%;
-  width: 23%;
+  bottom: 1em;
+  left: 5em;
+  width: 17.1875em;
   z-index: 888;
 }
 
 .objet.livre2 {
-  bottom: -2%;
-  right: 16%;
-  width: 12%;
+  bottom: -1em;
+  left: 56em;
+  width: 8.9375em;
   z-index: 888;
 }
 
 .objet.deco-gif {
-  right: 12%;
-  top: 12%;
-  width: 15%;
+  bottom: 9em;
+  left: 56em;
+  width: 11.25em;
 }
 
 .porte {
   bottom: 0;
   text-decoration: none;
-  transition: all .5s ease;
-  width: 10%;
+  transition: box-shadow .5s ease;
+  width: 7.5625em;
 }
 
 .porte:hover img {
@@ -698,26 +880,26 @@ body {
 }
 
 .porte#porte1 {
-  left: 25%;
+  left: 20em;
 }
 
 .porte#porte2 {
-  left: 45%;
+  left: 35em;
 }
 
 .porte#porte3 {
-  left: 65%;
+  left: 50em;
 }
 
 .porte#portet {
-  left: 60%;
+  left: 45em;
   text-align: center;
-  width: 11%;
+  width: 8.125em;
 }
 
 .porte#portet .signe {
   margin-bottom: .75em;
-  width: 75%;
+  width: 6.125em;
 }
 
 .porte h2 {
@@ -746,7 +928,6 @@ body {
 .popup {
   display: none;
   height: 100%;
-  left: 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -768,8 +949,8 @@ body {
   display: block;
   float: right;
   font-weight: bold;
-  margin: 0 0 1em 1em;
-  padding: .25em;
+  margin: 0 0 0.5em 0.5em;
+  padding: .25em 0.5em;
   text-decoration: none;
 }
 
@@ -779,24 +960,11 @@ body {
   margin-top: 1px;
 }
 
-.popup h2 {
-  font-size: 1.5em;
-  line-height: 1.5;
-  padding-bottom: 1em;
-}
-
-.popup p {
-  font-weight: 300;
-  letter-spacing: .5px;
-  line-height: 1.5;
-  padding-bottom: 1em;
-}
-
-.popup .content {
-  background-color: rgba(186,237,255, .8);
+.popup .entry-content {
+  background-color: rgba(186,237,255, .9);
   box-shadow: -10px 10px 10px -5px alpha(#000, .8);
   margin: 2em auto 0;
-  padding: 1.5em;
+  padding: 1.25em;
   position: relative;
   width: 75%;
   z-index: 20;
@@ -855,6 +1023,26 @@ body {
   z-index: 888;
 }
 
+@media screen and (max-width: 1024px) {
+  .popup .entry-content {
+    font-size: 90%;
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  #zone-menu .menu-content {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .feuille {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .preaccueil {
     font-size: 80%;
@@ -864,6 +1052,10 @@ body {
 @media screen and (max-width: 500px) {
   .preaccueil {
     font-size: 55%;
+  }
+
+  #zone-menu .menu-content {
+    font-size: 80%;
   }
 }
 

@@ -20,8 +20,7 @@ Author URI: http://www.galeriegalerie.com
   font-style: normal;
 }
 
-body,
-html {
+html.scene {
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -30,7 +29,19 @@ html {
 
 body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+body.page-template-default {
+  background-image: url('images/carreaumarbre300px.jpg');
+  background-size: contain;
+  height: auto;
+  position: relative;
+  overflow: auto;
 }
 
 .clickable {
@@ -80,14 +91,6 @@ body {
 
 }
 
-.page {
-  background-image: url('images/carreaumarbre300px.jpg');
-  background-size: contain;
-  height: 100%;
-  position: relative;
-  width: 100%;
-}
-
 #zone-menu {
   &.visible {
     .menu-content {
@@ -106,6 +109,7 @@ body {
     left: -17em;
     padding: 2.5em 1em 1em;
     position: fixed;
+    overflow: scroll;
     top: 0;
     transition: left .75s ease;
     width: 17em;
@@ -116,11 +120,28 @@ body {
     }
   }
 
+  .subtitle {
+
+    ul {
+      padding-left: 0.5em;
+    }
+
+    & > a {
+      cursor: default;
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+
+      &:hover {
+        color: $noir;
+      }
+    }
+  }
+
   a {
     color: $noir;
     font-family: $signika;
     font-size: .9135em;
-    font-weight: bold;
     letter-spacing: 1px;
     line-height: 1.25;
     text-decoration: none;
@@ -147,25 +168,31 @@ body {
   }
 
   .bt-menu {
+    background-image: url('images/sol.jpg');
+    box-shadow: -3px 3px 0 0 $noir;
+    color: $blanc;
+    font-weight: bold;
     left: .5em;
-    padding-left: 1.5em;
+    padding: 0.15em 0.15em 0.15em 1.55em;
     position: absolute;
-    text-shadow: 1px -1px 1px $blanc;
+    //text-shadow: 1px -1px 1px $blanc;
     top: .5em;
     z-index: 999;
 
     &:hover {
-      text-shadow: none;
+      box-shadow: -2px 2px 0 0 $noir;
+      margin-right: 1px;
+      margin-top: 1px;
     }
 
     &::before {
-      background: $noir;
-      box-shadow: 0 .25em 0 0 $noir, 0 .5em 0 0 $noir;
+      background: $blanc;
+      box-shadow: 0 .25em 0 0 $blanc, 0 .5em 0 0 $blanc;
       content: "";
       height: .15em;
-      left: 0;
+      left: 0.25em;
       position: absolute;
-      top: .25em;
+      top: .4em;
       width: 1em;
     }
   }
@@ -226,9 +253,9 @@ body {
     z-index: 2;
 
     .entry-content h1 {
-      margin-bottom: -0.5em;
+      margin-bottom: -0.6em;
       position: relative;
-      top: -1em;
+      top: -0.8em;
     }
   }
 
@@ -237,6 +264,10 @@ body {
 
 .entry-content {
 
+  em {
+    font-weight: 300;
+  }
+
   h1 {
     font-family: $signika;
     font-size: 1.75em;
@@ -244,16 +275,147 @@ body {
     margin-bottom: 0.75em;
   }
 
-  p {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    line-height: 1em;
+    padding-bottom: 0.25em;
+    display: block;
+    a { 
+      text-decoration: none;
+      color: @rose;
+      &:hover { color: @rose; }
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    clear: both;
+    font-family: $signika;
+  }
+
+  h1, .h1 { 
+    font-size: 2.5em;
+    line-height: 1.1em;
+  }
+
+  h2, .h2 { 
+    font-size: 1.75em;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
+
+  h3, .h3 { 
+    font-size: 1.5em;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
+
+  h4, .h4 { 
+    font-size: 1.25em;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
+
+  h5, .h5 { 
     font-size: 1em;
-    font-weight: 300;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
+
+  h6, .h6 { 
+    font-size: 0.75em; 
+    font-weight: bold;
+    line-height: 1.25em;
+    text-transform: uppercase; 
+  }
+
+  p, ol, ul, td, pre {
     line-height: 1.5em;
-    padding-bottom: 1em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    font-weight: 300;
+
+    a { 
+      border-bottom: thin dotted $noir;
+      color: $noir;
+      font-size: .8125em;
+      letter-spacing: 1px;
+      line-height: 1.25;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        border-bottom: none; 
+      }
+    }
+  }
+
+  ul, ol {
+    list-style-type: hangul-consonant;
+    padding-left: 1.5em;
+
+    li { padding-bottom: 0.5em; font-weight: 300; }
+
+    ul {
+      list-style-type: circle;
+      margin-top: 0.5em;
+    }
+  }
+
+  ol { 
+    list-style-type: lower-roman;
+  }
+
+  .alignleft { 
+    float: left;
+    padding: .5em 1.15em 1em 0;
+  }
+
+  .alignright { 
+    float: right;
+    padding: .5em 0 1em 1.15em;
+  }
+
+  .aligncenter { 
+    clear: both;
+     display: block;
+     margin: 1em auto 1em auto;
+  }
+
+  .alignnone { 
+    padding: .5em 1em 0 0;
+  }
+
+  .alignleft, 
+  .alignright, 
+  .aligncenter, 
+  .alignnone {
+    max-width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .wp-caption p {
+    font-size: 0.65em;
+    letter-spacing: 0.1em;
+    padding-top: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  pre {
+    background-color: #eee;
+    font-size: .8em;
+    margin-bottom: 2em;
+    padding: 1em;
   }
 }
 
 .landscape-gif {
-  background-color: fade($noir, 80%);
+  background-color: rgba(0,0,0,.8);
   display: none;
   height: 100%;
   position: fixed;
@@ -382,8 +544,13 @@ body {
   }
 }
 
+.tous {
+  font-size: 1.3vw;
+}
+
 .objet {
   display: block;
+  height: auto;
   pointer-events: none;
   position: absolute;
 
@@ -398,38 +565,38 @@ body {
   }
 
   &.table {
+    bottom: 4em;
     left: 0;
     margin-left: auto;
     margin-right: auto;
     right: 0;
-    top: 5%;
-    width: 30%;
+    width: 22.8125em;
   }
 
   &.chaise {
-    right: 25%;
-    top: -25%;
-    width: 10%;
+    bottom: 10em;
+    left: 44em;
+    width: 7.5625em;
   }
 
   &.plante {
-    left: 12%;
-    top: -70%;
-    width: 9%;
+    bottom: 6em;
+    left: 10em;
+    width: 6.875em;
     z-index: 5;
   }
 
   &.fontaine {
-    left: 5%;
-    top: 20%;
-    width: 10%;
+    bottom: 1em;
+    left: 4em;
+    width: 8em;
     z-index: 10;
   }
 
   &.baraeau {
-    right: 12%;
-    top: -50%;
-    width: 10%;
+    bottom: 12em;
+    left: 60em;
+    width: 8em;
     z-index: 10;
   }
 
@@ -441,138 +608,151 @@ body {
     z-index: 3;
   }
 
+  /*BUREAU*/
+
   &.bureau {
-    left: 35%;
-    top: -54%;
-    width: 35%;
-    z-index: 15;
+    bottom: 2em;
+    left: 26em;
+    width: 27.9375em;
+    z-index: 24;
   }
 
   &.bureau2 {
-    left: -4%;
-    top: -70%;
-    width: 22%;
-    z-index: 15;
-  }
-
-  &.conference {
-    bottom: 0;
-    left: -5%;
-    width: 50%;
-    z-index: 10;
+    bottom: 4em;
+    left: -2em;
+    width: 17.5625em;
+    z-index: 21;
   }
 
   &.chaise2 {
-    left: 28%;
-    top: -60%;
-    width: 12%;
-    z-index: 10;
+    bottom: 8em;
+    left: 22em;
+    width: 9.5625em;
+    z-index: 21;
   }
 
   &.gabrielle {
-    left: 8%;
-    top: 28%;
-    width: 24%;
+    left: 7em;
+    bottom: 2em;
+    width: 19.125em;
     z-index: 888;
   }
 
-  &.deco {
-    right: 40%;
-    top: 10%;
-    width: 12%;
-  }
-
-  &.peinture {
-    right: 16%;
-    top: 5%;
-    width: 17%;
-  }
-
   &.stagiaire {
-    right: 2%;
-    top: 47%;
-    width: 14%;
+    bottom: 1em;
+    left: 57em;
+    width: 11.125em;
     z-index: 888;
   }
 
   &.sophie {
-    left: 33%;
-    top: -106%;
-    width: 14%;
+    bottom: 7em;
+    left: 26em;
+    width: 11.125em;
+    z-index: 22;
+  }
+
+  &.charlotte {
+    bottom: 8em;
+    left: 41em;
+    width: 15.125em;
+    z-index: 25;
+  }
+
+  &.deco {
+    bottom: 10em;
+    left: 36em;
+    width: 9em;
+  }
+
+  &.conference {
+    bottom: 0;
+    left: -1em;
+    width: 35em;
     z-index: 10;
   }
 
+  &.peinture {
+    bottom: 4em;
+    left: 51em;
+    width: 13em;
+  }
+
+  /*Toilette*/
+
   &.miroire {
-    left: 52%;
-    top: 10%;
-    width: 15%;
+    bottom: 10em;
+    left: 42em;
+    width: 11.9375em;
   }
 
   &.lavabo {
-    left: 50%;
-    top: -50%;
-    width: 20%;
+    bottom: 10em;
+    left: 40em;
+    width: 15.9375em;
   }
 
   &.toilette1 {
-    bottom: 10%;
-    left: 5%;
-    width: 14%;
+    bottom: 3em;
+    left: 3em;
+    width: 11.125em;
     z-index: 888;
   }
 
   &.toilette2 {
-    bottom: 15%;
-    right: 8%;
-    width: 13%;
+    bottom: 3em;
+    left: 66em;
+    width: 10.375em;
     z-index: 888;
   }
 
   &.fenetre {
-    left: 20%;
-    top: 12%;
-    width: 20%;
+    left: 15em;
+    bottom: 4em;
+    width: 15.9375em;
   }
 
+  /*Archive*/
+
   &.bureau-archive {
-    bottom: 63%;
-    left: 15%;
-    width: 42%;
+    bottom: 10em;
+    left: 9em;
+    width: 31.25em;
   }
 
   &.divan-archive {
-    bottom: 12%;
-    right: 1%;
-    width: 20%;
+    bottom: 4em;
+    left: 60em;
+    width: 14.875em;
     z-index: 888;
   }
 
   &.livre {
-    bottom: 3%;
-    left: 13%;
-    width: 23%;
+    bottom: 1em;
+    left: 5em;
+    width: 17.1875em;
     z-index: 888;
   }
 
   &.livre2 {
-    bottom: -2%;
-    right: 16%;
-    width: 12%;
+    bottom: -1em;
+    left: 56em;
+    width: 8.9375em;
     z-index: 888;
   }
 
   &.deco-gif {
-    right: 12%;
-    top: 12%;
-    width: 15%;
+    bottom: 9em;
+    left: 56em;
+    width: 11.25em;
   }
 }
 
 .porte {
   bottom: 0;
   text-decoration: none;
-  transition: all .5s ease;
-  width: 10%;
+  transition: box-shadow .5s ease;
+  width: 7.5625em;
 
   &:hover img {
     box-shadow: 0 0 10px -5px $gris;
@@ -580,25 +760,25 @@ body {
   }
 
   &#porte1 {
-    left: 25%;
+    left: 20em;
   }
 
   &#porte2 {
-    left: 45%;
+    left: 35em;
   }
 
   &#porte3 {
-    left: 65%;
+    left: 50em;
   }
 
   &#portet {
-    left: 60%;
+    left: 45em;
     text-align: center;
-    width: 11%;
+    width: 8.125em;
 
     .signe {
       margin-bottom: .75em;
-      width: 75%;
+      width: 6.125em;
     }
   }
 
@@ -629,7 +809,6 @@ body {
 .popup {
   display: none;
   height: 100%;
-  left: 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -650,8 +829,8 @@ body {
     display: block;
     float: right;
     font-weight: bold;
-    margin: 0 0 1em 1em;
-    padding: .25em;
+    margin: 0 0 0.5em 0.5em;
+    padding: .25em 0.5em;
     text-decoration: none;
 
     &:hover {
@@ -661,24 +840,11 @@ body {
     }
   }
 
-  h2 {
-    font-size: 1.5em;
-    line-height: 1.5;
-    padding-bottom: 1em;
-  }
-
-  p {
-    font-weight: 300;
-    letter-spacing: .5px;
-    line-height: 1.5;
-    padding-bottom: 1em;
-  }
-
-  .content {
-    background-color: rgba($bleu, .8);
+  .entry-content {
+    background-color: rgba($bleu, .9);
     box-shadow: -10px 10px 10px -5px alpha($noir, .8);
     margin: 2em auto 0;
-    padding: 1.5em;
+    padding: 1.25em;
     position: relative;
     width: 75%;
     z-index: 20;
@@ -738,6 +904,26 @@ body {
   z-index: 888;
 }
 
+@media screen and (max-width: 1024px) {
+  .popup .entry-content {
+    font-size: 90%;
+    height: 100%;
+    margin: 0;
+    overflow: scroll;
+    width: 100%;
+  }
+
+  #zone-menu .menu-content {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .feuille {
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .preaccueil {
     font-size: 80%;
@@ -747,6 +933,10 @@ body {
 @media screen and (max-width: 500px) {
   .preaccueil {
     font-size: 55%;
+  }
+
+  #zone-menu .menu-content {
+    font-size: 80%;
   }
 }
 
