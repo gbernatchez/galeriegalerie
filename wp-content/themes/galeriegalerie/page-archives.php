@@ -32,7 +32,7 @@ get_header(); ?>
 		</a>
 
 		<div class="objet deco-gif">
-			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/gif-décoratif.gif">
+			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/gif-decoratif.gif">
 		</div>
 
 	</div>
@@ -45,9 +45,9 @@ get_header(); ?>
 
 	<div class="tous">
 	
-		<div class="objet bureau-archive">
+		<a href="<?php echo get_template_directory_uri(); ?>/finder" title="Consulter les archives" class="objet bureau-archive click">
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/archives.png">
-		</div>
+		</a>
 
 	</div>
 

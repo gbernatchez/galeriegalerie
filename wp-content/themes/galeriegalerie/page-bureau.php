@@ -6,21 +6,25 @@ get_header(); ?>
 
 <div class="tous">
 
-	<a href="#" class="objet stagiaire bt-popup-stagiaire click">
+	<div class="objet stagiaire">
+		<a href="#" class="bt-popup bt-popup-stagiaire click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/stagiaire.png" alt="">
-	</a>
+	</div>
 
-	<a href="#" class="objet gabrielle bt-popup-gabrielle click">
+	<div href="#" class="objet gabrielle">
+		<a href="#" class="bt-popup bt-popup-gabrielle click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/avatar_gab.png" alt="">
-	</a>
+	</div>
 
-	<a href="#" class="objet charlotte bt-popup-charlotte click">
+	<div class="objet charlotte">
+		<a href="#" class="bt-popup bt-popup-charlotte click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/charlotte.png" alt="">
-	</a>
+	</div>
 
-	<a href="#" class="objet sophie bt-popup-sophie click">
+	<div class="objet sophie">
+		<a href="#" class="bt-popup bt-popup-sophie click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/sophie_avatar.png" alt="">
-	</a>
+	</div>
 
 	<div class="objet bureau">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/bureau.png" alt="">

@@ -13,17 +13,17 @@ get_header(); ?>
 		<h1>Exposition Collective</h1>
 
 		<a href="<?php echo get_template_directory_uri(); ?>/expo1" title="Expo 1" id="porte1" class="objet porte click">
-			<h2>Salle 1</h2>
+			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte1.jpg">
 		</a>
 
 		<a href="<?php echo get_template_directory_uri(); ?>/expo2" title="Expo 2" id="porte2" class="objet porte click">
-			<h2>Salle 2</h2>
+			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte2.jpg">
 		</a>
 
 		<a href="<?php echo get_template_directory_uri(); ?>/expo3" title="Expo 3" id="porte3" class="objet porte click">
-			<h2>Salle 3</h2>
+			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg">
 		</a>
 
@@ -44,6 +44,10 @@ get_header(); ?>
 		<div class="objet chaise">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/chaise.png">
 		</div>
+
+		<a href="#" title="Fermer la radio" class="objet radio click">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/radio.gif" alt="Une radio">
+		</a>
 
 		<div class="objet table">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/table.png" alt="Une table">
