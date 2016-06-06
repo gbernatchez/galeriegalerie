@@ -35,6 +35,7 @@ get_header(); ?>
 	</div>
 
 	<div class="objet bureau2">
+		<a href="???" class="ordi-code click" onClick="MyWindow=window.open('http://www.galeriegalerieweb.com/259-2','????', 'location=no,top=100,titlebar=no,status=no,menubar=no,left=300,width=500,height=400'); return false;"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/test bureau.gif" alt="">
 	</div>
 
@@ -48,9 +49,9 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/cubeplant.png" alt="">
 		</div>
 
-		<div class="objet peinture">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/devin-troy-strother.jpg" alt="">
-		</div>
+		<a href="http://www.andreeannemercier.com/" title="Andrée-Anne Mercier" class="click objet peinture">
+			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg" alt="">
+		</a>
 
 		<div class="objet conference">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/conferenceroom.png" alt="">
@@ -60,7 +61,9 @@ get_header(); ?>
 
 </div><!-- #mur-fond -->
 
-<a title="Accueil" href="<?php echo get_template_directory_uri(); ?>/hall" class="mur droit sorti"></a>
+<div class="mur droit sorti">
+	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
+</div>
 
 <div id="sol" class="coin-gauche coin-droit">
 
@@ -70,7 +73,9 @@ get_header(); ?>
 <div class="popup popup-sophie">
 	<div class="entry-content">
 		<a href="#" class="close close-sophie" title="Fermer"><span>x</span></a>
-		<?php the_field('sophie'); ?>
+		<div class="texte-sophie">
+			<?php the_field('sophie'); ?>
+		</div>
 	</div>
 	<div class="overlay overlay-sophie"></div>
 </div><!-- .popup-sophie -->
@@ -78,7 +83,9 @@ get_header(); ?>
 <div class="popup popup-gabrielle">
 	<div class="entry-content">
 		<a href="#" class="close close-gabrielle" title="Fermer"><span>x</span></a>
-		<?php the_field('gabrielle'); ?>
+		<div class="texte-gabrielle">
+			<?php the_field('gabrielle'); ?>
+		</div>
 	</div>
 	<div class="overlay overlay-gabrielle"></div>
 </div><!-- .popup-gabrielle -->
@@ -86,7 +93,9 @@ get_header(); ?>
 <div class="popup popup-stagiaire">
 	<div class="entry-content">
 		<a href="#" class="close close-stagiaire" title="Fermer"><span>x</span></a>
-		<?php the_field('stagiaire'); ?>
+		<div class="texte-stagiaire">
+			<?php the_field('stagiaire'); ?>
+		</div>
 	</div>
 	<div class="overlay overlay-stagiaire"></div>
 </div><!-- .popup-stagiaire -->
@@ -94,7 +103,9 @@ get_header(); ?>
 <div class="popup popup-charlotte">
 	<div class="entry-content">
 		<a href="#" class="close close-charlotte" title="Fermer"><span>x</span></a>
-		<?php the_field('charlotte'); ?>
+		<div class="texte-charlotte">
+			<?php the_field('charlotte'); ?>
+		</div>
 	</div>
 	<div class="overlay overlay-charlotte"></div>
 </div><!-- .popup-charlotte -->

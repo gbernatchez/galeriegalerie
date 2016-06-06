@@ -1,16 +1,24 @@
 <?php 
 /*
-* Template name: Hall
+* Template name: Entrée
 */
 get_header(); ?>
 
-<a title="Salle gauche" href="<?php echo get_template_directory_uri(); ?>/bureau" class="mur gauche sorti"></a>
+<div class="mur gauche sorti">
+	<a title="<?php echo get_the_title(11); ?>" href="<?php echo get_permalink(11); ?>"></a>
+</div>
+
+<div class="tous">
+	<div class="objet fontaine">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/fontaine-deco.gif" alt="Une fontaine">
+	</div>
+</div>
 
 <div id="mur-fond">
 
 	<div class="tous">
 
-		<h1>Exposition Collective</h1>
+		<h1 class="visuallyhidden">Exposition Collective</h1>
 
 		<a href="<?php echo get_template_directory_uri(); ?>/expo1" title="Expo 1" id="porte1" class="objet porte click">
 			<h2></h2>
@@ -31,7 +39,9 @@ get_header(); ?>
 
 </div><!-- #mur-fond -->
 
-<a title="Salle droite" href="<?php echo get_template_directory_uri(); ?>/archives" class="mur droit sorti"></a>
+<div class="mur droit sorti">
+	<a title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>"></a>
+</div>
 
 <div id="sol" class="coin-gauche coin-droit">
 
@@ -45,16 +55,20 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/chaise.png">
 		</div>
 
+		<?php //if(get_field('pamphlet')) : ?>
+
+			<a href="<?php the_field('pamphlet'); ?>" target="_blank" title="Visionner le pamphlet" class="objet pamphlet click">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/expo_encours_02.gif" alt="Pamphlet">
+			</a>
+
+		<?php //endif; ?>
+
 		<a href="#" title="Fermer la radio" class="objet radio click">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/radio.gif" alt="Une radio">
 		</a>
 
 		<div class="objet table">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/table.png" alt="Une table">
-		</div>
-
-		<div class="objet fontaine">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/fontaine-deco.gif" alt="Une fontaine">
 		</div>
 
 		<div class="objet baraeau">

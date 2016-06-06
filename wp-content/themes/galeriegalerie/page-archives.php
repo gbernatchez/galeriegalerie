@@ -4,7 +4,9 @@
 */
 get_header(); ?>
 
-<a title="Accueil" href="<?php echo get_template_directory_uri(); ?>/hall" class="mur gauche sorti"></a>
+<div class="mur gauche sorti">
+	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
+</div>
 
 <div class="tous">
 
@@ -31,9 +33,9 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte-toilette.jpg" alt="">
 		</a>
 
-		<div class="objet deco-gif">
-			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/gif-decoratif.gif">
-		</div>
+		<a href="http://www.andreeannemercier.com/" title="Andrée-Anne Mercier" class="click objet deco-gif">
+			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andree-anne-mercier.gif">
+		</a>
 
 	</div>
 
@@ -44,7 +46,7 @@ get_header(); ?>
 <div id="sol" class="coin-droit coin-gauche">
 
 	<div class="tous">
-	
+
 		<a href="<?php echo get_template_directory_uri(); ?>/finder" title="Consulter les archives" class="objet bureau-archive click">
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/archives.png">
 		</a>

@@ -2,6 +2,12 @@
 
 <?php if(have_posts()) while(have_posts()) : the_post(); ?>
 
+	<?php if(get_field('cutie')) : ?>
+		<div class="cutie">
+			<img src="<?php the_field('cutie'); ?>">
+		</div>
+	<?php endif; ?>
+
 	<div class="feuille">
 
 		<div class="top">

@@ -16,6 +16,12 @@ jQuery(document).ready(function(){
 	/*var h = jQuery('body').height();
 	jQuery('body, html').height(h+60);*/
 
+    if(isMobile) {
+        jQuery('html').addClass('mobile');
+        //window.scrollTo(0, 30);
+        //setTimeout(window.scrollTo(0,30),100);
+    }
+
 	resize();
     jQuery(window).resize(function(){ resize(); });
 
@@ -24,19 +30,31 @@ jQuery(document).ready(function(){
 	})
 
     jQuery('.bt-popup-sophie, .close-sophie, .overlay-sophie').click(function(){
+        //var texte = jQuery('.texte-sophie').html();
+        //jQuery('.texte-sophie').empty();
         jQuery('.popup-sophie').toggleClass('visible');
+        //jQuery('.texte-sophie').typedText(texte, 'medium');
     });
 
     jQuery('.bt-popup-gabrielle, .close-gabrielle, .overlay-gabrielle').click(function(){
+        //var texte = jQuery('.texte-gabrielle').html();
+        //jQuery('.texte-gabrielle').empty();
         jQuery('.popup-gabrielle').toggleClass('visible');
+        //jQuery('.texte-gabrielle').typedText(texte, 'medium');
     });
 
     jQuery('.bt-popup-stagiaire, .close-stagiaire, .overlay-stagiaire').click(function(){
+        //var texte = jQuery('.texte-stagiaire').html();
+        //jQuery('.texte-stagiaire').empty();
         jQuery('.popup-stagiaire').toggleClass('visible');
+        //jQuery('.texte-stagiaire').typedText(texte, 'medium');
     });
 
     jQuery('.bt-popup-charlotte, .close-charlotte, .overlay-charlotte').click(function(){
-        jQuery('.popup-charlotte').toggleClass('visible');
+        //var texte = jQuery('.texte-charlotte').html();
+        jQuery('.texte-charlotte').empty();
+        //jQuery('.popup-charlotte').toggleClass('visible');
+        //jQuery('.texte-charlotte').typedText(texte, 'medium');
     });
 
     jQuery('.bt-menu, #zone-menu .overlay').click(function(){
@@ -49,8 +67,9 @@ function resize() {
 
 	//window.scrollTo(0,1);
 
-	if(isMobile && jQuery('body:not(.page-template-default)')) {
-		if(window.innerHeight > window.innerWidth){
+	//if(isMobile && jQuery('body:not(.page-template-default)') && jQuery('body:not(.page-template-page-accueil)')) {
+	if(isMobile) {
+    	if(window.innerHeight > window.innerWidth){
 	    	jQuery('.landscape-gif').show();
 		} else {
 			jQuery('.landscape-gif').hide();

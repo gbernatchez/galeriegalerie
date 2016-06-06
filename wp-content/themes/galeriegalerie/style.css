@@ -149,6 +149,22 @@ button, input[type=button] {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Mou';
+  src: url('fonts/ufonts.com_ji-noodles-webfont.eot');
+  src: url('fonts/ufonts.com_ji-noodles-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ufonts.com_ji-noodles-webfont.woff2') format('woff2'),
+    url('fonts/ufonts.com_ji-noodles-webfont.woff') format('woff'),
+    url('fonts/ufonts.com_ji-noodles-webfont.ttf') format('truetype'),
+    url('fonts/ufonts.com_ji-noodles-webfont.svg#futura_lightregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  //cursor: url('images/cursor/navigation.png'), auto;
+}
+
 .visuallyhidden { 
   position: absolute; 
   overflow: hidden; 
@@ -202,9 +218,20 @@ button, input[type=button] {
     }
 }
 
+html.scene.mobile {
+  height: calc(100% + 30px);
+}
+
+html.scene.mobile body {
+  //height: calc(100% - 30px);
+  //bottom: 0;
+  //position: absolute;
+}
+
 html.scene {
   height: 100%;
-  overflow: hidden;
+  //height: calc(100% + 20px);
+  overflow: scroll;
   position: relative;
   width: 100%;
 }
@@ -234,7 +261,7 @@ body.page-template-page-finder {
 }
 
 .clickable {
-  cursor: pointer;
+  //cursor: pointer;
 }
 
 .preaccueil {
@@ -249,35 +276,54 @@ body.page-template-page-finder {
 
 }
 
+.preaccueil .letter {
+  font-family: sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  top: -100px;
+  left: 0px;
+}
+
 .preaccueil img {
   margin-bottom: -1.5em;
   position: relative;
-  width: 15em;
+  max-width: 25em;
+  height: auto;
   z-index: 2;
 }
 
 .preaccueil h1 {
-  color: rgb(255,255,255);
-  font-size: 4em;
-  font-weight: 500;
-  margin-bottom: 0.2em;
+  font-size: 80%;
+  background-image: url('images/galeriegalerie.gif');
+  text-indent: -9999px;
+  display: block;
+  max-width: 62.5em;
+  height: 6.1875em;
+  background-size: contain;
   position: relative;
-  text-shadow: -0.025em 0.025em 0px rgb(#777);
   z-index: 0;
+  margin: 0 auto 2em auto;
 }
 
 .preaccueil h2 {
   color: rgb(255,255,255);
   font-size: 1.75em;
   font-weight: 500;
-  margin-bottom: 1.5em;
+  //margin-bottom: 1.5em;
   text-transform: none;
+  position: relative;
 }
 
 .preaccueil p {
-  color: lighten(0,0,0, 10%);
-  font-size: 1.7em;
-  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5em;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.preaccueil header {
+  padding: 2em 0;
 }
 
 #zone-menu.visible .menu-content {
@@ -433,9 +479,22 @@ body.page-template-page-finder {
   font-weight: bold;
 }
 
+.cutie {
+  float: left;
+  position: relative;
+  width: 34%;
+  margin: 10% 0 0 2%;
+  text-align: center;
+}
+
+.cutie img {
+  max-width: 100%;
+  height: auto;
+}
+
 .feuille {
   float: right;
-  margin: 2em;
+  margin: 2em 2%;
   position: relative;
   width: 60%;
 
@@ -654,11 +713,12 @@ body.page-template-page-finder {
   background-image: url('images/pre-accueil-blur.jpg');
   background-position: center center;
   background-size: cover;
-  font-family: arial;
   height: 100%;
   padding: 4em;
   position: relative;
   width: 100%;
+  overflow: scroll;
+  box-sizing: border-box;
 }
 
 #pre-accueil .intro {
@@ -692,14 +752,21 @@ body.page-template-page-finder {
   width: 45%;
 }
 
-#pre-accueil .enter {
+#pre-accueil .bt .enter {
   border-radius: 100%;
+  margin-top: 20%;
+  font-size: 1.5em;
+}
+
+#pre-accueil .bt .enter div {
+  border-radius: 100%;
+  padding: 2.75em 1.5em;
+}
+
+#pre-accueil .enter {
   color: rgb(255,255,255);
   display: inline-block;
-  font-family: arial;
-  font-size: 1.5em;
   line-height: 1;
-  margin-top: 20%;
   opacity: .6;
   padding: 0.75em;
   text-align: center;
@@ -716,8 +783,7 @@ body.page-template-page-finder {
 
 #pre-accueil .enter div {
   background-color: rgb(0,0,0);
-  padding: 2.75em 1.5em;
-  border-radius: 100%;
+  padding: 1em 1.5em;
   font-weight: bold;
 }
 
@@ -730,7 +796,12 @@ body.page-template-page-finder {
 }
 
 #pre-accueil .bt-soutenir {
-  border-radius: 0;
+  padding: 0.5em;
+  background: linear-gradient(183deg, #00ff00, #000000);
+  background-size: 400% 400%;
+  -webkit-animation: gradientJaune 2s ease infinite;
+  -moz-animation: gradientJaune 2s ease infinite;
+  animation: gradientJaune 2s ease infinite;
 }
 
 #mc_embed_signup input:focus {
@@ -796,8 +867,20 @@ body.page-template-page-finder {
 
 .mur.droit.sorti {
   background-image: url('images/mur-porte-droit.png');
-  cursor: url('images/cursor/arrow-right.gif'), auto;
   bottom: 8.5%;
+}
+
+.mur.droit.sorti a {
+  //cursor: url('images/cursor/arrow-right.gif'), auto;
+  left: 8%;
+}
+
+.mur a {
+  display: block;
+  position: absolute;
+  bottom: 25%;
+  width: 36%;
+  height: 58%;
 }
 
 .mur.gauche {
@@ -807,8 +890,12 @@ body.page-template-page-finder {
 
 .mur.gauche.sorti {
   background-image: url('images/mur-porte-gauche.png');
-  cursor: url('images/cursor/arrow-left.gif'), auto;
   bottom: 8.5%;
+}
+
+.mur.gauche.sorti a {
+  //cursor: url('images/cursor/arrow-left.gif'), auto;
+  left: 57%;
 }
 
 #mur-fond {
@@ -837,7 +924,7 @@ body.page-template-page-finder {
 }
 
 .click {
-  pointer-events: auto; 
+  pointer-events: auto;
 }
 
 .click.bt-popup {
@@ -867,6 +954,22 @@ body.page-template-page-finder {
   top: 0.5em;
 }
 
+.click.ordi-code {
+  display: block;
+  height: 6em;
+  width: 6em;
+  position: absolute;
+  top: 2em;
+  left: 5em;
+  cursor: url('images/cursor/eye.png'), auto;
+}
+
+.code {
+  font-family: monospace, sans-serif;
+  background-color: rgb(0,0,0);
+  color: rgb(0, 255, 0);
+}
+
 .objet {
   display: block;
   height: auto;
@@ -884,15 +987,22 @@ body.page-template-page-finder {
   width: 100%;
 }
 
+.objet.pamphlet {
+  bottom: 11em;
+  width: 7em;
+  z-index: 20;
+  left: 31em;
+}
+
 .objet.radio {
-  bottom: 13em;
+  bottom: 11em;
   width: 7em;
   z-index: 20;
   left: 41em;
 }
 
 .objet.table {
-  bottom: 4em;
+  bottom: 2em;
   left: 0;
   margin-left: auto;
   margin-right: auto;
@@ -901,13 +1011,13 @@ body.page-template-page-finder {
 }
 
 .objet.chaise {
-  bottom: 10em;
+  bottom: 9em;
   left: 44em;
   width: 7.5625em;
 }
 
 .objet.plante {
-  bottom: 6em;
+  bottom: 14em;
   left: 10em;
   width: 6.875em;
   z-index: 5;
@@ -917,11 +1027,11 @@ body.page-template-page-finder {
   bottom: 1em;
   left: 4em;
   width: 8em;
-  z-index: 10;
+  z-index: 99;
 }
 
 .objet.baraeau {
-  bottom: 12em;
+  bottom: 11.5em;
   left: 60em;
   width: 8em;
   z-index: 10;
@@ -1000,9 +1110,10 @@ body.page-template-page-finder {
 }
 
 .objet.peinture {
-  bottom: 4em;
+  bottom: 6em;
   left: 51em;
   width: 13em;
+  box-shadow: 3px 3px 15px -7px black;
 }
 
 /*Toilette*/
@@ -1069,9 +1180,10 @@ body.page-template-page-finder {
 }
 
 .objet.deco-gif {
-  bottom: 9em;
-  left: 56em;
+  bottom: 4.3em;
+  left: 54em;
   width: 11.25em;
+  box-shadow: 3px 3px 15px -7px black;
 }
 
 .porte {
@@ -1079,11 +1191,12 @@ body.page-template-page-finder {
   text-decoration: none;
   transition: box-shadow .5s ease;
   width: 7.5625em;
+
+  cursor: url('images/cursor/eye.png'), auto;
 }
 
-.porte:hover img {
-  box-shadow: 0 0 10px -5px rgb(#777);
-  cursor: pointer;
+.porte:hover {
+  cursor: url('images/cursor/eye.png'), auto !important;
 }
 
 .porte#porte1 {
@@ -1099,10 +1212,9 @@ body.page-template-page-finder {
 }
 
 .porte#portet {
-  left: 45em;
+  left: 43em;
   text-align: center;
   width: 8.125em;
-  cursor: url('images/cursor/arrow-front.gif'), auto;
 }
 
 .porte#portet .signe {
@@ -1240,17 +1352,87 @@ body.page-template-page-finder {
   #zone-menu .menu-content {
     font-size: 90%;
   }
+
+  #pre-accueil {
+    padding: 2em;
+    font-size: 90%;
+  }
+
+  #pre-accueil .intro {
+    float: none;
+    width: 75%;
+    margin: 0em auto;
+  }
+
+  #pre-accueil .bt {
+    float: none;
+    width: 100%;
+  }
+
+  #pre-accueil .bt .enter {
+    margin-top: 5%;
+  }
+
+  #pre-accueil .enter {
+    color: rgb(255,255,255);
+    display: inline-block;
+    line-height: 1;
+    opacity: .6;
+    padding: 0.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .25s ease;
+    font-family: cursive;
+    background: linear-gradient(183deg, #ffee00, #000000);
+    background-size: 400% 400%;
+    -webkit-animation: gradientJaune 2s ease infinite;
+    -moz-animation: gradientJaune 2s ease infinite;
+    animation: gradientJaune 2s ease infinite;
+  }
+
+  #pre-accueil .enter div {
+    background-color: rgb(0,0,0);
+    padding: 1em 1.5em;
+    font-weight: bold;
+  }
+
+  #pre-accueil .enter div span {
+    font-weight: bold;
+  }
+
+  #pre-accueil .enter:hover {
+    opacity: .8;
+  }
+
+  #pre-accueil .bt-soutenir {
+    padding: 0.5em;
+    background: linear-gradient(183deg, #00ff00, #000000);
+    background-size: 400% 400%;
+    -webkit-animation: gradientJaune 2s ease infinite;
+    -moz-animation: gradientJaune 2s ease infinite;
+    animation: gradientJaune 2s ease infinite;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
   .feuille {
     width: auto;
   }
+
+  #pre-accueil {
+    font-size: 80%;
+  }
+
+  #pre-accueil .intro {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .preaccueil {
-    font-size: 80%;
+    //font-size: 80%;
   }
   .popup .entry-content {
     width: 100%;
@@ -1262,16 +1444,16 @@ body.page-template-page-finder {
 
 @media screen and (max-width: 500px) {
   .preaccueil {
-    font-size: 55%;
+    //font-size: 55%;
   }
 
-  #zone-menu .menu-content {
+  #zone-menu .menu-content  {
     font-size: 80%;
   }
 }
 
 @media screen and (max-width: 420px) {
   .preaccueil h1 {
-    font-size: 3.5em;
+    //font-size: 3.5em;
   }
 }
