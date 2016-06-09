@@ -4,7 +4,7 @@
 */
 get_header(); ?>
 
-<div id="pre-accueil">
+<div id="old-pre-accueil">
 
 	<div class="intro entry-content">
 

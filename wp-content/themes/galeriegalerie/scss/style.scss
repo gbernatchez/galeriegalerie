@@ -55,17 +55,17 @@ body, html {
 * html .group { zoom: 1; }
 *:first-child+html .group { zoom: 1; }
 
-@-webkit-keyframes gradientJaune {
+@-webkit-keyframes gradient {
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
 }
-@-moz-keyframes gradientJaune {
+@-moz-keyframes gradient {
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
 }
-@keyframes gradientJaune { 
+@keyframes gradient { 
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
@@ -596,145 +596,192 @@ body.page-template-page-finder {
   }
 }
 
-#pre-accueil {
-  background-attachment: fixed;
-  background-image: url('images/pre-accueil-blur.jpg');
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  padding: 4em;
-  position: relative;
-  width: 100%;
+.page-template-page-new-accueil {
+  background-image: url('images/carreaumarbre300px.jpg');
   overflow: scroll;
-  box-sizing: border-box;
 
-  .intro {
-    background-color: rgba(0, 0, 0, .7);
+  header {
+    background-color: rgb($blanc);
+    padding: 1em 2em;
+    box-shadow: 0px 0px 10px -5px rgb($noir);
+    text-align: center; 
+    margin-bottom: 2.5em;
+    overflow: scroll;
+    font-size: 90%;
+
+    div.intro {
+      color: #3417ef;
+      font-size: 1.25em;
+      font-weight: 500;
+      margin-bottom: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .logo-bleu {
+      max-width: 50em;
+      width: 100%;
+      height: auto;
+      margin-bottom: 1em;
+    }
+
+    /*h1 {
+      font-size: 80%;
+      background-image: url('images/galeriegalerie_bleugros.gif');
+      text-indent: -9999px;
+      display: block;
+      max-width: 62.5em;
+      height: 6.1875em;
+      background-size: contain;
+      position: relative;
+      z-index: 0;
+      margin: 0 auto 1em auto;
+    } */
+  }
+
+  .entre,
+  .content {
     box-sizing: border-box;
-    color: rgb($blanc);
-    float: right;
     padding: 2em;
-    width: 55%;
-  }
-
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: .4em;
-  }
-
-  h2 {
-    font-size: 1.75em;
-    margin-bottom: .4em;
-  }
-
-  p,
-  form {
-    font-size: 1em;
-    line-height: 1.5em;
-    margin-bottom: 1em;
-  }
-
-  .bt {
     float: left;
     text-align: center;
-    width: 45%;
 
-    .enter {
-      border-radius: 100%;
-      margin-top: 20%;
-      font-size: 1.5em;
-      div { 
-        border-radius: 100%; 
-        padding: 2.75em 1.5em;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+  }
+
+  .entre {
+    width: 50%;
+    .matisse {
+      width: 17em;
+      margin-bottom: 3em;
+    }
+
+    .gros-entre {
+      width: 23em;
+      margin-bottom: 1em;
+    }
+  }
+
+  .content {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+
+    .abonne-toi, form { margin-bottom: 2em; }
+
+    .bt-soutenir {
+      color: rgb($noir);
+      font-size: 1em;
+      padding: 0.5em;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: cursive;
+
+      div {
+        background-color: rgb($blanc);
+        font-weight: bold;
+        span { font-weight: bold; }
       }
+
+      background: linear-gradient(183deg, #ce74d1, #ffddff);
+      background-size: 400% 400%;
     }
-  }
-
-  .enter {
-    color: rgb($blanc);
-    display: inline-block;
-    line-height: 1;
-    opacity: .6;
-    padding: 0.75em;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all .25s ease;
-    font-family: cursive;
-
-    div {
-      background-color: rgb($noir);
-      padding: 1em 1.5em;
-      font-weight: bold;
-      span { font-weight: bold; }
-    }
-
-    background: linear-gradient(183deg, #ffee00, #000000);
-    background-size: 400% 400%;
-
-    -webkit-animation: gradientJaune 2s ease infinite;
-    -moz-animation: gradientJaune 2s ease infinite;
-    animation: gradientJaune 2s ease infinite;
-
-  }
-
-  .enter:hover {
-    opacity: .8;
-  }
-
-  .bt-soutenir {
-    padding: 0.5em;
-    background: linear-gradient(183deg, #00ff00, #000000);
-    background-size: 400% 400%;
-
-    -webkit-animation: gradientJaune 2s ease infinite;
-    -moz-animation: gradientJaune 2s ease infinite;
-    animation: gradientJaune 2s ease infinite;
   }
 }
 
+.blink-radient {
+  display: block;
+  box-sizing: border-box;
+  opacity: .6;
+  padding: 0.25em;
+  transition: all .25s ease;
+
+  div, input {
+    padding: 1em 1.5em;
+  }
+
+  background: linear-gradient(183deg, #3815ff, #d7d2fc);
+  background-size: 400% 400%;
+
+  -webkit-animation: gradient 2s ease infinite;
+  -moz-animation: gradient 2s ease infinite;
+  animation: gradient 2s ease infinite;
+}
+
 #mc_embed_signup {
-  input:focus {
-    outline: 0;
+  form { position: relative; }
+
+  input {
+    border: none;
     box-sizing: border-box;
+    border-radius: 0;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    font-family: Consolas,monospace;
+    &:focus { outline: 0; }
   }
 
-  input[type="email"] {
-    border: 5px solid #7B7B86;
-    padding: 0.5em 0.75em;
-    font-family: cursive;
-    border-style: inset;
-    width: 20em;
+  .ze-email {
+    width: 60%;
+    margin-right: 5%;
     float: left;
-    margin-right: 1em;
-  } 
+    //opacity: 1;
+    //padding: 0.1em;
+    border: thin solid rgb($noir);
 
-  ::-webkit-input-placeholder {
-    color: rgba($noir, 0.8);
-  }
-  ::-moz-placeholder {
-    color: rgba($noir, 0.8);
-  }
-  :-ms-input-placeholder {
-    color: rgba($noir, 0.8);
-  }
-  :-moz-placeholder {
-    color: rgba($noir, 0.8);
-  }
+    &:before {
+      content: "> ";
+      position: absolute;
+      left: 1em;
+      font-weight: bold;
+      top: 0.75em;
+    }
 
-  input[type="submit"] {
-    border: 5px solid #7B7B86;
-    background-color: #7B7B86;
-    padding: 0.07em;
-    border-style: outset;
-    width: 2em;
-    float: left;
-    font-size: 2em;
-
-    &:focus, &:hover {
-      border-style: inset;
+    input {
+      width: 100%;
+      //background-color: rgb($noir);
+      //color: rgb(0, 255, 0);
+      color: rgb($noir);
+      font-size: 1em;
+      margin: 0;
+      padding: 0.8em 0.75em 0.75em 2em;
     }
   } 
+
+  ::-webkit-input-placeholder { color: rgba($noir, 0.8); }
+  ::-moz-placeholder { color: rgba($noir, 0.8); }
+  :-ms-input-placeholder { color: rgba($noir, 0.8); }
+  :-moz-placeholder { color: rgba($noir, 0.8); }
+
+  .ze-submit {
+    width: 35%;
+    float: left;
+    //opacity: 0.8;
+    opacity: 1;
+    padding: 0.35em;
+    background: linear-gradient(183deg, #00ff00, #000000);
+    background-size: 400% 400%;
+
+    input {
+      width: 100%;
+      background-color: rgb($noir);
+      color: rgb(0, 255, 0);
+      font-size: 0.875em;
+      margin: 0;
+      padding: 0.65em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
 
 }
 
@@ -1219,6 +1266,103 @@ body.page-template-page-finder {
   z-index: 888;
 }
 
+#old-pre-accueil {
+  background-attachment: fixed;
+  background-image: url('images/pre-accueil-blur.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  padding: 4em;
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  box-sizing: border-box;
+
+  .intro {
+    background-color: rgba(0, 0, 0, .7);
+    box-sizing: border-box;
+    color: rgb($blanc);
+    float: right;
+    padding: 2em;
+    width: 55%;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: .4em;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    margin-bottom: .4em;
+  }
+
+  p,
+  form {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  .bt {
+    float: left;
+    text-align: center;
+    width: 45%;
+
+    .enter {
+      border-radius: 100%;
+      margin-top: 20%;
+      font-size: 1.5em;
+      div { 
+        border-radius: 100%; 
+        padding: 2.75em 1.5em;
+      }
+    }
+  }
+
+  .enter {
+    color: rgb($blanc);
+    display: inline-block;
+    line-height: 1;
+    opacity: .6;
+    padding: 0.75em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .25s ease;
+    font-family: cursive;
+
+    div {
+      background-color: rgb($noir);
+      padding: 1em 1.5em;
+      font-weight: bold;
+      span { font-weight: bold; }
+    }
+
+    background: linear-gradient(183deg, #ffee00, #000000);
+    background-size: 400% 400%;
+
+    -webkit-animation: gradient 2s ease infinite;
+    -moz-animation: gradient 2s ease infinite;
+    animation: gradient 2s ease infinite;
+
+  }
+
+  .enter:hover {
+    opacity: .8;
+  }
+
+  .bt-soutenir {
+    padding: 0.5em;
+    background: linear-gradient(183deg, #00ff00, #000000);
+    background-size: 400% 400%;
+
+    -webkit-animation: gradient 2s ease infinite;
+    -moz-animation: gradient 2s ease infinite;
+    animation: gradient 2s ease infinite;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .popup .entry-content {
     font-size: 90%;
@@ -1229,7 +1373,7 @@ body.page-template-page-finder {
     font-size: 90%;
   }
 
-  #pre-accueil {
+  #old-pre-accueil {
     padding: 2em;
     font-size: 90%;
 
@@ -1270,9 +1414,9 @@ body.page-template-page-finder {
       background: linear-gradient(183deg, #ffee00, #000000);
       background-size: 400% 400%;
 
-      -webkit-animation: gradientJaune 2s ease infinite;
-      -moz-animation: gradientJaune 2s ease infinite;
-      animation: gradientJaune 2s ease infinite;
+      -webkit-animation: gradient 2s ease infinite;
+      -moz-animation: gradient 2s ease infinite;
+      animation: gradient 2s ease infinite;
 
     }
 
@@ -1285,9 +1429,9 @@ body.page-template-page-finder {
       background: linear-gradient(183deg, #00ff00, #000000);
       background-size: 400% 400%;
 
-      -webkit-animation: gradientJaune 2s ease infinite;
-      -moz-animation: gradientJaune 2s ease infinite;
-      animation: gradientJaune 2s ease infinite;
+      -webkit-animation: gradient 2s ease infinite;
+      -moz-animation: gradient 2s ease infinite;
+      animation: gradient 2s ease infinite;
     }
   }
 
@@ -1298,12 +1442,16 @@ body.page-template-page-finder {
     width: auto;
   }
 
-  #pre-accueil {
-    font-size: 80%;
-    .intro {
-      width: 100%;
+
+  .page-template-page-new-accueil {
+    header { font-size: 60%; }
+    .entre,
+    .content {
+        width: 100%;
+        float: none;
     }
   }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -1326,6 +1474,11 @@ body.page-template-page-finder {
   #zone-menu .menu-content  {
     font-size: 80%;
   }
+
+  .page-template-page-new-accueil {
+    .content { font-size: 80%; }
+  }
+
 }
 
 @media screen and (max-width: 420px) {

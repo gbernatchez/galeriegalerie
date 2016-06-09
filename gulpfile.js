@@ -25,7 +25,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('favicons', function () {
-    gulp.src(path.styles_theme + 'images/lenny.jpg').pipe(favicons({
+    gulp.src(path.styles_theme + 'images/favicon.jpg').pipe(favicons({
     	appName: 'Galerie Galerie',
     	appDescription: 'Centre de diffusion en ligne',
     	background: '#ffffff',

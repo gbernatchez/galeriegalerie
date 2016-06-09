@@ -184,17 +184,17 @@ body, html {
 * html .group { zoom: 1; }
 *:first-child+html .group { zoom: 1; }
 
-@-webkit-keyframes gradientJaune {
+@-webkit-keyframes gradient {
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
 }
-@-moz-keyframes gradientJaune {
+@-moz-keyframes gradient {
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
 }
-@keyframes gradientJaune { 
+@keyframes gradient { 
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
@@ -708,115 +708,171 @@ body.page-template-page-finder {
   max-width: 100%;
 }
 
-#pre-accueil {
-  background-attachment: fixed;
-  background-image: url('images/pre-accueil-blur.jpg');
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  padding: 4em;
-  position: relative;
-  width: 100%;
+.page-template-page-new-accueil {
+  background-image: url('images/carreaumarbre300px.jpg');
   overflow: scroll;
-  box-sizing: border-box;
 }
 
-#pre-accueil .intro {
-  background-color: rgba(0, 0, 0, .7);
-  box-sizing: border-box;
-  color: rgb(255,255,255);
-  float: right;
-  padding: 2em;
-  width: 55%;
+.page-template-page-new-accueil header {
+  background-color: rgb(255,255,255);
+  padding: 1em 2em;
+  box-shadow: 0px 0px 10px -5px rgb(0,0,0);
+  text-align: center;
+  margin-bottom: 2.5em;
+  overflow: scroll;
+  font-size: 90%;/*h1 {
+      font-size: 80%;
+      background-image: url('images/galeriegalerie_bleugros.gif');
+      text-indent: -9999px;
+      display: block;
+      max-width: 62.5em;
+      height: 6.1875em;
+      background-size: contain;
+      position: relative;
+      z-index: 0;
+      margin: 0 auto 1em auto;
+    } */
 }
 
-#pre-accueil h1 {
-  font-size: 2.5em;
-  margin-bottom: .4em;
+.page-template-page-new-accueil header div.intro {
+  color: #3417ef;
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-#pre-accueil h2 {
-  font-size: 1.75em;
-  margin-bottom: .4em;
-}
-
-#pre-accueil p, #pre-accueil form {
-  font-size: 1em;
-  line-height: 1.5em;
+.page-template-page-new-accueil header .logo-bleu {
+  max-width: 50em;
+  width: 100%;
+  height: auto;
   margin-bottom: 1em;
 }
 
-#pre-accueil .bt {
+.page-template-page-new-accueil .entre, .page-template-page-new-accueil .content {
+  box-sizing: border-box;
+  padding: 2em;
   float: left;
   text-align: center;
-  width: 45%;
 }
 
-#pre-accueil .bt .enter {
-  border-radius: 100%;
-  margin-top: 20%;
-  font-size: 1.5em;
+.page-template-page-new-accueil .entre img, .page-template-page-new-accueil .content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-#pre-accueil .bt .enter div {
-  border-radius: 100%;
-  padding: 2.75em 1.5em;
+.page-template-page-new-accueil .entre {
+  width: 50%;
 }
 
-#pre-accueil .enter {
-  color: rgb(255,255,255);
-  display: inline-block;
-  line-height: 1;
-  opacity: .6;
-  padding: 0.75em;
+.page-template-page-new-accueil .entre .matisse {
+  width: 17em;
+  margin-bottom: 3em;
+}
+
+.page-template-page-new-accueil .entre .gros-entre {
+  width: 23em;
+  margin-bottom: 1em;
+}
+
+.page-template-page-new-accueil .content {
+  width: 50%;
+}
+
+.page-template-page-new-accueil .content img {
+  width: 100%;
+}
+
+.page-template-page-new-accueil .content .abonne-toi, .page-template-page-new-accueil .content form {
+  margin-bottom: 2em;
+}
+
+.page-template-page-new-accueil .content .bt-soutenir {
+  color: rgb(0,0,0);
+  font-size: 1em;
+  padding: 0.5em;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all .25s ease;
   font-family: cursive;
-  background: linear-gradient(183deg, #ffee00, #000000);
+  background: linear-gradient(183deg, #ce74d1, #ffddff);
   background-size: 400% 400%;
-  -webkit-animation: gradientJaune 2s ease infinite;
-  -moz-animation: gradientJaune 2s ease infinite;
-  animation: gradientJaune 2s ease infinite;
 }
 
-#pre-accueil .enter div {
-  background-color: rgb(0,0,0);
+.page-template-page-new-accueil .content .bt-soutenir div {
+  background-color: rgb(255,255,255);
+  font-weight: bold;
+}
+
+.page-template-page-new-accueil .content .bt-soutenir div span {
+  font-weight: bold;
+}
+
+.blink-radient {
+  display: block;
+  box-sizing: border-box;
+  opacity: .6;
+  padding: 0.25em;
+  transition: all .25s ease;
+
+  background: linear-gradient(183deg, #3815ff, #d7d2fc);
+  background-size: 400% 400%;
+
+  -webkit-animation: gradient 2s ease infinite;
+  -moz-animation: gradient 2s ease infinite;
+  animation: gradient 2s ease infinite;
+}
+
+.blink-radient div, .blink-radient input {
   padding: 1em 1.5em;
-  font-weight: bold;
 }
 
-#pre-accueil .enter div span {
-  font-weight: bold;
+#mc_embed_signup form {
+  position: relative;
 }
 
-#pre-accueil .enter:hover {
-  opacity: .8;
-}
-
-#pre-accueil .bt-soutenir {
-  padding: 0.5em;
-  background: linear-gradient(183deg, #00ff00, #000000);
-  background-size: 400% 400%;
-  -webkit-animation: gradientJaune 2s ease infinite;
-  -moz-animation: gradientJaune 2s ease infinite;
-  animation: gradientJaune 2s ease infinite;
+#mc_embed_signup input {
+  border: none;
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-border-radius: 0px;
+  -webkit-appearance: none;
+  font-family: Consolas,monospace;
 }
 
 #mc_embed_signup input:focus {
   outline: 0;
-  box-sizing: border-box;
 }
 
-#mc_embed_signup input[type="email"] {
-  border: 5px solid #7B7B86;
-  padding: 0.5em 0.75em;
-  font-family: cursive;
-  border-style: inset;
-  width: 20em;
+#mc_embed_signup .ze-email {
+  width: 60%;
+  margin-right: 5%;
   float: left;
-  margin-right: 1em;
+  //opacity: 1;
+  //padding: 0.1em;
+  border: thin solid rgb(0,0,0);
+}
+
+#mc_embed_signup .ze-email:before {
+  content: "> ";
+  position: absolute;
+  left: 1em;
+  font-weight: bold;
+  top: 0.75em;
+}
+
+#mc_embed_signup .ze-email input {
+  width: 100%;
+  //background-color: rgb(0,0,0);
+  //color: rgb(0, 255, 0);
+  color: rgb(0,0,0);
+  font-size: 1em;
+  margin: 0;
+  padding: 0.8em 0.75em 0.75em 2em;
 }
 
 #mc_embed_signup ::-webkit-input-placeholder {
@@ -835,18 +891,25 @@ body.page-template-page-finder {
   color: rgba(0,0,0, 0.8);
 }
 
-#mc_embed_signup input[type="submit"] {
-  border: 5px solid #7B7B86;
-  background-color: #7B7B86;
-  padding: 0.07em;
-  border-style: outset;
-  width: 2em;
+#mc_embed_signup .ze-submit {
+  width: 35%;
   float: left;
-  font-size: 2em;
+  //opacity: 0.8;
+  opacity: 1;
+  padding: 0.35em;
+  background: linear-gradient(183deg, #00ff00, #000000);
+  background-size: 400% 400%;
 }
 
-#mc_embed_signup input[type="submit"]:focus, #mc_embed_signup input[type="submit"]:hover {
-  border-style: inset;
+#mc_embed_signup .ze-submit input {
+  width: 100%;
+  background-color: rgb(0,0,0);
+  color: rgb(0, 255, 0);
+  font-size: 0.875em;
+  margin: 0;
+  padding: 0.65em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .mur {
@@ -1343,6 +1406,102 @@ body.page-template-page-finder {
   z-index: 888;
 }
 
+#old-pre-accueil {
+  background-attachment: fixed;
+  background-image: url('images/pre-accueil-blur.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  padding: 4em;
+  position: relative;
+  width: 100%;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+#old-pre-accueil .intro {
+  background-color: rgba(0, 0, 0, .7);
+  box-sizing: border-box;
+  color: rgb(255,255,255);
+  float: right;
+  padding: 2em;
+  width: 55%;
+}
+
+#old-pre-accueil h1 {
+  font-size: 2.5em;
+  margin-bottom: .4em;
+}
+
+#old-pre-accueil h2 {
+  font-size: 1.75em;
+  margin-bottom: .4em;
+}
+
+#old-pre-accueil p, #old-pre-accueil form {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+#old-pre-accueil .bt {
+  float: left;
+  text-align: center;
+  width: 45%;
+}
+
+#old-pre-accueil .bt .enter {
+  border-radius: 100%;
+  margin-top: 20%;
+  font-size: 1.5em;
+}
+
+#old-pre-accueil .bt .enter div {
+  border-radius: 100%;
+  padding: 2.75em 1.5em;
+}
+
+#old-pre-accueil .enter {
+  color: rgb(255,255,255);
+  display: inline-block;
+  line-height: 1;
+  opacity: .6;
+  padding: 0.75em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .25s ease;
+  font-family: cursive;
+  background: linear-gradient(183deg, #ffee00, #000000);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease infinite;
+  -moz-animation: gradient 2s ease infinite;
+  animation: gradient 2s ease infinite;
+}
+
+#old-pre-accueil .enter div {
+  background-color: rgb(0,0,0);
+  padding: 1em 1.5em;
+  font-weight: bold;
+}
+
+#old-pre-accueil .enter div span {
+  font-weight: bold;
+}
+
+#old-pre-accueil .enter:hover {
+  opacity: .8;
+}
+
+#old-pre-accueil .bt-soutenir {
+  padding: 0.5em;
+  background: linear-gradient(183deg, #00ff00, #000000);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 2s ease infinite;
+  -moz-animation: gradient 2s ease infinite;
+  animation: gradient 2s ease infinite;
+}
+
 @media screen and (max-width: 1024px) {
   .popup .entry-content {
     font-size: 90%;
@@ -1353,27 +1512,27 @@ body.page-template-page-finder {
     font-size: 90%;
   }
 
-  #pre-accueil {
+  #old-pre-accueil {
     padding: 2em;
     font-size: 90%;
   }
 
-  #pre-accueil .intro {
+  #old-pre-accueil .intro {
     float: none;
     width: 75%;
     margin: 0em auto;
   }
 
-  #pre-accueil .bt {
+  #old-pre-accueil .bt {
     float: none;
     width: 100%;
   }
 
-  #pre-accueil .bt .enter {
+  #old-pre-accueil .bt .enter {
     margin-top: 5%;
   }
 
-  #pre-accueil .enter {
+  #old-pre-accueil .enter {
     color: rgb(255,255,255);
     display: inline-block;
     line-height: 1;
@@ -1386,32 +1545,32 @@ body.page-template-page-finder {
     font-family: cursive;
     background: linear-gradient(183deg, #ffee00, #000000);
     background-size: 400% 400%;
-    -webkit-animation: gradientJaune 2s ease infinite;
-    -moz-animation: gradientJaune 2s ease infinite;
-    animation: gradientJaune 2s ease infinite;
+    -webkit-animation: gradient 2s ease infinite;
+    -moz-animation: gradient 2s ease infinite;
+    animation: gradient 2s ease infinite;
   }
 
-  #pre-accueil .enter div {
+  #old-pre-accueil .enter div {
     background-color: rgb(0,0,0);
     padding: 1em 1.5em;
     font-weight: bold;
   }
 
-  #pre-accueil .enter div span {
+  #old-pre-accueil .enter div span {
     font-weight: bold;
   }
 
-  #pre-accueil .enter:hover {
+  #old-pre-accueil .enter:hover {
     opacity: .8;
   }
 
-  #pre-accueil .bt-soutenir {
+  #old-pre-accueil .bt-soutenir {
     padding: 0.5em;
     background: linear-gradient(183deg, #00ff00, #000000);
     background-size: 400% 400%;
-    -webkit-animation: gradientJaune 2s ease infinite;
-    -moz-animation: gradientJaune 2s ease infinite;
-    animation: gradientJaune 2s ease infinite;
+    -webkit-animation: gradient 2s ease infinite;
+    -moz-animation: gradient 2s ease infinite;
+    animation: gradient 2s ease infinite;
   }
 
 }
@@ -1421,13 +1580,17 @@ body.page-template-page-finder {
     width: auto;
   }
 
-  #pre-accueil {
-    font-size: 80%;
+
+  .page-template-page-new-accueil header {
+    font-size: 60%;
   }
 
-  #pre-accueil .intro {
+
+  .page-template-page-new-accueil .entre, .page-template-page-new-accueil .content {
     width: 100%;
+    float: none;
   }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -1450,6 +1613,11 @@ body.page-template-page-finder {
   #zone-menu .menu-content  {
     font-size: 80%;
   }
+
+  .page-template-page-new-accueil .content {
+    font-size: 80%;
+  }
+
 }
 
 @media screen and (max-width: 420px) {
