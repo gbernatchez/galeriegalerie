@@ -95,7 +95,7 @@
 <link href='https://fonts.googleapis.com/css?family=Signika:600,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
 <?php 
 wp_enqueue_script('jquery');
@@ -107,37 +107,23 @@ wp_head();
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta property="twitter:image" content="wp-content/themes/galeriegalerie/favicons/twitter.png">
-<link rel="icon" type="image/png" sizes="192x192" href="wp-content/themes/galeriegalerie/favicons/android-chrome-192x192.png">
-<link rel="manifest" href="wp-content/themes/galeriegalerie/favicons/manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" sizes="114x114" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" sizes="57x57" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="wp-content/themes/galeriegalerie/favicons/apple-touch-icon-76x76.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="icon" type="image/png" sizes="16x16" href="wp-content/themes/galeriegalerie/favicons/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="230x230" href="wp-content/themes/galeriegalerie/favicons/favicon-230x230.png">
-<link rel="icon" type="image/png" sizes="32x32" href="wp-content/themes/galeriegalerie/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="wp-content/themes/galeriegalerie/favicons/favicon-96x96.png">
-<link rel="shortcut icon" href="wp-content/themes/galeriegalerie/favicons/favicon.ico">
-<link rel="yandex-tableau-widget" href="wp-content/themes/galeriegalerie/favicons/yandex-browser-manifest.json">
-<meta name="msapplication-TileColor" content="#FFFFFF">
-<meta name="msapplication-TileImage" content="wp-content/themes/galeriegalerie/favicons/mstile-144x144.png">
-<meta name="msapplication-config" content="wp-content/themes/galeriegalerie/favicons/browserconfig.xml">
-<meta property="twitter:image" content="wp-content/themes/galeriegalerie/favicons/twitter.png">
-<meta property="og:image" content="wp-content/themes/galeriegalerie/favicons/open-graph.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-1024x748.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-1536x2008.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-2048x1496.png">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-320x460.png">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-640x1096.png">
-<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-640x920.png">
-<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-768x1004.png"></head>
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 <body <?php body_class( $class ); ?>>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -156,16 +142,16 @@ wp_head();
 
 <?php if(!is_page('accueil')) : ?>
 
-	<div id="zone-menu">
-		<div class="overlay"></div>
+  <div id="zone-menu">
+    <div class="overlay"></div>
 
-		<a href="#" class="bt-menu">
-			Menu
-		</a>
-		<div class="menu-content">
-			<?php wp_nav_menu(array('theme_location' => 'navigation', 'container' => false)); ?>
-		</div><!-- .menu-content -->
-	</div><!-- #zone-menu -->
+    <a href="#" class="bt-menu">
+      Menu
+    </a>
+    <div class="menu-content">
+      <?php wp_nav_menu(array('theme_location' => 'navigation', 'container' => false)); ?>
+    </div><!-- .menu-content -->
+  </div><!-- #zone-menu -->
 
 <?php endif; ?>
 

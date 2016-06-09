@@ -49,7 +49,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/cubeplant.png" alt="">
 		</div>
 
-		<a href="http://www.andreeannemercier.com/" title="Andrée-Anne Mercier" class="click objet peinture">
+		<a href="http://www.andreeannemercier.com/" target="_blank" title="Andrée-Anne Mercier" class="click objet peinture">
 			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg" alt="">
 		</a>
 

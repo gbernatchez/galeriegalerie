@@ -20,17 +20,17 @@ get_header(); ?>
 
 		<h1 class="visuallyhidden">Exposition Collective</h1>
 
-		<a href="<?php echo get_template_directory_uri(); ?>/expo1" title="Expo 1" id="porte1" class="objet porte click">
+		<a href="/expo-1" title="Expo 1" id="porte1" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte1.jpg">
 		</a>
 
-		<a href="<?php echo get_template_directory_uri(); ?>/expo2" title="Expo 2" id="porte2" class="objet porte click">
+		<a href="/expo-2" title="Expo 2" id="porte2" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte2.jpg">
 		</a>
 
-		<a href="<?php echo get_template_directory_uri(); ?>/expo3" title="Expo 3" id="porte3" class="objet porte click">
+		<a href="/expo-3" title="Expo 3" id="porte3" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg">
 		</a>
