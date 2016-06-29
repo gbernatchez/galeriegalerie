@@ -92,7 +92,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <title><?php wp_title(); ?></title>
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no">
-<link href='https://fonts.googleapis.com/css?family=Signika:600,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Signika:600,300|VT323' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <!--[if lt IE 9]>
   <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>

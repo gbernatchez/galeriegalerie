@@ -21,7 +21,7 @@ Matisse_01.gif <?php */ ?>
 		<div class="entre">
 			<a href="<?php echo get_permalink(7); ?>" title="Entre !">
 				<img class="matisse" src="<?php echo get_template_directory_uri(); ?>/images/Matisse_01.gif">
-				<img class="gros-entre" src="<?php echo get_template_directory_uri(); ?>/images/entre.png">
+				<div class="gros-entre"></div>
 			</a>
 		</div>
 

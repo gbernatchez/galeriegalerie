@@ -50,7 +50,7 @@ wp_head();
 <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-640x1096.png">
 <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-640x920.png">
 <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" href="wp-content/themes/galeriegalerie/favicons/apple-touch-startup-image-768x1004.png"></head>
-<body>
+<body <?php body_class( $class ); ?>>
 <div id="fb-root"></div>
 <script>
 (function(d, s, id) {
@@ -60,45 +60,17 @@ wp_head();
   js.src = "//connect.facebook.net/fr_CA/sdk.js#xfbml=1&appId=415222945342431&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-
-/*jQuery(document).ready(function(){
-  var starttime = new Date().getTime();
-  var width = jQuery(window).width() - 40;
-  var letters = document.location.hash ? document.location.hash.substr(1) : '<?php echo get_option('blogdescription'); ?>';
-  var elements = jQuery('#elements');
-  for (i = 0; i < letters.length; i++) {
-    jQuery('<div>', {
-      html: letters[i]
-    })
-    .addClass('letter')
-    .appendTo(elements);
-  }
-  
-  function run() {
-    var elapsed = new Date().getTime() - starttime;
-    var pos = elapsed * 0.1;
-    
-    jQuery('div.letter').each(function(index, letter) {
-      var posx = (pos + 25 * index) % width;
-      var posy = 100 + Math.sin(posx / 25) * 25;
-      jQuery(letter).css('left', posx + 'px');
-      jQuery(letter).css('top', posy + 'px');
-    });
-  }
-
-  setInterval(run, 30);
-}); */
-
 </script>
 
 <?php if(have_posts()) while(have_posts()) : the_post(); ?>
 
-	<div class="tous preaccueil">
+	<div class="preaccueil">
 
     <marquee scrollamount="10"><p>Ouverture <?php the_field('ouverture'); ?></p></marquee>
 
     <header>
-      <img alt="Allo ;)" src="<?php echo get_template_directory_uri(); ?>/images/peek-a-boo.gif">
+      <div class="peek-a-boo"></div>
+      <?php /* ?><img alt="Allo ;)" src="<?php echo get_template_directory_uri(); ?>/images/peek-a-boo.gif"><?php */ ?>
       <h1><?php echo get_option('blogname'); ?></h1>
       <h2 id="elements"><?php echo get_option('blogdescription'); ?></h2>
     </header>

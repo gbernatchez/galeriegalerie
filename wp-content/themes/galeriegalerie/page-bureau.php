@@ -8,7 +8,7 @@ get_header(); ?>
 
 	<div class="objet stagiaire">
 		<a href="#" class="bt-popup bt-popup-stagiaire click"></a>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/stagiaire.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/stagiaire_mage_maybe.png" alt="">
 	</div>
 
 	<div href="#" class="objet gabrielle">
@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<div class="objet charlotte">
 		<a href="#" class="bt-popup bt-popup-charlotte click"></a>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/charlotte.png" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/Marie-charlotte_renard_conseil.png" alt="">
 	</div>
 
 	<div class="objet sophie">
@@ -73,7 +73,8 @@ get_header(); ?>
 <div class="popup popup-sophie">
 	<div class="entry-content">
 		<a href="#" class="close close-sophie" title="Fermer"><span>x</span></a>
-		<div class="texte-sophie">
+		<div class="texte">
+			<h2><?php the_field('nom_sophie'); ?></h2>
 			<?php the_field('sophie'); ?>
 		</div>
 	</div>
@@ -83,7 +84,8 @@ get_header(); ?>
 <div class="popup popup-gabrielle">
 	<div class="entry-content">
 		<a href="#" class="close close-gabrielle" title="Fermer"><span>x</span></a>
-		<div class="texte-gabrielle">
+		<div class="texte">
+			<h2><?php the_field('nom_gabi'); ?></h2>
 			<?php the_field('gabrielle'); ?>
 		</div>
 	</div>
@@ -93,7 +95,8 @@ get_header(); ?>
 <div class="popup popup-stagiaire">
 	<div class="entry-content">
 		<a href="#" class="close close-stagiaire" title="Fermer"><span>x</span></a>
-		<div class="texte-stagiaire">
+		<div class="texte">
+			<h2><strong><?php the_field('nom_stagiaire'); ?></h2>
 			<?php the_field('stagiaire'); ?>
 		</div>
 	</div>
@@ -103,7 +106,8 @@ get_header(); ?>
 <div class="popup popup-charlotte">
 	<div class="entry-content">
 		<a href="#" class="close close-charlotte" title="Fermer"><span>x</span></a>
-		<div class="texte-charlotte">
+		<div class="texte">
+			<h2><strong><?php the_field('nom_charlotte'); ?></h2>
 			<?php the_field('charlotte'); ?>
 		</div>
 	</div>
