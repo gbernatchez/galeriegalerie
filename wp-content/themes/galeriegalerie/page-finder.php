@@ -14,20 +14,7 @@ get_header(); ?>
 			
 			<a href="#" class="dossier">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/dossier.png">
-				<h2>Allô allô</h2>
-				<p class="date">12 février 2016</p>
-			</a>
-
-			<a href="#" class="dossier">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/dossier.png">
-				<h2>Lancement</h2>
-				<p class="date">25 mai 2015</p>
-			</a>
-
-			<a href="#" class="dossier">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/dossier.png">
-				<h2>Surprise surprise</h2>
-				<p class="date">10 juin 2015</p>
+				<h2>Dossier de presse</h2>
 			</a>
 
 		</div>

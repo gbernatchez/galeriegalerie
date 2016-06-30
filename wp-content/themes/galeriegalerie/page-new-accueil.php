@@ -11,7 +11,7 @@ entre.png
 Matisse_01.gif <?php */ ?>
 
 	<header class="tous">
-		<div class="intro">Bienvenue à l'espace de diffusion virtuel</div>
+		<div class="intro">Bienvenue à l'espace de diffusion en ligne</div>
 		<h1 class="visuallyhidden"><?php echo get_option('blogname'); ?></h1>
 		<img class="logo-bleu" src="<?php echo get_template_directory_uri(); ?>/images/galeriegalerie_bleugros.gif">
 	</header>

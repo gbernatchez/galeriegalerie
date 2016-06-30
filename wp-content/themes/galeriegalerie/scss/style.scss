@@ -87,6 +87,74 @@ body, html {
   100%{background-size: 90% auto }
 }
 
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
 @-webkit-keyframes glow {
     to {
         text-shadow: 0 0 10px red;
@@ -356,21 +424,24 @@ body.page-template-page-finder {
   .dossiers {
 
     .dossier {
-      display: inline-block;
+      display: block;
+      float: left;
       padding: 1em;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
       color: rgb($blanc);
+      width: 12em;
       text-shadow: 1px 1px 1px rgb($noir);
     }
 
     img {
       margin-bottom: 0.75em;
+      width: 50%;
     }
 
     h2 {
-      font-size: 1.75em;
+      font-size: 1.5em;
       margin-bottom: 0.25em;
       font-weight: bold;
     } 
@@ -440,6 +511,27 @@ body.page-template-page-finder {
   }
 
 
+}
+
+
+.inntro {
+  background-image: url('images/gradient-dialogue.jpg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  margin: 1em auto;
+  padding: 1.25em;
+  width: 30em;
+  z-index: 20;
+  box-sizing: border-box;
+  border-radius: 1em;
+  color: #fff;
+  font-family: VT323;
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  border: 0.25em solid rgba($blanc, 1);
+  box-shadow: inset 0.1em 0.1em 1em -0.1em black;
 }
 
 .entry-content {
@@ -513,6 +605,7 @@ body.page-template-page-finder {
     font-size: 1em;
     margin-bottom: 1em;
     font-weight: 300;
+    white-space: normal;
 
     a { 
       border-bottom: thin dotted rgb($noir);
@@ -707,17 +800,19 @@ body.page-template-page-finder {
 
     .bt-soutenir {
       color: rgb($noir);
-      font-size: 1em;
-      padding: 0.5em;
+      font-size: 1.5em;
+      padding: 0.25em;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
-      font-family: cursive;
+      font-family: VT323;
+      letter-spacing: 1px;
 
       div {
         background-color: rgb($blanc);
         font-weight: bold;
+        padding: 0.5em 0.75em;
         span { font-weight: bold; }
       }
 
@@ -898,7 +993,8 @@ body.page-template-page-finder {
     border-radius: 100%;
     position: absolute;
     top: 0em;
-    cursor: url('images/cursor/mouth.png'), auto;
+    cursor: pointer;
+    //cursor: url('images/cursor/mouth.png') 0 0, auto;
   }
 
   &.bt-popup-sophie { left: 4.5em; } 
@@ -937,6 +1033,42 @@ body.page-template-page-finder {
     width: 100%;
   }
 
+  &.danger {
+    width: 25em;
+    z-index: 99;
+  }
+
+  &.danger1 {
+    bottom: 8em;
+    left: 19em;
+  }
+
+  &.danger2 {
+    bottom: 1em;
+    left: 34em;
+  }
+
+  &.cone {
+    width: 6em;
+    z-index: 5;
+  }
+
+  &.cone1 {
+    bottom: 8em;
+    left: 17em;
+  }
+
+  &.cone2 {
+    bottom: 12em;
+    width: 5.5em;
+    left: 36em;
+  }
+
+  &.cone3 {
+    bottom: 9em;
+    left: 53em;
+  }
+
   &.pamphlet {
     bottom: 11em;
     width: 7em;
@@ -949,6 +1081,7 @@ body.page-template-page-finder {
     width: 7em;
     z-index: 20;
     left: 41em;
+    display: none;
   }
 
   &.table {
@@ -957,6 +1090,7 @@ body.page-template-page-finder {
     margin-left: auto;
     margin-right: auto;
     right: 0;
+    z-index: 10;
     width: 22.8125em;
   }
 
@@ -1137,16 +1271,30 @@ body.page-template-page-finder {
   }
 }
 
+.drake {
+  position: absolute;
+  top: 2em;
+  left: 1.75em;
+  opacity: 0;
+  transition: opacity 5s ease;
+
+  &.visible {
+    opacity: 1;
+    //display: block;
+  } 
+
+}
+
 .porte {
   bottom: 0;
   text-decoration: none;
   transition: box-shadow .5s ease;
   width: 7.5625em;
 
-  cursor: url('images/cursor/eye.png'), auto;
+  //cursor: url('images/cursor/eye.png'), auto;
 
   &:hover {
-    cursor: url('images/cursor/eye.png'), auto !important;
+    //cursor: url('images/cursor/eye.png'), auto !important;
   }
 
 
@@ -1198,37 +1346,16 @@ body.page-template-page-finder {
 }
 
 .popup {
-  //display: none;
-  //height: 100%;
-  //position: fixed;
   bottom: -23em;
   position: absolute;
-  //width: 100%;
   z-index: 9999;
   width: 100%;
-
   transition: bottom 0.5s ease;
-
-  &.visible {
-    bottom: 0;
-    //display: block;
-
-    .entry-content {
-      //bottom: 0;
-      //transition: bottom 0.5s ease;
-    }
-
-    .overlay {
-      //opacity: 1;
-    }
-  }
+  &.visible { bottom: 0; }
 
   .close {
-    //background-color: rgb($noir);
-    //box-shadow: -3px 3px 0 0 rgb($noir);
     color: rgb($blanc);
     display: block;
-    //float: right;
     font-weight: bold;
     margin: 0 0 1em 1em;
     padding: .25em 0.5em;
@@ -1240,7 +1367,6 @@ body.page-template-page-finder {
     font-weight: bold;
 
     &:hover {
-      //box-shadow: -2px 2px 0 0 rgb($noir);
       margin-right: 1px;
       margin-top: 1px;
     }
@@ -1250,14 +1376,8 @@ body.page-template-page-finder {
     background-image: url('images/gradient-dialogue.jpg');
     background-repeat: repeat-x;
     background-size: auto 100%;
-
-    //position: absolute;
-    //bottom: -15em;
-    //transition: bottom 0.5s ease;
-
     margin: 1em 1%;
     padding: 1.25em;
-    //position: relative;
     width: 98%;
     z-index: 20;
     box-sizing: border-box;
@@ -1287,14 +1407,14 @@ body.page-template-page-finder {
     .texte {
       height: 15em;
       overflow: scroll;
+      display: none;
+      &.visible { display: block; }
 
       img {
         padding: 0.1em 0.2em;
         width: 3em;
         height: auto;
-        //background-color: rgba(255, 255, 255, 0.75);
         margin: 0.5em 0.8em 0.25em 0;
-        //border: thin dashed #000;
       }
     }
 
@@ -1357,8 +1477,8 @@ body.page-template-page-finder {
 
 @media screen and (max-width: 1024px) {
   .popup .entry-content {
-    font-size: 90%;
-    width: 75%;
+    font-size: 85%;
+    .texte { height: 12em; }
   }
 
   #zone-menu .menu-content {

@@ -12,6 +12,18 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 jQuery(document).ready(function(){
 
+    jQuery('.bt-popup').mouseover(function(){
+        console.log(this);
+        jQuery('html').css("cursor: url('images/cursor/mouth.png'), auto");
+    });
+
+    jQuery('.miroire').click(function(){
+        console.log('yeah');
+        event.preventDefault;
+        jQuery('.drake').addClass('visible');
+    });
+    //jQuery("html").css("cursor: url('images/cursor/mouth.png'), auto");
+
 	jQuery('body:not(.page-template-default)').parent().addClass('scene');
 	/*var h = jQuery('body').height();
 	jQuery('body, html').height(h+60);*/
@@ -29,33 +41,17 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	})
 
-    jQuery('.bt-popup-sophie, .close-sophie, .overlay-sophie').click(function(){
-        //var texte = jQuery('.texte-sophie').html();
-        //jQuery('.texte-sophie').empty();
-        jQuery('.popup-sophie').toggleClass('visible');
-        //jQuery('.texte-sophie').typedText(texte, 'medium');
+    jQuery('.bt-popup').click(function(){
+        var bonhomme = jQuery(this).attr('data-name');
+        jQuery('.texte').removeClass('visible');
+        jQuery('.popup').addClass('visible');
+        jQuery('.texte[data-name='+bonhomme+']').addClass('visible');
     });
 
-    jQuery('.bt-popup-gabrielle, .close-gabrielle, .overlay-gabrielle').click(function(){
-        //var texte = jQuery('.texte-gabrielle').html();
-        //jQuery('.texte-gabrielle').empty();
-        jQuery('.popup-gabrielle').toggleClass('visible');
-        //jQuery('.texte-gabrielle').typedText(texte, 'medium');
+    jQuery('.close').click(function(){
+        jQuery('.popup').removeClass('visible');
     });
 
-    jQuery('.bt-popup-stagiaire, .close-stagiaire, .overlay-stagiaire').click(function(){
-        //var texte = jQuery('.texte-stagiaire').html();
-        //jQuery('.texte-stagiaire').empty();
-        jQuery('.popup-stagiaire').toggleClass('visible');
-        //jQuery('.texte-stagiaire').typedText(texte, 'medium');
-    });
-
-    jQuery('.bt-popup-charlotte, .close-charlotte, .overlay-charlotte').click(function(){
-        //var texte = jQuery('.texte-charlotte').html();
-        jQuery('.texte-charlotte').empty();
-        //jQuery('.popup-charlotte').toggleClass('visible');
-        //jQuery('.texte-charlotte').typedText(texte, 'medium');
-    });
 
     jQuery('.bt-menu, #zone-menu .overlay').click(function(){
         jQuery('#zone-menu').toggleClass('visible');

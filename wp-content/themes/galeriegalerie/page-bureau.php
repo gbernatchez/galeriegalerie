@@ -7,22 +7,22 @@ get_header(); ?>
 <div class="tous">
 
 	<div class="objet stagiaire">
-		<a href="#" class="bt-popup bt-popup-stagiaire click"></a>
+		<a href="#" data-name="stagiaire" class="bt-popup bt-popup-stagiaire click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/stagiaire_mage_maybe.png" alt="">
 	</div>
 
 	<div href="#" class="objet gabrielle">
-		<a href="#" class="bt-popup bt-popup-gabrielle click"></a>
+		<a href="#" data-name="gabrielle" class="bt-popup bt-popup-gabrielle click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/avatar_gab.png" alt="">
 	</div>
 
 	<div class="objet charlotte">
-		<a href="#" class="bt-popup bt-popup-charlotte click"></a>
+		<a href="#" data-name="charlotte" class="bt-popup bt-popup-charlotte click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/Marie-charlotte_renard_conseil.png" alt="">
 	</div>
 
 	<div class="objet sophie">
-		<a href="#" class="bt-popup bt-popup-sophie click"></a>
+		<a href="#" data-name="sophie" class="bt-popup bt-popup-sophie click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/sophie_avatar.png" alt="">
 	</div>
 
@@ -49,7 +49,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/cubeplant.png" alt="">
 		</div>
 
-		<a href="http://www.andreeannemercier.com/" target="_blank" title="Andrée-Anne Mercier" class="click objet peinture">
+		<a href="#" target="_blank" title="Oeuvre de Andrée-Anne Mercier" class="click objet peinture">
 			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg" alt="">
 		</a>
 
@@ -70,48 +70,23 @@ get_header(); ?>
 
 </div><!-- #sol -->
 
-<div class="popup popup-sophie">
+<div class="popup">
 	<div class="entry-content">
-		<a href="#" class="close close-sophie" title="Fermer"><span>x</span></a>
-		<div class="texte">
-			<h2><?php the_field('nom_sophie'); ?></h2>
+		<a href="#" class="close" title="Fermer"><span>x</span></a>
+		<div data-name="sophie" class="texte texte-sophie">
 			<?php the_field('sophie'); ?>
 		</div>
-	</div>
-	<div class="overlay overlay-sophie"></div>
-</div><!-- .popup-sophie -->
-
-<div class="popup popup-gabrielle">
-	<div class="entry-content">
-		<a href="#" class="close close-gabrielle" title="Fermer"><span>x</span></a>
-		<div class="texte">
-			<h2><?php the_field('nom_gabi'); ?></h2>
+		<div data-name="gabrielle" class="texte texte-gabi">
 			<?php the_field('gabrielle'); ?>
 		</div>
-	</div>
-	<div class="overlay overlay-gabrielle"></div>
-</div><!-- .popup-gabrielle -->
-
-<div class="popup popup-stagiaire">
-	<div class="entry-content">
-		<a href="#" class="close close-stagiaire" title="Fermer"><span>x</span></a>
-		<div class="texte">
-			<h2><strong><?php the_field('nom_stagiaire'); ?></h2>
+		<div data-name="stagiaire" class="texte texte-stagiaire">
 			<?php the_field('stagiaire'); ?>
 		</div>
-	</div>
-	<div class="overlay overlay-stagiaire"></div>
-</div><!-- .popup-stagiaire -->
-
-<div class="popup popup-charlotte">
-	<div class="entry-content">
-		<a href="#" class="close close-charlotte" title="Fermer"><span>x</span></a>
-		<div class="texte">
-			<h2><strong><?php the_field('nom_charlotte'); ?></h2>
+		<div data-name="charlotte" class="texte texte-charlotte">
 			<?php the_field('charlotte'); ?>
 		</div>
 	</div>
-	<div class="overlay overlay-charlotte"></div>
-</div><!-- .popup-charlotte -->
+	<div class="overlay"></div>
+</div><!-- .popup-sophie -->
 
 <?php get_footer(); ?>

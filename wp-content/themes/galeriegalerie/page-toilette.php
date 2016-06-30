@@ -26,9 +26,12 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/fenetre.jpg" alt="">
 		</div>
 
-		<div class="objet miroire">
+		<a href="#" class="click objet miroire">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/miroire.png" alt="">
-		</div>
+
+			<img class="drake" src="<?php echo get_template_directory_uri(); ?>/images/drake.gif" alt="">
+
+		</a>
 
 	</div>
 

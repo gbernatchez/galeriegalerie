@@ -12,6 +12,7 @@ get_header(); ?>
 	<div class="objet fontaine">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/fontaine-deco.gif" alt="Une fontaine">
 	</div>
+
 </div>
 
 <div id="mur-fond">
@@ -20,20 +21,33 @@ get_header(); ?>
 
 		<h1 class="visuallyhidden">Exposition Collective</h1>
 
-		<a href="/expo-1" title="Expo 1" id="porte1" class="objet porte click">
+		<div class="inntro">
+			Exposition en préparation<br>
+			Consultez notre <a href="">appel de dossier</a>
+		</div>
+
+		<div class="objet danger danger1">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/danger.png" alt="Une plante">
+		</div>
+
+		<div class="objet danger danger2">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/danger.png" alt="Une plante">
+		</div>
+
+		<div id="porte1" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte1.jpg">
-		</a>
+		</div>
 
-		<a href="/expo-2" title="Expo 2" id="porte2" class="objet porte click">
+		<div id="porte2" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte2.jpg">
-		</a>
+		</div>
 
-		<a href="/expo-3" title="Expo 3" id="porte3" class="objet porte click">
+		<div id="porte3" class="objet porte click">
 			<h2></h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg">
-		</a>
+		</div>
 
 	</div>
 
@@ -46,6 +60,18 @@ get_header(); ?>
 <div id="sol" class="coin-gauche coin-droit">
 
 	<div class="tous">
+
+		<div class="objet cone cone1">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/cone.png" alt="Une plante">
+		</div>
+
+		<div class="objet cone cone2">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/cone.png" alt="Une plante">
+		</div>
+
+		<div class="objet cone cone3">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/cone.png" alt="Une plante">
+		</div>
 
 		<div class="objet plante">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/plante.png" alt="Une plante">

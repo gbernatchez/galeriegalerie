@@ -33,7 +33,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte-toilette.jpg" alt="">
 		</a>
 
-		<a href="http://www.andreeannemercier.com/" target="_blank" title="Andrée-Anne Mercier" class="click objet deco-gif">
+		<a href="http://www.andreeannemercier.com/" target="_blank" title="Oeuvre de Andrée-Anne Mercier" class="click objet deco-gif">
 			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andree-anne-mercier.gif">
 		</a>
 
