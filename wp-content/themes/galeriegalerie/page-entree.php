@@ -5,6 +5,7 @@
 get_header(); ?>
 
 <div class="mur gauche sorti">
+	<img class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/bureau_entree.png">
 	<a title="<?php echo get_the_title(11); ?>" href="<?php echo get_permalink(11); ?>"></a>
 </div>
 
@@ -54,6 +55,7 @@ get_header(); ?>
 </div><!-- #mur-fond -->
 
 <div class="mur droit sorti">
+	<img class="archive titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_entree.png">
 	<a title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>"></a>
 </div>
 
