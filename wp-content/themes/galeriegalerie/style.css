@@ -111,8 +111,8 @@ sub {
 pre, code, kbd, samp {
   font-family: monospace, sans-serif;
 }
-label, input[type=button], input[type=submit], input[type=file], button {
-  cursor: pointer;
+input[type=button], input[type=submit], input[type=file], button {
+  cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/gam1232.gif'), auto !important;
 }
 button, input, select, textarea {
   margin: 0;
@@ -162,7 +162,7 @@ button, input[type=button] {
 }
 
 body, html {
-  //cursor: url('images/cursor/navigation.png'), auto;
+  cursor: url('images/cursor/epe.png'), auto !important;
 }
 
 .visuallyhidden { 
@@ -214,6 +214,19 @@ body, html {
   0%{background-size: 90% auto }
   50%{background-size: 75% auto }
   100%{background-size: 90% auto }
+}
+
+@-webkit-keyframes justPassing {
+  from {left: -300%}
+  to {left: 150%}
+}
+@-moz-keyframes justPassing {
+  from {left: -300%}
+  to {left: 150%}
+}
+@keyframes justPassing { 
+  from {left: -300%}
+  to {left: 150%}
 }
 
 @-webkit-keyframes fadeInFromNone {
@@ -284,24 +297,6 @@ body, html {
     }
 }
 
-@-webkit-keyframes glow {
-    to {
-        text-shadow: 0 0 10px red;
-    }
-}
-
-@-moz-keyframes glow {
-    to {
-        text-shadow: 0 0 10px red;
-    }
-}
-
-@keyframes glow {
-    to {
-        text-shadow: 0 0 10px red;
-    }
-}
-
 html.scene.mobile {
   height: calc(100% + 30px);
 }
@@ -348,6 +343,56 @@ body.page-template-page-finder {
   //cursor: pointer;
 }
 
+.page-template-page-toilette #mur-fond {
+  background-color: transparent;
+}
+
+.page-template-page-toilette .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.page-template-page-toilette .bg .h {
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 17%;
+  background-color: #e4e4e4;
+}
+
+.page-template-page-toilette .bg .d {
+  background-color: #e4e4e4;
+  position: absolute;
+  width: 60%;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.page-template-page-toilette .bg .b {
+  background-color: #e4e4e4;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  height: 26%;
+}
+
+.page-template-page-toilette .bg .g {
+  background-color: #e4e4e4;
+  position: absolute;
+  width: 20%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+
 .page-template-page-preaccueil {
   background-image: url('images/carreaumarbre300px.jpg');
   background-repeat: repeat;
@@ -358,6 +403,7 @@ body.page-template-page-finder {
   text-transform: uppercase;
 
 }
+
 
 .page-template-page-preaccueil .peek-a-boo {
   background-image: url('images/peek-a-boo.gif');
@@ -371,6 +417,7 @@ body.page-template-page-finder {
   position: relative;
   z-index: 2;
 }
+
 
 .page-template-page-preaccueil h1 {
   background-image: url('images/galeriegalerie.gif');
@@ -386,6 +433,7 @@ body.page-template-page-finder {
   z-index: 1;
 }
 
+
 .page-template-page-preaccueil h2 {
   color: rgb(255,255,255);
   font-size: 1.25em;
@@ -396,12 +444,14 @@ body.page-template-page-finder {
   position: relative;
 }
 
+
 .page-template-page-preaccueil p {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.5em;
   font-weight: bolder;
   letter-spacing: 1px;
 }
+
 
 .page-template-page-preaccueil header {
   padding: 2em 0;
@@ -419,13 +469,13 @@ body.page-template-page-finder {
 #zone-menu .menu-content {
   background-image: url('images/sol.jpg');
   height: 100%;
-  left: -17em;
-  padding: 2.5em 1em 1em;
+  left: -18.5em;
+  padding: 3em 1em 1em;
   position: fixed;
   overflow: scroll;
   top: 0;
   transition: left .75s ease;
-  width: 17em;
+  width: 18.5em;
   z-index: 990;
 }
 
@@ -438,7 +488,7 @@ body.page-template-page-finder {
 }
 
 #zone-menu .subtitle > a {
-  cursor: default;
+  //cursor: default;
   display: block;
   font-weight: bold;
   margin-bottom: 0.5em;
@@ -619,7 +669,7 @@ body.page-template-page-finder {
 }
 
 .feuille .bottom .entry-content h1 {
-  margin-bottom: -0.6em;
+  margin-bottom: -1em;
   position: relative;
   top: -0.8em;
 }
@@ -656,6 +706,11 @@ body.page-template-page-finder {
 
 .inntro a:hover {
   border-bottom: none;
+}
+
+.entry-content hr {
+  background-color: #cacaca;
+  margin: 2em 0;
 }
 
 .entry-content em {
@@ -1044,6 +1099,24 @@ body.page-template-page-finder {
   text-transform: uppercase;
 }
 
+#mc_embed_signup #mce-responses #mce-error-response {
+  margin-top: 1em;
+  padding: 0.75em;
+  background-color: rgba(128, 0, 0, 0.4);
+  text-align: left;
+  font-family: VT323;
+  font-size: 1.25em;
+}
+
+#mc_embed_signup #mce-responses #mce-success-response {
+  margin-top: 1em;
+  padding: 0.75em;
+  background-color: rgba(0, 128, 0, 0.4);
+  text-align: left;
+  font-family: VT323;
+  font-size: 1.25em;
+}
+
 .mur {
   background-position: bottom;
   background-repeat: no-repeat;
@@ -1057,14 +1130,17 @@ body.page-template-page-finder {
 
 .mur .titre-porte {
   position: absolute;
-  height: 2.5em;
-  bottom: 31.5em;
-  left: 2.9em;
-  display: none;
+  bottom: 67%;
+  left: 37%;
+  width: 70%;
 }
 
 .mur .titre-porte.archive {
-  left: -0.5em;
+  left: -4%;
+}
+
+.mur .titre-porte.entree {
+  left: -13%;
 }
 
 .mur.droit {
@@ -1073,7 +1149,7 @@ body.page-template-page-finder {
 }
 
 .mur.droit.sorti {
-  background-image: url('images/mur-porte-droit.png');
+  background-image: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/porte_droit_12juillet.png');
   bottom: 8.5%;
 }
 
@@ -1086,7 +1162,7 @@ body.page-template-page-finder {
   display: block;
   position: absolute;
   bottom: 25%;
-  width: 36%;
+  width: 55%;
   height: 58%;
 }
 
@@ -1096,13 +1172,13 @@ body.page-template-page-finder {
 }
 
 .mur.gauche.sorti {
-  background-image: url('images/mur-porte-gauche.png');
+  background-image: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/portegauche_12juillet.png');
   bottom: 8.5%;
 }
 
 .mur.gauche.sorti a {
   //cursor: url('images/cursor/arrow-left.gif'), auto;
-  left: 57%;
+  left: 37%;
 }
 
 #mur-fond {
@@ -1130,39 +1206,61 @@ body.page-template-page-finder {
   font-size: 1.3vw;
 }
 
+a {
+  cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
+  //background-color: red !important;
+  //pointer-events: auto !important;
+  //cursor: pointer !important;
+}
+
+a.bt-popup {
+  cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
+}
+
+* {
+  //cursor: pointer !important;
+  //pointer-events: none !important;
+}
+
 .click {
-  pointer-events: auto;
+  //pointer-events: auto;
 }
 
 .click.bt-popup {
   display: block;
-  height: 4em;
-  width: 4em;
+  height: 5em;
+  width: 5em;
   border-radius: 100%;
   position: absolute;
   top: 0em;
-  cursor: pointer;
+  //box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1);
+  //cursor: pointer;
   //cursor: url('images/cursor/mouth.png') 0 0, auto;
+  -webkit-animation: glow 2s ease infinite;
+  -moz-animation: glow 2s ease infinite;
+  animation: glow 2s ease infinite;
 }
 
 .click.bt-popup-sophie {
-  left: 4.5em;
+  left: 4em;
+  top: -0.5em;
 }
 
 .click.bt-popup-charlotte {
-  left: 1em;
-  top: 2em;
-  width: 5em;
-  height: 5em;
+  left: 0.5em;
+  top: 1em;
+  width: 6em;
+  height: 6em;
 }
 
 .click.bt-popup-gabrielle {
-  left: 9em;
+  left: 8.5em;
+  top: -0.5em;
 }
 
 .click.bt-popup-stagiaire {
-  left: 6em;
-  top: 1em;
+  left: 5.5em;
+  top: 0.5em;
 }
 
 .click.ordi-code {
@@ -1172,7 +1270,25 @@ body.page-template-page-finder {
   position: absolute;
   top: 2em;
   left: 5em;
-  cursor: url('images/cursor/eye.png'), auto;
+  //cursor: url('images/cursor/eye.png'), auto;
+}
+
+@-webkit-keyframes glow {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 0), inset 0 0 1.5em 0px rgba(148, 68, 187, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
+}
+
+@-moz-keyframes glow {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 0), inset 0 0 1.5em 0px rgba(148, 68, 187, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
+}
+
+@keyframes glow {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 0), inset 0 0 1.5em 0px rgba(148, 68, 187, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
 }
 
 .code {
@@ -1184,11 +1300,11 @@ body.page-template-page-finder {
 .objet {
   display: block;
   height: auto;
-  pointer-events: none;
+  
   position: absolute;
 }
 
-.objet.click {
+//.objet.click {
   pointer-events: auto;
 }
 
@@ -1196,6 +1312,7 @@ body.page-template-page-finder {
   height: auto;
   vertical-align: bottom;
   width: 100%;
+  //pointer-events: none;
 }
 
 .objet.danger {
@@ -1286,11 +1403,10 @@ body.page-template-page-finder {
   z-index: 10;
 }
 
-.objet.octane {
-  right: 12%;
-  top: 22%;
-  transform: rotate(-3deg);
-  width: 10%;
+.objet.enseigne {
+  right: 7.5em;
+  top: 7em;
+  width: 11em;
   z-index: 3;
 }
 
@@ -1318,7 +1434,7 @@ body.page-template-page-finder {
 }
 
 .objet.gabrielle {
-  left: 7em;
+  left: 9em;
   bottom: 2em;
   width: 19.125em;
   z-index: 888;
@@ -1326,7 +1442,7 @@ body.page-template-page-finder {
 
 .objet.stagiaire {
   bottom: 3em;
-  left: 59em;
+  left: 56em;
   width: 17em;
   z-index: 888;
 }
@@ -1367,16 +1483,50 @@ body.page-template-page-finder {
 
 /*Toilette*/
 
+.objet.eye {
+  z-index: 98;
+  left: 34em;
+  width: 11em;
+  top: 5em;
+}
+
 .objet.miroire {
+  z-index: 99;
   bottom: 10em;
   left: 42em;
   width: 11.9375em;
 }
 
+.objet.tearz {
+  width: 4.25em;
+  left: 50.25em;
+  bottom: 22em;
+  z-index: 99;
+}
+
+.objet.iguane {
+  width: 15em;
+  left: 41em;
+  bottom: 8.5em;
+}
+
+.objet.iguane.p1 {
+  left: 35em;
+  bottom: 6.5em;
+}
+
+.objet.iguane.p2 {}
+
 .objet.lavabo {
   bottom: 10em;
   left: 40em;
   width: 15.9375em;
+}
+
+.objet.squelette {
+  width: 10em;
+  bottom: 5em;
+  left: 15em;
 }
 
 .objet.toilette1 {
@@ -1387,16 +1537,44 @@ body.page-template-page-finder {
 }
 
 .objet.toilette2 {
-  bottom: 3em;
-  left: 66em;
+  bottom: 11em;
+  left: 61em;
   width: 10.375em;
   z-index: 888;
 }
 
 .objet.fenetre {
   left: 15em;
-  bottom: 4em;
+  top: 16%;
   width: 15.9375em;
+  height: 60%;
+}
+
+.objet.fenetre .frame {
+  height: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.objet.fenetre .savini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  height: 100%;
+  width: auto;
+}
+
+.objet .dragon {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: auto;
+  -webkit-animation: justPassing 35s ease;
+  -moz-animation: justPassing 35s ease;
+  animation: justPassing 35s ease;
 }
 
 /*Archive*/
@@ -1405,6 +1583,16 @@ body.page-template-page-finder {
   bottom: 10em;
   left: 9em;
   width: 31.25em;
+}
+
+.objet.bureau-archive a {
+  display: block;
+  height: 8em;
+  width: 18em;
+  position: absolute;
+  top: 9em;
+  //cursor: pointer;
+  left: 11em;
 }
 
 .objet.divan-archive {
@@ -1521,6 +1709,7 @@ body.page-template-page-finder {
 }
 
 .popup .close {
+  display: none;
   color: rgb(255,255,255);
   display: block;
   font-weight: bold;
@@ -1532,6 +1721,7 @@ body.page-template-page-finder {
   border-bottom: none;
   text-decoration: none;
   font-weight: bold;
+  background-color: #000;
 }
 
 .popup .close:hover {
@@ -1544,7 +1734,7 @@ body.page-template-page-finder {
   background-repeat: repeat-x;
   background-size: auto 100%;
   margin: 1em 1%;
-  padding: 1.25em;
+  padding: 1.25em 4em 1.25em 1.25em;
   width: 98%;
   z-index: 20;
   box-sizing: border-box;
@@ -1658,7 +1848,21 @@ body.page-template-page-finder {
 
 @media screen and (max-width: 767px) {
   .feuille {
-    width: auto;
+    font-size: 90%;
+    width: 96%;
+  }
+  .feuille .bottom {
+    padding: 0px 1.5em 1em;
+  }
+  .feuille .bottom .entry-content h1 {
+    top: -0.8em;
+    left: 0.75em;
+    font-size: 2em;
+  }
+
+  .cutie {
+    float: none;
+    margin: 3em auto 0 auto;
   }
 
   .page-template-page-preaccueil .peek-a-boo {

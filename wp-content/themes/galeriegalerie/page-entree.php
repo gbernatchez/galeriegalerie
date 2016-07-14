@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div class="mur gauche sorti">
-	<img class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/bureau_entree.png">
+	<img class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_flechecorriige.png">
 	<a title="<?php echo get_the_title(11); ?>" href="<?php echo get_permalink(11); ?>"></a>
 </div>
 
@@ -24,7 +24,11 @@ get_header(); ?>
 
 		<div class="inntro">
 			Exposition en préparation<br>
-			Consultez notre <a href="">appel de dossier</a>
+			Consultez notre appel de dossiers pour <a href="<?php echo get_permalink(344); ?>" title="Exposition à venir">l'exposition à venir</a>.
+		</div>
+
+		<div class="objet enseigne">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/enseigne.png">
 		</div>
 
 		<div class="objet danger danger1">
@@ -55,7 +59,7 @@ get_header(); ?>
 </div><!-- #mur-fond -->
 
 <div class="mur droit sorti">
-	<img class="archive titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_entree.png">
+	<img class="archive titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche.png">
 	<a title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>"></a>
 </div>
 
@@ -83,13 +87,13 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/chaise.png">
 		</div>
 
-		<?php //if(get_field('pamphlet')) : ?>
+		<?php if(get_field('pamphlet')) : ?>
 
 			<a href="<?php the_field('pamphlet'); ?>" target="_blank" title="Visionner le pamphlet" class="objet pamphlet click">
 				<img src="<?php echo get_template_directory_uri(); ?>/images/expo_encours_02.gif" alt="Pamphlet">
 			</a>
 
-		<?php //endif; ?>
+		<?php endif; ?>
 
 		<a href="#" title="Fermer la radio" class="objet radio click">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/radio.gif" alt="Une radio">

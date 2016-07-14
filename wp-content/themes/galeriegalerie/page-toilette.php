@@ -6,6 +6,10 @@ get_header(); ?>
 
 <div class="tous">
 
+	<div class="objet squeltte">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/salledebain_07.gif">
+	</div>
+
 	<div class="objet toilette1">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/toilette1.png" alt="">
 	</div>
@@ -20,17 +24,28 @@ get_header(); ?>
 
 <div id="mur-fond">
 
+	<div class="bg">
+		<div class="h"></div>
+		<div class="d"></div>
+		<div class="b"></div>
+		<div class="g"></div>
+	</div>
+
 	<div class="tous">
 
+		<div class="objet eye">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/salledebain_03.gif">
+		</div>
+
 		<div class="objet fenetre">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/fenetre.jpg" alt="">
+			<img class="frame" src="<?php echo get_template_directory_uri(); ?>/images/fenetre.png" alt="">
+			<img class="dragon" src="<?php echo get_template_directory_uri(); ?>/images/salledebain_08.gif">
+			<img class="savini" src="<?php echo get_template_directory_uri(); ?>/images/savini.jpg">
 		</div>
 
 		<a href="#" class="click objet miroire">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/miroire.png" alt="">
-
 			<img class="drake" src="<?php echo get_template_directory_uri(); ?>/images/drake.gif" alt="">
-
 		</a>
 
 	</div>
@@ -42,6 +57,14 @@ get_header(); ?>
 <div id="sol" class="coin-droit coin-gauche">
 
 	<div class="tous">
+
+		<div class="objet tearz">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/salledebain_05.gif">
+		</div>
+
+		<div class="objet iguane">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/salledebain_04.gif">
+		</div>
 
 		<div class="objet lavabo">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/lavabo.png" alt="">

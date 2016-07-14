@@ -5,6 +5,7 @@
 get_header(); ?>
 
 <div class="mur gauche sorti">
+	<img class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
 	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
 </div>
 
@@ -33,7 +34,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte-toilette.jpg" alt="">
 		</a>
 
-		<a href="http://www.andreeannemercier.com/" target="_blank" title="Oeuvre de Andrée-Anne Mercier" class="click objet deco-gif">
+		<a href="#" data-name="oeuvre" class="bt-popup-oeuvre click objet deco-gif">
 			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andree-anne-mercier.gif">
 		</a>
 
@@ -47,12 +48,23 @@ get_header(); ?>
 
 	<div class="tous">
 
-		<a href="<?php echo get_template_directory_uri(); ?>/finder" title="Consulter les archives" class="objet bureau-archive click">
+		<div class="objet bureau-archive">
+			<a href="<?php echo get_template_directory_uri(); ?>/finder" title="Consulter les archives" class="click"></a>
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/archives.png">
-		</a>
+		</div>
 
 	</div>
 
 </div>
+
+<div class="popup">
+	<div class="entry-content">
+		<a href="#" class="close" title="Fermer"><span>x</span></a>
+		<div data-name="oeuvre" class="texte texte-oeuvre">
+			<?php the_field('oeuvre', 11); ?>
+		</div>
+	</div>
+	<div class="overlay"></div>
+</div><!-- .popup -->
 
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@ get_header(); ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/stagiaire_mage_maybe.png" alt="">
 	</div>
 
-	<div href="#" class="objet gabrielle">
+	<div class="objet gabrielle">
 		<a href="#" data-name="gabrielle" class="bt-popup bt-popup-gabrielle click"></a>
 		<img src="<?php echo get_template_directory_uri(); ?>/images/avatar_gab.png" alt="">
 	</div>
@@ -49,7 +49,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/cubeplant.png" alt="">
 		</div>
 
-		<a href="#" target="_blank" title="Oeuvre de Andrée-Anne Mercier" class="click objet peinture">
+		<a href="#" data-name="oeuvre" class="bt-popup-oeuvre click objet peinture">
 			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg" alt="">
 		</a>
 
@@ -62,6 +62,7 @@ get_header(); ?>
 </div><!-- #mur-fond -->
 
 <div class="mur droit sorti">
+	<img class="entree titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche2.png">
 	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
 </div>
 
@@ -85,8 +86,11 @@ get_header(); ?>
 		<div data-name="charlotte" class="texte texte-charlotte">
 			<?php the_field('charlotte'); ?>
 		</div>
+		<div data-name="oeuvre" class="texte texte-oeuvre">
+			<?php the_field('oeuvre'); ?>
+		</div>
 	</div>
 	<div class="overlay"></div>
-</div><!-- .popup-sophie -->
+</div><!-- .popup -->
 
 <?php get_footer(); ?>

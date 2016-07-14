@@ -12,10 +12,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 jQuery(document).ready(function(){
 
-    jQuery('.bt-popup').mouseover(function(){
+   /* jQuery('.bt-popup').mouseover(function(){
         console.log(this);
         jQuery('html').css("cursor: url('images/cursor/mouth.png'), auto");
-    });
+    }); */
 
     jQuery('.miroire').click(function(){
         console.log('yeah');
@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	})
 
-    jQuery('.bt-popup').click(function(){
+    jQuery('.bt-popup, .peinture, .deco-gif').click(function(){
         var bonhomme = jQuery(this).attr('data-name');
         jQuery('.texte').removeClass('visible');
         jQuery('.popup').addClass('visible');
