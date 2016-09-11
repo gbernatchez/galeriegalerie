@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="dossiers">
 			
 			<a href="#" class="dossier">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/dossier.png">
+				<img src="<?php echo get_template_directory_uri(); ?>/images/dossier.png" alt="">
 				<h2>Dossier de presse</h2>
 			</a>
 

@@ -5,14 +5,14 @@
 get_header(); ?>
 
 <div class="mur gauche sorti">
-	<img class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
+	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
 	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
 </div>
 
 <div class="tous">
 
 	<div class="objet divan-archive">
-		<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/divan archive.png">
+		<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/divan_archive.png">
 	</div>
 
 	<div class="objet livre">
@@ -21,6 +21,10 @@ get_header(); ?>
 
 	<div class="objet livre2">
 		<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/livres2.png">
+	</div>
+
+	<div class="objet bipbip">
+		<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/bipbip.gif">
 	</div>
 
 </div>

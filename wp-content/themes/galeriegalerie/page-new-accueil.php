@@ -13,14 +13,14 @@ Matisse_01.gif <?php */ ?>
 	<header class="tous">
 		<div class="intro">Bienvenue à l'espace de diffusion en ligne</div>
 		<h1 class="visuallyhidden"><?php echo get_option('blogname'); ?></h1>
-		<img class="logo-bleu" src="<?php echo get_template_directory_uri(); ?>/images/galeriegalerie_bleugros.gif">
+		<img alt="" class="logo-bleu" src="<?php echo get_template_directory_uri(); ?>/images/galeriegalerie_bleugros.gif">
 	</header>
 
 	<div class="group">
 	
 		<div class="entre">
 			<a href="<?php echo get_permalink(7); ?>" title="Entre !">
-				<img class="matisse" src="<?php echo get_template_directory_uri(); ?>/images/Matisse_01.gif">
+				<img alt="" class="matisse" src="<?php echo get_template_directory_uri(); ?>/images/Matisse_01.gif">
 				<div class="gros-entre"></div>
 			</a>
 		</div>
@@ -29,7 +29,7 @@ Matisse_01.gif <?php */ ?>
 			
 			<div id="mc_embed_signup">
 
-				<img class="abonne-toi" src="<?php echo get_template_directory_uri(); ?>/images/ban_abonnement.gif">
+				<img alt="" class="abonne-toi" src="<?php echo get_template_directory_uri(); ?>/images/ban_abonnement.gif">
 
 				<form action="//online.us11.list-manage.com/subscribe/post?u=7db3addfbdf5cebea08e1f4d2&amp;id=2dd06301ba" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<div class="group" id="mc_embed_signup_scroll">

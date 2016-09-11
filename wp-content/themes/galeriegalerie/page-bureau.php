@@ -36,7 +36,7 @@ get_header(); ?>
 
 	<div class="objet bureau2">
 		<a href="???" class="ordi-code click" onClick="MyWindow=window.open('http://www.galeriegalerieweb.com/259-2','????', 'location=no,top=100,titlebar=no,status=no,menubar=no,left=300,width=500,height=400'); return false;"></a>
-		<img src="<?php echo get_template_directory_uri(); ?>/images/test bureau.gif" alt="">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/test_bureau.gif" alt="">
 	</div>
 
 </div>
@@ -50,7 +50,7 @@ get_header(); ?>
 		</div>
 
 		<a href="#" data-name="oeuvre" class="bt-popup-oeuvre click objet peinture">
-			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg" alt="">
+			<img alt="Andrée-Anne Mercier" src="<?php echo get_template_directory_uri(); ?>/images/andre-anne-mercier-samourai.jpg">
 		</a>
 
 		<div class="objet conference">
@@ -62,7 +62,7 @@ get_header(); ?>
 </div><!-- #mur-fond -->
 
 <div class="mur droit sorti">
-	<img class="entree titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche2.png">
+	<img alt="" class="entree titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche2.png">
 	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>
 </div>
 

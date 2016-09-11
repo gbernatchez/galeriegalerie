@@ -4,7 +4,7 @@
 
 	<?php if(get_field('cutie')) : ?>
 		<div class="cutie">
-			<img src="<?php the_field('cutie'); ?>">
+			<img alt="" src="<?php the_field('cutie'); ?>">
 		</div>
 	<?php endif; ?>
 

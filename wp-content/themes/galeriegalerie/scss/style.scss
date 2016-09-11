@@ -8,7 +8,7 @@ Author URI: http://www.galeriegalerie.com
 @import '_variables.scss';
 @import '_reset.scss';
 
-@font-face {
+/*@font-face {
   font-family: 'Futura light';
   src: url('fonts/futura_light-webfont.eot');
   src: url('fonts/futura_light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -18,20 +18,20 @@ Author URI: http://www.galeriegalerie.com
     url('fonts/futura_light-webfont.svg#futura_lightregular') format('svg');
   font-weight: normal;
   font-style: normal;
-}
+}*/
 
-@font-face {
+/*@font-face {
   font-family: 'Mou';
   src: url('fonts/ufonts.com_ji-noodles-webfont.eot');
   src: url('fonts/ufonts.com_ji-noodles-webfont.eot?#iefix') format('embedded-opentype'),
     url('fonts/ufonts.com_ji-noodles-webfont.woff2') format('woff2'),
     url('fonts/ufonts.com_ji-noodles-webfont.woff') format('woff'),
     url('fonts/ufonts.com_ji-noodles-webfont.ttf') format('truetype'),
-    url('fonts/ufonts.com_ji-noodles-webfont.svg#futura_lightregular') format('svg');
+    url('fonts/ufonts.com_ji-noodles-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
-}
-
+} */
+ 
 body, html {
   cursor: url('images/cursor/epe.png'), auto !important;
 }
@@ -69,6 +69,22 @@ body, html {
   0%{background-position:51% 0%}
   50%{background-position:50% 100%}
   100%{background-position:51% 0%}
+}
+
+@-webkit-keyframes fleche {
+  0%{top: 7em;}
+  50%{top: 7.5em;}
+  100%{top: 7em;}
+}
+@-moz-keyframes fleche {
+  0%{top: 7em;}
+  50%{top: 7.5em;}
+  100%{top: 7em;}
+}
+@keyframes fleche { 
+  0%{top: 7em;}
+  50%{top: 7.5em;}
+  100%{top: 7em;}
 }
 
 @-webkit-keyframes big {
@@ -168,6 +184,37 @@ body, html {
     }
 }
 
+@-webkit-keyframes annaBg {
+  0%{background-color: #ededed;}
+  15%{background-color: #ebe6fc;}
+  29%{background-color: #e6ecfa;}
+  43%{background-color: #f4f1e8;}
+  57%{background-color: #e8f3ef;}
+  71%{background-color: #f1f1f1;}
+  85%{background-color: #eef5fd;}
+  100%{background-color: #ededed;}
+}
+@-moz-keyframes annaBg {
+  0%{background-color: #ededed;}
+  15%{background-color: #ebe6fc;}
+  29%{background-color: #e6ecfa;}
+  43%{background-color: #f4f1e8;}
+  57%{background-color: #e8f3ef;}
+  71%{background-color: #f1f1f1;}
+  85%{background-color: #eef5fd;}
+  100%{background-color: #ededed;}
+}
+@keyframes annaBg { 
+  0%{background-color: #ededed;}
+  15%{background-color: #ebe6fc;}
+  29%{background-color: #e6ecfa;}
+  43%{background-color: #f4f1e8;}
+  57%{background-color: #e8f3ef;}
+  71%{background-color: #f1f1f1;}
+  85%{background-color: #eef5fd;}
+  100%{background-color: #ededed;}
+}
+
 html.scene.mobile {
   height: calc(100% + 30px);
 
@@ -211,8 +258,130 @@ body.page-template-page-finder {
   background-image: url('images/marbre.jpg');
 }
 
+body.page-template-page-expo-anna {
+  -webkit-animation: annaBg 15s ease infinite;
+  -moz-animation: annaBg 15s ease infinite;
+  animation: annaBg 15s ease infinite;
+
+  .wrapper {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .plante-anna-1 {
+    position: absolute;
+    left: 0em;
+    bottom: 3em;
+    width: 11em;
+  }
+  .plante-anna-2 {
+    position: absolute;
+    right: 0em;
+    bottom: 3em;
+    width: 11em;
+  }
+
+
+}
+
 .clickable {
   //cursor: pointer;
+}
+
+iframe.fullsize {
+  width: 100%;
+  height: 100%;
+}
+
+.page-template-page-entree-new,
+.page-template-page-entree-edc-setup1,
+.page-template-page-entree-edc-setup2 {
+
+  .titre-expo {
+    width: 33%;
+    margin: 1.5em auto 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+
+  .porte {
+    box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 0);
+    transition: box-shadow 0.5s ease;
+    &:hover {
+      box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 1);
+    }
+
+    .anna {
+      background-image: url('images/anna.png');
+      width: 26.3125em;
+      height: 5.875em;
+    }
+
+    .roby {
+      background-image: url('images/roby.png');
+      height: 9.375em;
+      width: 31.625em;
+    }
+
+    .conan {
+      background-image: url('images/conan.png');
+      width: 26.3125em;
+      height: 5.875em;
+    }
+
+    h2 {
+      background-repeat: no-repeat;      
+      background-position: center bottom;
+      background-size: 100% auto;
+      text-indent: -9999px;
+      margin-bottom: .5em;
+      position: absolute;
+      top: -5.5em;
+      left: 50%;
+      font-size: 30%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        //background-position: center top;
+      }
+    }
+
+    /*h2 {
+      color: rgb($noir);
+      font-size: 1em;
+      margin-bottom: .5em;
+      text-align: center;
+      white-space: nowrap;
+      font-family: $signika;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: absolute;
+      top: -1.5em;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    } */
+  }
+
+
 }
 
 .page-template-page-toilette {
@@ -340,6 +509,13 @@ body.page-template-page-finder {
     .overlay {
       display: block;
     }
+  }
+
+  .retour {
+    z-index: 980;
+    width: 5em;
+    left: 0em;
+    top: 3em;
   }
 
   .menu-content {
@@ -1065,19 +1241,6 @@ body.page-template-page-finder {
   position: absolute;
   width: 100%;
   z-index: 15;
-
-  h1 {
-    color: rgb($noir);
-    font-family: 'Futura light';
-    font-size: 1.75em;
-    line-height: 1.5em;
-    margin-top: .5em;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-animation: glow .5s infinite alternate;
-    -moz-animation: glow .5s infinite alternate;
-    animation: glow .5s infinite alternate;
-  }
 }
 
 .tous {
@@ -1086,18 +1249,10 @@ body.page-template-page-finder {
 
 a {
   cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
-  //background-color: red !important;
-  //pointer-events: auto !important;
-  //cursor: pointer !important;
 }
 
 a.bt-popup {
   cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
-}
-
-* {
-  //cursor: pointer !important;
-  //pointer-events: none !important;
 }
 
 .click {
@@ -1118,12 +1273,20 @@ a.bt-popup {
     -webkit-animation: glow 2s ease infinite;
     -moz-animation: glow 2s ease infinite;
     animation: glow 2s ease infinite;
+
+    &.edc {
+      -webkit-animation: glowEdc 2s ease infinite;
+      -moz-animation: glowEdc 2s ease infinite;
+      animation: glowEdc 2s ease infinite;
+    }
   }
 
   &.bt-popup-sophie { left: 4em; top: -0.5em; } 
   &.bt-popup-charlotte { left: 0.5em; top: 1em; width: 6em; height: 6em; } 
   &.bt-popup-gabrielle { left: 8.5em; top: -0.5em; } 
   &.bt-popup-stagiaire { left: 5.5em; top: 0.5em; } 
+
+  &.bt-popup-lebaquet404 { left: 22.5em; top: 0.5em; } 
 
   &.ordi-code {
     display: block;
@@ -1154,16 +1317,188 @@ a.bt-popup {
   100%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
 }
 
+@-webkit-keyframes glowEdc {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 0), inset 0 0 1.5em 0px rgba(0, 0, 0, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+}
+
+@-moz-keyframes glowEdc {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 0), inset 0 0 1.5em 0px rgba(0, 0, 0, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+}
+
+@keyframes glowEdc {
+  0%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+  50%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 0), inset 0 0 1.5em 0px rgba(0, 0, 0, 0); }
+  100%{ box-shadow: 0 0 1.5em 0px rgba(0, 0, 0, 1), inset 0 0 1.5em 0px rgba(0, 0, 0, 1); }
+}
+
 .code {
   font-family: monospace, sans-serif;
   background-color: rgb($noir);
   color: rgb(0, 255, 0);
 }
 
+.titre-pdf {
+  position: absolute;
+  transform: rotate(90deg);
+  top: 7em;
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+  -webkit-animation: fleche 2s ease infinite;
+  -moz-animation: fleche 2s ease infinite;
+  animation: fleche 2s ease infinite;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/*EDC SETUP*/
+
+.objet {
+
+  /*Entree 1*/
+
+  &.opEntree {
+    width: 10em;
+    z-index: 99;
+    left: 6em;
+    bottom: 10em;
+  }
+  &.hangaround2Entree {
+    width: 10em;
+    z-index: 99;
+    left: 62em;
+    bottom: 5em;
+  }
+  &.chichiEntree {
+    width: 7.5em;
+    z-index: 19;
+    left: 28em;
+    bottom: 12em;
+  }
+  &.tibrasEntree {
+    width: 11em;
+    z-index: 99;
+    left: 36em;
+    bottom: 10em;
+  }
+  &.lebaquetEntree {
+    width: 10.5em;
+    z-index: 99;
+    left: 50em;
+    bottom: 0em;
+  }
+  &.hangaround1Entree {
+    width: 12em;
+    z-index: 99;
+    left: 15em;
+    bottom: 2em;
+  }
+
+  /*Entree 2*/
+
+  &.opEntree2 {
+    width: 9em;
+    z-index: 19;
+    left: 28em;
+    bottom: 13em;
+  }
+  &.chichiEntree2 {
+    width: 12em;
+    z-index: 99;
+    left: 15em;
+    bottom: 2em;
+    display: none;
+  }
+  &.tibrasEntree2 {
+    width: 12em;
+    z-index: 99;
+    left: 60em;
+    bottom: 5em;
+  }
+  &.lebaquetEntree2 {
+    width: 12em;
+    z-index: 19;
+    left: 15em;
+    bottom: 12em;
+  }
+  &.stagiaireEntree2 {
+    width: 12em;
+    z-index: 99;
+    left: 55em;
+    bottom: 2em;
+  }
+
+  /*Toilettes*/
+
+  &.shireMotos {
+    width: 75em;
+    z-index: 970;
+    left: 1em;
+    bottom: -1em;
+  }
+
+  &.motos {
+    width: 75em;
+    z-index: 970;
+    left: 2em;
+    bottom: -1em;
+  }
+
+  /*404*/
+
+  &.beerBroke {
+    width: 6em;
+    z-index: 99;
+    left: 27em;
+    bottom: 5em;
+  }
+
+  &.poubEnFeu {
+    width: 8em;
+    z-index: 99;
+    left: 35.5em;
+    bottom: 7em;
+  }
+  &.stickers {
+    width: 35em;
+    z-index: 95;
+    left: 19em;
+    bottom: 21em;
+  }
+
+  &.chichi {
+    width: 13em;
+    z-index: 970;
+    left: 51em;
+    bottom: 5em;
+  }
+
+  &.feuPoub {
+    width: 11em;
+    z-index: 100;
+    left: 34em;
+    bottom: 15em;
+    opacity: 0.95;
+  }
+  &.edc404 {
+    width: 29em;
+    z-index: 99;
+    left: 22em;
+    bottom: 2em;
+  }
+
+
+}
+
+
 .objet {
   display: block;
   height: auto;
-  
   position: absolute;
 
   //&.click { pointer-events: auto; }
@@ -1173,6 +1508,13 @@ a.bt-popup {
     vertical-align: bottom;
     width: 100%;
     //pointer-events: none;
+  }
+
+  &.poub {
+    width: 12em;
+    z-index: 98;
+    left: 7em;
+    bottom: 10em;
   }
 
   &.danger {
@@ -1343,6 +1685,12 @@ a.bt-popup {
 
   /*Toilette*/
 
+  &.peace {
+    left: 57em;
+    width: 9em;
+    top: 4em;
+  }
+
   &.eye {
     z-index: 98;
     left: 34em;
@@ -1384,11 +1732,19 @@ a.bt-popup {
     width: 15.9375em;
   }
 
-  &.squelette {
-    width: 10em;
-    bottom: 5em;
-    left: 15em;
+  &.girl {
+    width: 50em;
+    bottom: 1em;
+    left: 7em;
+    z-index: 999;
+    display: none;
+  }
 
+  &.squelette {
+    width: 20em;
+    bottom: 10em;
+    left: 6.5em;
+    z-index: 777;
   }
 
   &.toilette1 {
@@ -1410,9 +1766,10 @@ a.bt-popup {
     top: 16%;
     width: 15.9375em;
     height: 60%;
+    overflow: hidden;
 
     .frame {
-      height: 100%;
+      height: 101%;
       z-index: 2;
       position: relative;
 
@@ -1421,10 +1778,10 @@ a.bt-popup {
     .savini {
       position: absolute;
       top: 0;
-      left: 0;
-      z-index: -2;
-      height: 100%;
-      width: auto;
+      left: -10em;
+      z-index: -1;
+      width: 30em;
+      max-width: inherit;
     }
 
   }
@@ -1433,7 +1790,7 @@ a.bt-popup {
     position: absolute;
     top: 1em;
     left: 0;
-    z-index: -1;
+    z-index: 0;
     height: 100%;
     width: auto;
 
@@ -1445,7 +1802,7 @@ a.bt-popup {
   /*Archive*/
 
   &.bureau-archive {
-    bottom: 10em;
+    bottom: 11em;
     left: 9em;
     width: 31.25em;
 
@@ -1461,8 +1818,8 @@ a.bt-popup {
   }
 
   &.divan-archive {
-    bottom: 4em;
-    left: 60em;
+    bottom: 6em;
+    left: 62em;
     width: 14.875em;
     z-index: 888;
   }
@@ -1475,10 +1832,21 @@ a.bt-popup {
   }
 
   &.livre2 {
-    bottom: -1em;
-    left: 56em;
+    bottom: 1em;
+    left: 61em;
     width: 8.9375em;
     z-index: 888;
+  }
+
+  &.bipbip {
+    z-index: 777;
+    bottom: 2em;
+    left: 10em;
+    width: 9em;
+    transition: bottom 1s ease;
+    &.visible {
+      bottom: 13em;
+    }
   }
 
   &.deco-gif {
@@ -1539,21 +1907,105 @@ a.bt-popup {
     }
   }
 
-  h2 {
+  /*h2 {
     color: rgb($noir);
     font-family: 'Futura light';
     font-size: 1.5em;
     margin-bottom: .5em;
     text-align: center;
     text-transform: lowercase;
-  }
+  } */
 
   &:hover img {
     box-shadow: 0 0 4em -.5em rgb($gris);
   }
 }
 
-#sol {
+.error404 {
+  #toit {
+    height: 15%;
+    top: 0;
+    bottom: initial;
+  }
+
+  #sol {
+    height: 32.5%;
+    left: 0;
+  }
+
+  #mur-fond {
+    height: 70%;
+  }
+
+  .mur {
+    &.droit {
+      background-image: url('images/mur-droit-toit.png');
+      right: -2%;
+    }
+
+    &.gauche {
+      background-image: url('images/mur-gauche-toit.png');
+      left: -2%;
+    }
+  }
+
+  .objet {
+    &.echelle {
+      z-index: 99;
+      bottom: 3em;
+      width: 30em;
+      left: -2em;
+    }
+
+    &.poub1 {
+      z-index: 97;
+      width: 9em;
+      right: 6em;
+      bottom: 9em;
+    }
+    &.poub2 {
+      z-index: 98;
+      width: 8em;
+      right: 20em;
+      bottom: 9em;
+      transform: rotate(8deg);
+    }
+    &.poub3 {
+      z-index: 99;
+      width: 7.25em;
+      right: 12em;
+      bottom: 5em;
+      transform: rotate(10deg);
+    }
+
+    &.poub4 {
+      z-index: 96;
+      width: 11em;
+      right: 13em;
+      bottom: 10em;
+    }
+
+    &.robinet {
+      z-index: 99;
+      bottom: 4em;
+      right: 1em;
+      width: 5.4375em;
+    }
+    &.trappe {
+      z-index: 99;
+      top: 22%;
+      height: 60%;
+      left: 9%;
+      width: auto;
+      img {
+        height: 100%;
+        
+      }
+    }
+  }
+}
+
+#sol, #toit {
   background-image: url('images/sol.jpg');
   bottom: 0;
   height: 40%;
@@ -1764,6 +2216,12 @@ a.bt-popup {
     margin: 0;
     overflow: scroll;
   }
+
+  #zone-menu .objet.retour {
+    font-size: 70%;
+    top: 3.5em;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1780,6 +2238,12 @@ a.bt-popup {
     .entre .gros-entre { height: 6em; }
   }
 
+}
+
+@media all and (max-height: 300px) {
+  html.scene {
+    height: calc(100% + 50px);
+  }
 }
 
 @media screen and (max-width: 420px) {
