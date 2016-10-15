@@ -10,19 +10,19 @@ get_header(); ?>
 </div>
 
 <div class="tous edcSetup">
-	<a href="http://lesenfantsdechienne.com/" title="O.P." class="objet opEntree">
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="O.P." class="objet opEntree">
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-op.png" alt="">
 	</a>
-	<a href="http://lesenfantsdechienne.com/" title="????" class="objet hangaround2Entree">
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="????" class="objet hangaround2Entree">
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-hangaround01.png" alt="">
 	</a>
-	<a href="http://lesenfantsdechienne.com/" title="Ti-Bras" class="objet tibrasEntree">
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="Ti-Bras" class="objet tibrasEntree">
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-tibras.png" alt="">
 	</a>
-	<a href="http://lesenfantsdechienne.com/" title="Le Baquet" class="objet lebaquetEntree">
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="Le Baquet" class="objet lebaquetEntree">
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-lebaquet.png" alt="">
 	</a>
-	<a href="http://lesenfantsdechienne.com/" title="????" class="objet hangaround1Entree">
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="????" class="objet hangaround1Entree">
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-hangaround02.png" alt="">
 	</a>
 
@@ -97,7 +97,7 @@ get_header(); ?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/table.png" alt="">
 		</div>
 
-		<a href="http://lesenfantsdechienne.com/" title="Chichi" class="objet chichiEntree">
+		<a target="_blank" href="http://lesenfantsdechienne.com/" title="Chichi" class="objet chichiEntree">
 			<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup1-entree-chichi.png" alt="">
 		</a>
 

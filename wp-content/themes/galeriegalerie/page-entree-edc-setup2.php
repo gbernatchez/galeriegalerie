@@ -23,19 +23,24 @@ get_header(); ?>
 		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup2-entree-stagiaire.png" alt="">
 	</div>
 
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="" class="objet drapeau1">
+		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup2-entree-drapeau-droit.png" alt="">
+	</a>
 
-setup2-entree-caissebieres.png
-setup2-entree-drapeau-droit.png
-setup2-entree-drapeau-gauche.png
-setup2-entree-tag.png
+	<a target="_blank" href="http://lesenfantsdechienne.com/" title="" class="objet drapeau2">
+		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup2-entree-drapeau-gauche.png" alt="">
+	</a>
+
+	<div class="objet tag">
+		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup2-entree-tag.png" alt="">
+	</div>
 
 </div>
 
 <div class="tous">
-	<div class="objet fontaine">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/fontaine-deco.gif" alt="">
+	<div class="objet caisseBiere">
+		<img src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/setup2-entree-caissebieres.png" alt="">
 	</div>
-
 </div>
 
 <div id="mur-fond">
@@ -130,7 +135,7 @@ setup2-entree-tag.png
 		</div>
 		<div data-name="chichi" class="texte texte-chichi">
 			<p>
-				<img class="alignleft size-full wp-image-265" src="<?php echo get_template_directory_uri(); ?>/edc/medias/chichi/visage-chichi.png" alt="" width="58" height="60" />
+				<img class="alignleft size-full wp-image-265" src="<?php echo get_template_directory_uri(); ?>/edc/medias/entree/visage-chichi.png" alt="" width="58" height="60" />
 				<strong>Chichi:</strong>
 			</p>
 			<p>Prends une carte, farme ta yeule!</p>

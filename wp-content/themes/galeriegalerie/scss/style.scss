@@ -312,7 +312,9 @@ iframe.fullsize {
 
 .page-template-page-entree-new,
 .page-template-page-entree-edc-setup1,
-.page-template-page-entree-edc-setup2 {
+.page-template-page-entree-edc-setup2,
+.page-template-page-entree-edc-setup3,
+.page-template-page-entree-edc-setup4 {
 
   .titre-expo {
     width: 33%;
@@ -497,6 +499,228 @@ iframe.fullsize {
     padding: 2em 0;
   }
 
+}
+
+
+form.ajax-auth {
+    display: none;
+    //z-index: 999;
+    
+    //width: 350px;
+    
+    //padding: 40px 25px 25px 25px;
+    //background-color: #FFFFFF;
+    //border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    //box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);   
+    color: #000;
+    font-size: 11px;
+}
+
+form.ajax-auth label {
+  display: block;
+  color: #000;
+}
+
+.ajax-auth h1, .ajax-auth h3{
+    /*font-family: 'Georgia', 'Times New Roman', Times, serif;
+    font-weight: 100;
+    color: #333333;    
+    line-height: 1; */
+}
+
+.ajax-auth h1{
+    /*font-size: 27px;
+    text-align: center;
+    margin: 0 0 20px 0; */
+}
+
+.ajax-auth h3{
+    font-size: 18px;
+    text-align: left;
+    margin: 0;
+}
+
+.ajax-auth h3 a{
+  color: #e25c4c;
+}
+
+.ajax-auth hr {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0 none;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.ajax-auth input#username,
+.ajax-auth input#password,
+.ajax-auth input#signonname,
+.ajax-auth input#email,
+.ajax-auth input#signonpassword,
+.ajax-auth input#password2{
+    border: 1px solid #EDEDED;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1) inset;
+    color: #333333;
+    font-size: 15px;
+    padding: 10px 10px 10px 13px;
+    width: 325px;
+    margin: 7px 0 20px 0;
+    background-color: #F9F9F9;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.ajax-auth input#username:focus,
+.ajax-auth input#password:focus,
+.ajax-auth input#signonname:focus,
+.ajax-auth input#email:focus,
+.ajax-auth input#signonpassword:focus,
+.ajax-auth input#password2:focus{
+    background-color: #FFF;
+}
+
+.ajax-auth label.error{
+  display: none !important;
+}
+
+.ajax-auth input.error{
+  border: 1px solid #FF0000 !important;
+}
+
+.ajax-auth input.submit_button{
+    font-size: 13px;
+    color: #FFF;
+    border: 1px solid #b34336;
+    background-color: #e25c4c;
+    border-radius: 3px;
+    text-shadow: 0 1px 0 #ba3f31;
+    padding: 9px 31px 9px 31px;
+    background: -moz-linear-gradient(top, #ea6656, #df5949);
+    border-top: 1px solid #bb483a;
+    border-bottom: 1px solid #a63b2e;
+    float: right;
+    box-shadow: 0 1px 0 #E87A6E inset;
+}
+
+.ajax-auth a{
+    text-decoration: none;
+}
+
+.ajax-auth a.close{
+    color: #DCDCDC;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.ajax-auth a.text-link{
+    color: #B4B2B2;
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+.ajax-auth p.status{
+    text-align: center;
+    margin: -15px 0 20px 0;
+  font-weight: 600;
+    display: none;
+}
+
+a.login_button{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 7px 5px 7px;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid #DCDCDC;
+    color: #333;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+/*.login_overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #F6F6F6;
+    opacity: 0.9;
+    position: fixed;
+    z-index: 998;
+} */
+
+.chatroom {
+  width: 100%;
+  background-color: #fff;
+  height: 600px;
+}
+
+#zone-chatroom {
+  .content {
+      right: 0;
+      transition: left .75s ease;
+    }
+  &.visible {
+    .content {
+      right: 0;
+      transition: left .75s ease;
+    }
+
+    .overlay {
+      display: block;
+    }
+  }
+
+  .content {
+    background-image: url('images/sol.jpg');
+    height: 100%;
+    //right: -25em;
+    padding: 3em 1em 1em;
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    transition: right .75s ease;
+    width: 25em;
+    z-index: 990;
+  }
+
+  .bt-chatroom {
+    background-image: url('images/sol.jpg');
+    box-shadow: -3px 3px 0 0 rgb($noir);
+    color: rgb($blanc);
+    font-weight: bold;
+    right: .5em;
+    padding: 0.15em 0.15em 0.15em 1.55em;
+    position: absolute;
+    //text-shadow: 1px -1px 1px $blanc;
+    top: .5em;
+    z-index: 999;
+
+    &:hover {
+      box-shadow: -2px 2px 0 0 rgb($noir);
+      margin-right: 1px;
+      margin-top: 1px;
+    }
+
+    &::before {
+      background: rgb($blanc);
+      box-shadow: 0 .25em 0 0 rgb($blanc), 0 .5em 0 0 rgb($blanc);
+      content: "";
+      height: .15em;
+      left: 0.25em;
+      position: absolute;
+      top: .4em;
+      width: 1em;
+    }
+  }
+
+  .overlay {
+    background-color: rgba(255, 255, 255, .5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 980;
+  }
 }
 
 #zone-menu {
@@ -746,7 +970,7 @@ iframe.fullsize {
   background-size: auto 100%;
   margin: 1em auto;
   padding: 1em;
-  width: 25em;
+  width: 18em;
   z-index: 20;
   box-sizing: border-box;
   border-radius: 1em;
@@ -1360,6 +1584,43 @@ a.bt-popup {
 
 .objet {
 
+  &.magicien {
+    z-index: 99;
+    left: 3em;
+    bottom: 0.5em;
+    width: 16.5em;
+  }
+  &.glitter {
+    z-index: 5;
+    width: 40em;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    bottom: 14em;
+  }
+  &.sakura {
+    z-index: 99;
+    left: 54em;
+    bottom: 22.7em;
+    width: 12.8em;
+  }
+  &.jackhammer {
+    z-index: 6;
+    left: 25em;
+    bottom: 13em;
+    width: 13em;
+  }
+  &.marteau {
+    z-index: 999;
+  }
+  &.marteau2 {
+    z-index: 99;
+    left: 33em;
+    top: 17.5em;
+    width: 15.25em;
+  }
+
   /*Entree 1*/
 
   &.opEntree {
@@ -1406,31 +1667,304 @@ a.bt-popup {
     z-index: 19;
     left: 28em;
     bottom: 13em;
+    a.bt-popup {
+      left: 2em;
+      width: 4em;
+      height: 4em;
+    }
   }
   &.chichiEntree2 {
-    width: 12em;
+    width: 10em;
     z-index: 99;
-    left: 15em;
+    left: 51em;
     bottom: 2em;
-    display: none;
+    a.bt-popup {
+      width: 4em;
+      height: 4em;
+      left: 3.75em;
+    }
   }
   &.tibrasEntree2 {
-    width: 12em;
+    width: 13em;
     z-index: 99;
-    left: 60em;
+    left: 62em;
     bottom: 5em;
+    a.bt-popup {
+      left: 2.5em;
+      width: 4em;
+      height: 4em;
+    }
   }
   &.lebaquetEntree2 {
-    width: 12em;
+    width: 7.5em;
     z-index: 19;
-    left: 15em;
-    bottom: 12em;
+    left: 10em;
+    bottom: 11em;
+    a.bt-popup {
+      left: 1.25em;
+      width: 4em;
+      height: 4em;
+      top: -0.5em;
+    }
   }
   &.stagiaireEntree2 {
+    width: 14em;
+    z-index: 99;
+    left: 39em;
+    bottom: 0em;
+    a.bt-popup {
+      left: 3.5em;
+      height: 4em;
+      width: 4em;
+    }
+  }
+
+  &.caisseBiere {
+    bottom: 1em;
+    left: 4em;
     width: 12em;
+    z-index: 99;
+  }
+
+  &.drapeau1 {
+    width: 8em;
+    z-index: 18;
+    left: 9em;
+    bottom: 24em;
+  }
+
+  &.drapeau2 {
+    width: 7em;
+    z-index: 18;
+    left: 59em;
+    bottom: 25em;
+  }
+
+  &.tag {
+    width: 15em;
+    z-index: 18;
+    left: 31em;
+    bottom: 27em;
+  }
+
+  &.lebaquetEntree3 {
+    width: 28em;
+    z-index: 99;
+    left: 50em;
+    bottom: 3em;
+    a.bt-popup {
+      top: 2em;
+      left: 1em;
+    }
+  }
+  &.groupe {
+    width: 37em;
+    z-index: 99;
+    left: 8em;
+    bottom: 0em;
+  }
+
+  &.balles {
+    width: 15em;
+    z-index: 99;
+    left: 10em;
+    bottom: 36em;
+  }
+  &.cartes {
+    width: 15em;
+    z-index: 99;
+    left: 11em;
+    bottom: 6em;
+  }
+  &.cashFeu {
+    width: 15em;
+    z-index: 99;
+    left: 53em;
+    bottom: 4em;
+  }
+
+  &.feuCash {
+    width: 10em;
+    z-index: 100;
+    left: 55.5em;
+    bottom: 6.5em;
+    opacity: 0.8;
+  }
+
+  /*Bureau*/
+
+  &.chichiBureau1 {
+    width: 13.5em;
+    z-index: 99;
+    left: 4em;
+    bottom: 1em;
+  }
+
+  &.tibrasBureau1 {
+    width: 15em;
+    z-index: 99;
+    left: 42em;
+    bottom: 4em;
+  }
+
+  &.cash1 {
+    width: 10em;
+    z-index: 99;
+    left: 42em;
+    bottom: 17em;
+  }
+  &.cash2 {
+    width: 12em;
+    z-index: 99;
+    left: 42em;
+    bottom: 4em;
+  }
+  &.cash3 {
+    width: 12em;
+    z-index: 100;
+    left: 6em;
+    bottom: 1em;
+  }
+  &.drapeauBureau {
+    width: 40em;
+    z-index: 99;
+    left: 4em;
+    bottom: 32em;
+  }
+  &.hangBureau2 {
+    width: 14em;
     z-index: 99;
     left: 55em;
     bottom: 2em;
+  }
+  &.hang2Bureau2 {
+    width: 9em;
+    z-index: 99;
+    left: 17em;
+    bottom: 4em;
+  }
+
+  &.hangBureau3 {
+    width: 25em;
+    z-index: 99;
+    left: 46em;
+    bottom: 4em;
+  }
+
+  &.renardBureau3 {
+    width: 10em;
+    z-index: 99;
+    left: 45em;
+    bottom: 2em;
+    a.bt-popup {
+      left: 1em;
+      height: 7em;
+      width: 7em;
+    }
+  }
+
+  &.vomi {
+    width: 17em;
+    z-index: 99;
+    left: 53em;
+    bottom: 2em;
+  }
+
+  &.couteau {
+    width: 5em;
+    z-index: 99;
+    left: 61em;
+    bottom: 34em;
+  }
+
+  /*Archives*/
+
+  &.sticker {
+    width: 2em;
+    z-index: 99;
+    left: 55em;
+    bottom: 32em;
+  }
+  &.opArchives1 {
+    width: 11.5em;
+    z-index: 99;
+    left: 21em;
+    bottom: 5em;
+    a.bt-popup {
+      left: 4.5em;
+    }
+  }
+  &.lebaquetArchives1 {
+    width: 45em;
+    z-index: 890;
+    left: 31em;
+    bottom: 2em;
+    pointer-events: none;
+  }
+  &.feuLivre {
+    width: 24em;
+    z-index: 980;
+    left: 3em;
+    bottom: 0em;
+    opacity: 0.95;
+  }
+  &.bieresArchives {
+    width: 7.5em;
+    z-index: 897;
+    left: 61em;
+    bottom: 0em;
+  }
+
+  &.bieresArchives2 {
+    width: 7.5em;
+    z-index: 99;
+    left: 5em;
+    bottom: 12em;
+  }
+
+  &.bieresArchives3 {
+    width: 7.5em;
+    z-index: 99;
+    left: 41em;
+    bottom: 13em;
+  }
+
+  &.caissesBieresArchives {
+    z-index: 99;
+    width: 20em;
+    bottom: -1em;
+    left: 3em;
+  }
+  &.filleSaoule {
+    width: 35em;
+    z-index: 99;
+    left: 27em;
+    bottom: 4em;
+  }
+  &.stagiaireArchive {
+    width: 15em;
+    z-index: 99;
+    left: 27em;
+    bottom: 1em;
+    a.bt-popup {
+      left: 3.75em;
+      height: 5em;
+      width: 5em;
+    }
+  }
+
+  &.tiVomi {
+    width: 7em;
+    z-index: 99;
+    left: 48em;
+    bottom: 6em;
+  }
+
+  &.beerBroke {
+    width: 8em;
+    z-index: 99;
+    left: 27em;
+    bottom: 3em;
   }
 
   /*Toilettes*/
@@ -1576,6 +2110,16 @@ a.bt-popup {
     right: 0;
     z-index: 10;
     width: 22.8125em;
+    img {
+      z-index: 20;
+    }
+    .marteau {
+      width: 16em;
+      z-index: 25;
+      top: 1.75em;
+      position: relative;
+      left: 5em;
+    }
   }
 
   &.chaise {
@@ -1596,6 +2140,7 @@ a.bt-popup {
     left: 4em;
     width: 8em;
     z-index: 99;
+    display: none;
   }
 
   &.baraeau {
@@ -2077,7 +2622,7 @@ a.bt-popup {
     }
 
     .texte {
-      height: 15em;
+      height: 12em;
       overflow: scroll;
       display: none;
       &.visible { display: block; }

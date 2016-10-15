@@ -44,6 +44,10 @@ jQuery(document).ready(function(){
         jQuery('#zone-menu').toggleClass('visible');
     });
 
+    jQuery('.bt-chatroom, #zone-chatroom .overlay').click(function(){
+        jQuery('#zone-chatroom').toggleClass('visible');
+    });
+
 });
 
 function resize() {
