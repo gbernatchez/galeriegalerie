@@ -216,6 +216,22 @@ body, html {
     }
 }
 
+@-webkit-keyframes bgVernissage {
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+@-moz-keyframes bgVernissage {
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+@keyframes bgVernissage { 
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+
 @-webkit-keyframes annaBg {
   0%{background-color: #ededed;}
   15%{background-color: #ebe6fc;}
@@ -348,16 +364,6 @@ iframe.fullsize {
 .page-template-page-entree-edc-setup3,
 .page-template-page-entree-edc-setup4 {
 
-  .titre-expo {
-    width: 33%;
-    margin: 1.5em auto 0 auto;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-
   .porte {
     box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 0);
     transition: box-shadow 0.5s ease;
@@ -399,20 +405,6 @@ iframe.fullsize {
       }
     }
 
-    /*h2 {
-      color: rgb($noir);
-      font-size: 1em;
-      margin-bottom: .5em;
-      text-align: center;
-      white-space: nowrap;
-      font-family: $signika;
-      text-transform: uppercase;
-      font-weight: bold;
-      position: absolute;
-      top: -1.5em;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } */
   }
 
 
@@ -471,7 +463,6 @@ iframe.fullsize {
   }
 
 }
-
 
 .page-template-page-preaccueil {
   background-image: url('images/carreaumarbre300px.jpg');
@@ -646,7 +637,7 @@ form.ajax-auth label {
     display: none;
 }
 */
-a.login_button{
+a.login_button {
    /* font-family: Arial, Helvetica, sans-serif;
     padding: 5px 7px 5px 7px;
     background-color: #FFF;
@@ -666,47 +657,141 @@ a.login_button{
     z-index: 998;
 } */
 
-.page-template-page-entree-chatroom {
-  #zone-chatroom {
-    z-index: 999;
+
+.page-template-page-entree-vernissage {
+
+  .objet.danseuse {
+    bottom: 2em;
+    left: 4em;
+    width: 16em;
+    z-index: 99;
   }
 
-  /*.objet.porte {
-    z-index: 998;
+  .objet.glitter {
+    z-index: 91;
   }
 
-  .ambiance {
-    z-index: 997;
+  .animal {
+    bottom: 7em;
+    left: 58em;
+    width: 8em;
+    z-index: 99;
+  }
+  .cake {
+    bottom: 11em;
+    left: 39em;
+    width: 3em;
+    z-index: 100;
   }
 
-  .objet.porte {
-    z-index: 998;
-  }*/
+  .cake1 {
+    bottom: 11.5em;
+    left: 45.5em;
+  }
+  .cake2 {
+    bottom: 10.5em;
+    left: 42em;
+  }
+  .cake3 {
+    bottom: 10em;
+    left: 37.5em;
+  }
+
+  .verre {
+    bottom: 12em;
+    left: 42em;
+    width: 5em;
+    z-index: 99;
+  }
 
 }
 
+.page-template-page-entree-vernissage-fini {
+  .objet.fontaine {
+    display: block;
+  }
+}
+
+.page-template-page-entree-vernissage,
+.page-template-page-entree-vernissage-fini {
+
+  .titre-expo {
+    width: 38%;
+    margin: 1em auto 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .objet.enseigne {
+    top: 5em;
+    width: 11em;
+  }
+
+  #sol {
+    height: 35%;
+  }
+
+  .mur.droit.sorti,
+  .mur.gauche.sorti {
+    bottom: 3.5%;
+  }
+
+  #mur-fond {
+    height: 65%;
+  }
+
+  .objet.plante {
+    bottom: 12em;
+  }
+
+  .porte {
+    img {
+      transition: box-shadow 0.5s ease;
+      box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 0);
+    }
+    &:hover img {
+      box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 1);
+    }
+
+    h2 {
+      color: rgb(137,117,255);
+      font-family: Arial black;
+      font-size: 0.8em;
+      margin-bottom: .5em;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      position: relative;
+      width: 12em;
+      left: -1.3em;
+      text-shadow: 1px 1px 1px #fff;
+    }
+  }
+}
+
 .ambiance {
-  //display: none;
   pointer-events: none;
   position: absolute;
-  z-index: 997;
+  z-index: 980;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
 
-  /*.lum {
+  .lum {
     width: 0;
     height: 0;
     top: 0em;
     position: absolute;
-    transform-origin: 0 0;
+    transform-origin: 50% 0;
 
     &.bleu {
       right: 10em;
-      border-left: 3em solid transparent;
-      border-right: 3em solid transparent;
+      border-left: 4em solid transparent;
+      border-right: 4em solid transparent;
       border-bottom: 39em solid rgba(0, 0, 255, 0.22);
       -webkit-animation: disco 5s ease infinite;
       -moz-animation: disco 5s ease infinite;
@@ -718,8 +803,8 @@ a.login_button{
 
     &.rouge {
       left: 10em;
-      border-left: 3em solid transparent;
-      border-right: 3em solid transparent;
+      border-left: 4em solid transparent;
+      border-right: 4em solid transparent;
       border-bottom: 39em solid rgba(255, 0, 0, 0.22);
       -webkit-animation: discorouge 5s ease infinite;
       -moz-animation: discorouge 5s ease infinite;
@@ -733,13 +818,84 @@ a.login_button{
       content: "";
       position: absolute;
       top: 38em;
-      left: -3em;
-      width: 6em;
+      left: -4em;
+      width: 8em;
       height: 2em;
       border-radius: 100%;
       display: block;
     }
-  }*/
+  }
+
+}
+
+.page-template-page-photobooth {
+  overflow: scroll;
+  -webkit-animation: bgVernissage 5s ease infinite;
+  -moz-animation: bgVernissage 5s ease infinite;
+  animation: bgVernissage 5s ease infinite;
+
+  #content {
+    padding: 2em 10em;
+  }
+
+  .missy {
+    position: fixed;
+    width: 10%;
+    top: 4em;
+    z-index: 999;
+  }
+  .stagiaire {
+    position: fixed;
+    width: 14%;
+    bottom: 1em;
+    right: 1em;
+    z-index: 999;
+  }
+
+  .intro-photobooth {
+    position: relative;
+    bottom: inherit;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 99;
+    .entry-content {
+      padding: 1.25em;
+      font-size: 89%;
+      .texte {
+        height: auto !important;
+      }
+    }
+  }
+
+  .wdi_feed_info {
+    display: none;
+  }
+
+  #wdi_feed_0 .wdi_feed_container,
+  #wdi_feed_0 .wdi_feed_wrapper,
+  #wdi_feed_0 .wdi_photo_wrap_inner {
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  #wdi_feed_0 .wdi_photo_wrap {
+    padding: 0;
+    width: 96%;
+    margin-bottom: 1em;
+  }
+
+  #wdi_feed_0 .wdi_feed_item {
+    width: 33%;
+  }
+
+  .titre-expo {
+    width: 75%;
+    margin: 2em auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 
 }
 
@@ -760,27 +916,49 @@ a.login_button{
 
 }
 
+.bt-chatroom {
+  background-color: pink;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0em;
+  right: 15em;
+  z-index: 999;
+  font-family: arial black;
+  font-size: 0.75em;
+  width: 19em;
+  text-align: center;
+}
+
 #zone-chatroom {
-  position: absolute;
-  height: 100%;
-  bottom: calc(-100% + 50px);
-  //bottom: 0;
+  position: fixed;
+  //height: 105%;
+  //bottom: calc(-100% + 50px);
+  bottom: -44em;
   right: 0;
-  width: 35em;
-  z-index: 888;
-  padding: 1em 1em 0 1em;
+  //width: 49%;
+  z-index: 998;
   transition: bottom 1s ease;
+
+  height: 44em;
+  width: 39em;
+
+  background-image: url('images/ipadchat.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 
   #login, #register {
     position: absolute;
-    width: 97%;
+    width: 100%;
     background-color: rgba(255, 0, 0, 0.83);
     padding: 0.5em;
-    height: 88.5%;
+    height: 88.6%;
   }
 
   &.visible {
-    bottom: 0;
+    bottom: -2em;
   }
 
   .login-zone {
@@ -789,30 +967,30 @@ a.login_button{
 
   .wcContainer {
     height: calc(100% - 60px);
+    border: none;
   }
 
   .wcContainer>.wcClear {
     display: none;
   } 
 
-  .bt-chatroom {
-    float: right;
-    background-color: pink;
-    padding: 0.5em 1em 0.5em 1.5em;
-    border-radius: 1.5em 0 0 0;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    height: 35px;
-  }
-
   .content {
     clear: both;
-    padding: 0.5em;
-    background-color: pink;
+    background-color: white;
     position: relative;
-    height: calc(100% - 35px);
     box-sizing: border-box;
+    margin: 9.5% 28.5% 0% 8.75%;
+    height: 72%;
+  }
+
+  .login-zone {
+    padding: 1em;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    line-height: 1.75;
+    font-family: arial black;
+    letter-spacing: 0.5px;
+    text-align: center;
   }
 
   .wcWindowTitle, .wcUsersCounter, .wcCustomizeButton {
@@ -850,28 +1028,6 @@ a.login_button{
     padding-top: 10px;
     box-sizing: border-box;
   }
-
-    //display: none;
-    /*background-image: url(images/ipad.png);
-    width: 45em;
-    position: absolute;
-    z-index: 999;
-    right: -10em;
-    height: 100%;
-    background-size: 100% auto;
-    bottom: -4em;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-
-
-    .content {
-      width: 18.35em;
-      left: 2.9em;
-      position: relative;
-      top: 4.25em;
-      height: 25.5em;
-    }*/
-
 
 }
 
@@ -1732,7 +1888,6 @@ a.bt-popup {
   }
 }
 
-/*EDC SETUP*/
 
 .objet {
 
@@ -1750,6 +1905,7 @@ a.bt-popup {
     margin-right: auto;
     right: 0;
     bottom: 14em;
+    pointer-events: none;
   }
   &.sakura {
     z-index: 99;
@@ -2243,7 +2399,7 @@ a.bt-popup {
     bottom: 11em;
     width: 7em;
     z-index: 20;
-    left: 31em;
+    left: 30em;
   }
 
   &.radio {
@@ -2917,6 +3073,10 @@ a.bt-popup {
   #zone-menu .objet.retour {
     font-size: 70%;
     top: 3.5em;
+  }
+
+  #zone-chatroom {
+    font-size: 75%;
   }
 
 }

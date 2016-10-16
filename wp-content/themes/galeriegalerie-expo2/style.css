@@ -345,6 +345,22 @@ body, html {
     }
 }
 
+@-webkit-keyframes bgVernissage {
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+@-moz-keyframes bgVernissage {
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+@keyframes bgVernissage { 
+  0%{background-color: #1e1e1e;}
+  50%{background-color: #000;}
+  100%{background-color: #1e1e1e;}
+}
+
 @-webkit-keyframes annaBg {
   0%{background-color: #ededed;}
   15%{background-color: #ebe6fc;}
@@ -471,32 +487,9 @@ iframe.fullsize {
   height: 100%;
 }
 
-.page-template-page-entree-new .titre-expo, .page-template-page-entree-edc-setup1 .titre-expo, .page-template-page-entree-edc-setup2 .titre-expo, .page-template-page-entree-edc-setup3 .titre-expo, .page-template-page-entree-edc-setup4 .titre-expo {
-  width: 33%;
-  margin: 1.5em auto 0 auto;
-}
-
-.page-template-page-entree-new .titre-expo img, .page-template-page-entree-edc-setup1 .titre-expo img, .page-template-page-entree-edc-setup2 .titre-expo img, .page-template-page-entree-edc-setup3 .titre-expo img, .page-template-page-entree-edc-setup4 .titre-expo img {
-  width: 100%;
-  height: auto;
-}
-
 .page-template-page-entree-new .porte, .page-template-page-entree-edc-setup1 .porte, .page-template-page-entree-edc-setup2 .porte, .page-template-page-entree-edc-setup3 .porte, .page-template-page-entree-edc-setup4 .porte {
   box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 0);
-  transition: box-shadow 0.5s ease;/*h2 {
-      color: rgb($noir);
-      font-size: 1em;
-      margin-bottom: .5em;
-      text-align: center;
-      white-space: nowrap;
-      font-family: $signika;
-      text-transform: uppercase;
-      font-weight: bold;
-      position: absolute;
-      top: -1.5em;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    } */
+  transition: box-shadow 0.5s ease;
 }
 
 .page-template-page-entree-new .porte:hover, .page-template-page-entree-edc-setup1 .porte:hover, .page-template-page-entree-edc-setup2 .porte:hover, .page-template-page-entree-edc-setup3 .porte:hover, .page-template-page-entree-edc-setup4 .porte:hover {
@@ -587,7 +580,6 @@ iframe.fullsize {
   height: 100%;
 }
 
-
 .page-template-page-preaccueil {
   background-image: url('images/carreaumarbre300px.jpg');
   background-repeat: repeat;
@@ -598,7 +590,6 @@ iframe.fullsize {
   text-transform: uppercase;
 
 }
-
 
 .page-template-page-preaccueil .peek-a-boo {
   background-image: url('images/peek-a-boo.gif');
@@ -612,7 +603,6 @@ iframe.fullsize {
   position: relative;
   z-index: 2;
 }
-
 
 .page-template-page-preaccueil h1 {
   background-image: url('images/galeriegalerie.gif');
@@ -628,7 +618,6 @@ iframe.fullsize {
   z-index: 1;
 }
 
-
 .page-template-page-preaccueil h2 {
   color: rgb(255,255,255);
   font-size: 1.25em;
@@ -639,14 +628,12 @@ iframe.fullsize {
   position: relative;
 }
 
-
 .page-template-page-preaccueil p {
   color: rgba(0, 0, 0, 0.5);
   font-size: 1.5em;
   font-weight: bolder;
   letter-spacing: 1px;
 }
-
 
 .page-template-page-preaccueil header {
   padding: 2em 0;
@@ -765,7 +752,7 @@ form.ajax-auth label {
     display: none;
 }
 */
-a.login_button{
+a.login_button {
    /* font-family: Arial, Helvetica, sans-serif;
     padding: 5px 7px 5px 7px;
     background-color: #FFF;
@@ -785,82 +772,249 @@ a.login_button{
     z-index: 998;
 } */
 
-.page-template-page-entree-chatroom {
 
-  /*.objet.porte {
-    z-index: 998;
-  }
-
-  .ambiance {
-    z-index: 997;
-  }
-
-  .objet.porte {
-    z-index: 998;
-  }*/
-
+.page-template-page-entree-vernissage .objet.danseuse {
+  bottom: 2em;
+  left: 4em;
+  width: 16em;
+  z-index: 99;
 }
 
-.page-template-page-entree-chatroom #zone-chatroom {
-  z-index: 999;
+
+.page-template-page-entree-vernissage .objet.glitter {
+  z-index: 91;
+}
+
+
+.page-template-page-entree-vernissage .animal {
+  bottom: 7em;
+  left: 58em;
+  width: 8em;
+  z-index: 99;
+}
+
+
+.page-template-page-entree-vernissage .cake {
+  bottom: 11em;
+  left: 39em;
+  width: 3em;
+  z-index: 100;
+}
+
+
+.page-template-page-entree-vernissage .cake1 {
+  bottom: 11.5em;
+  left: 45.5em;
+}
+
+
+.page-template-page-entree-vernissage .cake2 {
+  bottom: 10.5em;
+  left: 42em;
+}
+
+
+.page-template-page-entree-vernissage .cake3 {
+  bottom: 10em;
+  left: 37.5em;
+}
+
+
+.page-template-page-entree-vernissage .verre {
+  bottom: 12em;
+  left: 42em;
+  width: 5em;
+  z-index: 99;
+}
+
+.page-template-page-entree-vernissage-fini .objet.fontaine {
+  display: block;
+}
+
+.page-template-page-entree-vernissage .titre-expo, .page-template-page-entree-vernissage-fini .titre-expo {
+  width: 38%;
+  margin: 1em auto 0 auto;
+}
+
+.page-template-page-entree-vernissage .titre-expo img, .page-template-page-entree-vernissage-fini .titre-expo img {
+  width: 100%;
+  height: auto;
+}
+
+.page-template-page-entree-vernissage .objet.enseigne, .page-template-page-entree-vernissage-fini .objet.enseigne {
+  top: 5em;
+  width: 11em;
+}
+
+.page-template-page-entree-vernissage #sol, .page-template-page-entree-vernissage-fini #sol {
+  height: 35%;
+}
+
+.page-template-page-entree-vernissage .mur.droit.sorti, .page-template-page-entree-vernissage .mur.gauche.sorti, .page-template-page-entree-vernissage-fini .mur.droit.sorti, .page-template-page-entree-vernissage-fini .mur.gauche.sorti {
+  bottom: 3.5%;
+}
+
+.page-template-page-entree-vernissage #mur-fond, .page-template-page-entree-vernissage-fini #mur-fond {
+  height: 65%;
+}
+
+.page-template-page-entree-vernissage .objet.plante, .page-template-page-entree-vernissage-fini .objet.plante {
+  bottom: 12em;
+}
+
+.page-template-page-entree-vernissage .porte img, .page-template-page-entree-vernissage-fini .porte img {
+  transition: box-shadow 0.5s ease;
+  box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 0);
+}
+
+.page-template-page-entree-vernissage .porte:hover img, .page-template-page-entree-vernissage-fini .porte:hover img {
+  box-shadow: 0px 0px 3em 0em rgba(148, 68, 187, 1);
+}
+
+.page-template-page-entree-vernissage .porte h2, .page-template-page-entree-vernissage-fini .porte h2 {
+  color: rgb(137,117,255);
+  font-family: Arial black;
+  font-size: 0.8em;
+  margin-bottom: .5em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  width: 12em;
+  left: -1.3em;
+  text-shadow: 1px 1px 1px #fff;
 }
 
 .ambiance {
-  //display: none;
   pointer-events: none;
   position: absolute;
-  z-index: 997;
+  z-index: 980;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.5);
 
-  /*.lum {
-    width: 0;
-    height: 0;
-    top: 0em;
-    position: absolute;
-    transform-origin: 0 0;
+}
 
-    &.bleu {
-      right: 10em;
-      border-left: 3em solid transparent;
-      border-right: 3em solid transparent;
-      border-bottom: 39em solid rgba(0, 0, 255, 0.22);
-      -webkit-animation: disco 5s ease infinite;
-      -moz-animation: disco 5s ease infinite;
-      animation: disco 5s ease infinite;
-      &:after {
-        background-color: rgba(0, 0, 255, 0.22);
-      }
-    }
+.ambiance .lum {
+  width: 0;
+  height: 0;
+  top: 0em;
+  position: absolute;
+  transform-origin: 50% 0;
+}
 
-    &.rouge {
-      left: 10em;
-      border-left: 3em solid transparent;
-      border-right: 3em solid transparent;
-      border-bottom: 39em solid rgba(255, 0, 0, 0.22);
-      -webkit-animation: discorouge 5s ease infinite;
-      -moz-animation: discorouge 5s ease infinite;
-      animation: discorouge 5s ease infinite;
-      &:after {
-        background-color: rgba(255, 0, 0, 0.22);
-      }
-    }
+.ambiance .lum.bleu {
+  right: 10em;
+  border-left: 4em solid transparent;
+  border-right: 4em solid transparent;
+  border-bottom: 39em solid rgba(0, 0, 255, 0.22);
+  -webkit-animation: disco 5s ease infinite;
+  -moz-animation: disco 5s ease infinite;
+  animation: disco 5s ease infinite;
+}
 
-    &:after {
-      content: "";
-      position: absolute;
-      top: 38em;
-      left: -3em;
-      width: 6em;
-      height: 2em;
-      border-radius: 100%;
-      display: block;
-    }
-  }*/
+.ambiance .lum.bleu:after {
+  background-color: rgba(0, 0, 255, 0.22);
+}
 
+.ambiance .lum.rouge {
+  left: 10em;
+  border-left: 4em solid transparent;
+  border-right: 4em solid transparent;
+  border-bottom: 39em solid rgba(255, 0, 0, 0.22);
+  -webkit-animation: discorouge 5s ease infinite;
+  -moz-animation: discorouge 5s ease infinite;
+  animation: discorouge 5s ease infinite;
+}
+
+.ambiance .lum.rouge:after {
+  background-color: rgba(255, 0, 0, 0.22);
+}
+
+.ambiance .lum:after {
+  content: "";
+  position: absolute;
+  top: 38em;
+  left: -4em;
+  width: 8em;
+  height: 2em;
+  border-radius: 100%;
+  display: block;
+}
+
+.page-template-page-photobooth {
+  overflow: scroll;
+  -webkit-animation: bgVernissage 5s ease infinite;
+  -moz-animation: bgVernissage 5s ease infinite;
+  animation: bgVernissage 5s ease infinite;
+
+}
+
+.page-template-page-photobooth #content {
+  padding: 2em 10em;
+}
+
+.page-template-page-photobooth .missy {
+  position: fixed;
+  width: 10%;
+  top: 4em;
+  z-index: 999;
+}
+
+.page-template-page-photobooth .stagiaire {
+  position: fixed;
+  width: 14%;
+  bottom: 1em;
+  right: 1em;
+  z-index: 999;
+}
+
+.page-template-page-photobooth .intro-photobooth {
+  position: relative;
+  bottom: inherit;
+  width: 75%;
+  margin: 0 auto;
+  z-index: 99;
+}
+
+.page-template-page-photobooth .intro-photobooth .entry-content {
+  padding: 1.25em;
+  font-size: 89%;
+}
+
+.page-template-page-photobooth .intro-photobooth .entry-content .texte {
+  height: auto !important;
+}
+
+.page-template-page-photobooth .wdi_feed_info {
+  display: none;
+}
+
+.page-template-page-photobooth #wdi_feed_0 .wdi_feed_container, .page-template-page-photobooth #wdi_feed_0 .wdi_feed_wrapper, .page-template-page-photobooth #wdi_feed_0 .wdi_photo_wrap_inner {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.page-template-page-photobooth #wdi_feed_0 .wdi_photo_wrap {
+  padding: 0;
+  width: 96%;
+  margin-bottom: 1em;
+}
+
+.page-template-page-photobooth #wdi_feed_0 .wdi_feed_item {
+  width: 33%;
+}
+
+.page-template-page-photobooth .titre-expo {
+  width: 75%;
+  margin: 2em auto;
+}
+
+.page-template-page-photobooth .titre-expo img {
+  width: 100%;
+  height: auto;
 }
 
 .logged-in #zone-chatroom .login-zone {
@@ -875,51 +1029,51 @@ a.login_button{
   height: calc(100% - 100px) !important;
 }
 
+.bt-chatroom {
+  background-color: pink;
+  padding: 0.5em 1em 0.5em 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0em;
+  right: 15em;
+  z-index: 999;
+  font-family: arial black;
+  font-size: 0.75em;
+  width: 19em;
+  text-align: center;
+}
+
 #zone-chatroom {
-  position: absolute;
-  height: 100%;
-  bottom: calc(-100% + 50px);
-  //bottom: 0;
+  position: fixed;
+  //height: 105%;
+  //bottom: calc(-100% + 50px);
+  bottom: -44em;
   right: 0;
-  width: 35em;
-  z-index: 888;
-  padding: 1em 1em 0 1em;
+  //width: 49%;
+  z-index: 998;
   transition: bottom 1s ease;
 
-    //display: none;
-    /*background-image: url(images/ipad.png);
-    width: 45em;
-    position: absolute;
-    z-index: 999;
-    right: -10em;
-    height: 100%;
-    background-size: 100% auto;
-    bottom: -4em;
-    background-repeat: no-repeat;
-    background-position: bottom right;
+  height: 44em;
+  width: 39em;
 
-
-    .content {
-      width: 18.35em;
-      left: 2.9em;
-      position: relative;
-      top: 4.25em;
-      height: 25.5em;
-    }*/
-
+  background-image: url('images/ipadchat.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
 
 }
 
 #zone-chatroom #login, #zone-chatroom #register {
   position: absolute;
-  width: 97%;
+  width: 100%;
   background-color: rgba(255, 0, 0, 0.83);
   padding: 0.5em;
-  height: 88.5%;
+  height: 88.6%;
 }
 
 #zone-chatroom.visible {
-  bottom: 0;
+  bottom: -2em;
 }
 
 #zone-chatroom .login-zone {
@@ -928,30 +1082,30 @@ a.login_button{
 
 #zone-chatroom .wcContainer {
   height: calc(100% - 60px);
+  border: none;
 }
 
 #zone-chatroom .wcContainer>.wcClear {
   display: none;
 }
 
-#zone-chatroom .bt-chatroom {
-  float: right;
-  background-color: pink;
-  padding: 0.5em 1em 0.5em 1.5em;
-  border-radius: 1.5em 0 0 0;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  height: 35px;
-}
-
 #zone-chatroom .content {
   clear: both;
-  padding: 0.5em;
-  background-color: pink;
+  background-color: white;
   position: relative;
-  height: calc(100% - 35px);
   box-sizing: border-box;
+  margin: 9.5% 28.5% 0% 8.75%;
+  height: 72%;
+}
+
+#zone-chatroom .login-zone {
+  padding: 1em;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  line-height: 1.75;
+  font-family: arial black;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
 #zone-chatroom .wcWindowTitle, #zone-chatroom .wcUsersCounter, #zone-chatroom .wcCustomizeButton {
@@ -1859,7 +2013,6 @@ a.bt-popup {
   opacity: 1;
 }
 
-/*EDC SETUP*/
 
 .objet.magicien {
   z-index: 99;
@@ -1867,6 +2020,7 @@ a.bt-popup {
   bottom: 0.5em;
   width: 16.5em;
 }
+
 
 .objet.glitter {
   z-index: 5;
@@ -1876,7 +2030,9 @@ a.bt-popup {
   margin-right: auto;
   right: 0;
   bottom: 14em;
+  pointer-events: none;
 }
+
 
 .objet.sakura {
   z-index: 99;
@@ -1885,6 +2041,7 @@ a.bt-popup {
   width: 12.8em;
 }
 
+
 .objet.jackhammer {
   z-index: 6;
   left: 25em;
@@ -1892,9 +2049,11 @@ a.bt-popup {
   width: 13em;
 }
 
+
 .objet.marteau {
   z-index: 999;
 }
+
 
 .objet.marteau2 {
   z-index: 99;
@@ -1903,7 +2062,9 @@ a.bt-popup {
   width: 15.25em;
 }
 
+
 /*Entree 1*/
+
 
 .objet.opEntree {
   width: 10em;
@@ -1912,12 +2073,14 @@ a.bt-popup {
   bottom: 10em;
 }
 
+
 .objet.hangaround2Entree {
   width: 10em;
   z-index: 99;
   left: 62em;
   bottom: 5em;
 }
+
 
 .objet.chichiEntree {
   width: 7.5em;
@@ -1926,12 +2089,14 @@ a.bt-popup {
   bottom: 12em;
 }
 
+
 .objet.tibrasEntree {
   width: 11em;
   z-index: 99;
   left: 36em;
   bottom: 10em;
 }
+
 
 .objet.lebaquetEntree {
   width: 10.5em;
@@ -1940,6 +2105,7 @@ a.bt-popup {
   bottom: 0em;
 }
 
+
 .objet.hangaround1Entree {
   width: 12em;
   z-index: 99;
@@ -1947,7 +2113,9 @@ a.bt-popup {
   bottom: 2em;
 }
 
+
 /*Entree 2*/
+
 
 .objet.opEntree2 {
   width: 9em;
@@ -1956,11 +2124,13 @@ a.bt-popup {
   bottom: 13em;
 }
 
+
 .objet.opEntree2 a.bt-popup {
   left: 2em;
   width: 4em;
   height: 4em;
 }
+
 
 .objet.chichiEntree2 {
   width: 10em;
@@ -1969,11 +2139,13 @@ a.bt-popup {
   bottom: 2em;
 }
 
+
 .objet.chichiEntree2 a.bt-popup {
   width: 4em;
   height: 4em;
   left: 3.75em;
 }
+
 
 .objet.tibrasEntree2 {
   width: 13em;
@@ -1982,11 +2154,13 @@ a.bt-popup {
   bottom: 5em;
 }
 
+
 .objet.tibrasEntree2 a.bt-popup {
   left: 2.5em;
   width: 4em;
   height: 4em;
 }
+
 
 .objet.lebaquetEntree2 {
   width: 7.5em;
@@ -1995,12 +2169,14 @@ a.bt-popup {
   bottom: 11em;
 }
 
+
 .objet.lebaquetEntree2 a.bt-popup {
   left: 1.25em;
   width: 4em;
   height: 4em;
   top: -0.5em;
 }
+
 
 .objet.stagiaireEntree2 {
   width: 14em;
@@ -2009,11 +2185,13 @@ a.bt-popup {
   bottom: 0em;
 }
 
+
 .objet.stagiaireEntree2 a.bt-popup {
   left: 3.5em;
   height: 4em;
   width: 4em;
 }
+
 
 .objet.caisseBiere {
   bottom: 1em;
@@ -2022,12 +2200,14 @@ a.bt-popup {
   z-index: 99;
 }
 
+
 .objet.drapeau1 {
   width: 8em;
   z-index: 18;
   left: 9em;
   bottom: 24em;
 }
+
 
 .objet.drapeau2 {
   width: 7em;
@@ -2036,12 +2216,14 @@ a.bt-popup {
   bottom: 25em;
 }
 
+
 .objet.tag {
   width: 15em;
   z-index: 18;
   left: 31em;
   bottom: 27em;
 }
+
 
 .objet.lebaquetEntree3 {
   width: 28em;
@@ -2050,10 +2232,12 @@ a.bt-popup {
   bottom: 3em;
 }
 
+
 .objet.lebaquetEntree3 a.bt-popup {
   top: 2em;
   left: 1em;
 }
+
 
 .objet.groupe {
   width: 37em;
@@ -2062,12 +2246,14 @@ a.bt-popup {
   bottom: 0em;
 }
 
+
 .objet.balles {
   width: 15em;
   z-index: 99;
   left: 10em;
   bottom: 36em;
 }
+
 
 .objet.cartes {
   width: 15em;
@@ -2076,12 +2262,14 @@ a.bt-popup {
   bottom: 6em;
 }
 
+
 .objet.cashFeu {
   width: 15em;
   z-index: 99;
   left: 53em;
   bottom: 4em;
 }
+
 
 .objet.feuCash {
   width: 10em;
@@ -2091,7 +2279,9 @@ a.bt-popup {
   opacity: 0.8;
 }
 
+
 /*Bureau*/
+
 
 .objet.chichiBureau1 {
   width: 13.5em;
@@ -2100,12 +2290,14 @@ a.bt-popup {
   bottom: 1em;
 }
 
+
 .objet.tibrasBureau1 {
   width: 15em;
   z-index: 99;
   left: 42em;
   bottom: 4em;
 }
+
 
 .objet.cash1 {
   width: 10em;
@@ -2114,12 +2306,14 @@ a.bt-popup {
   bottom: 17em;
 }
 
+
 .objet.cash2 {
   width: 12em;
   z-index: 99;
   left: 42em;
   bottom: 4em;
 }
+
 
 .objet.cash3 {
   width: 12em;
@@ -2128,12 +2322,14 @@ a.bt-popup {
   bottom: 1em;
 }
 
+
 .objet.drapeauBureau {
   width: 40em;
   z-index: 99;
   left: 4em;
   bottom: 32em;
 }
+
 
 .objet.hangBureau2 {
   width: 14em;
@@ -2142,12 +2338,14 @@ a.bt-popup {
   bottom: 2em;
 }
 
+
 .objet.hang2Bureau2 {
   width: 9em;
   z-index: 99;
   left: 17em;
   bottom: 4em;
 }
+
 
 .objet.hangBureau3 {
   width: 25em;
@@ -2156,6 +2354,7 @@ a.bt-popup {
   bottom: 4em;
 }
 
+
 .objet.renardBureau3 {
   width: 10em;
   z-index: 99;
@@ -2163,11 +2362,13 @@ a.bt-popup {
   bottom: 2em;
 }
 
+
 .objet.renardBureau3 a.bt-popup {
   left: 1em;
   height: 7em;
   width: 7em;
 }
+
 
 .objet.vomi {
   width: 17em;
@@ -2176,6 +2377,7 @@ a.bt-popup {
   bottom: 2em;
 }
 
+
 .objet.couteau {
   width: 5em;
   z-index: 99;
@@ -2183,7 +2385,9 @@ a.bt-popup {
   bottom: 34em;
 }
 
+
 /*Archives*/
+
 
 .objet.sticker {
   width: 2em;
@@ -2192,6 +2396,7 @@ a.bt-popup {
   bottom: 32em;
 }
 
+
 .objet.opArchives1 {
   width: 11.5em;
   z-index: 99;
@@ -2199,9 +2404,11 @@ a.bt-popup {
   bottom: 5em;
 }
 
+
 .objet.opArchives1 a.bt-popup {
   left: 4.5em;
 }
+
 
 .objet.lebaquetArchives1 {
   width: 45em;
@@ -2211,6 +2418,7 @@ a.bt-popup {
   pointer-events: none;
 }
 
+
 .objet.feuLivre {
   width: 24em;
   z-index: 980;
@@ -2219,12 +2427,14 @@ a.bt-popup {
   opacity: 0.95;
 }
 
+
 .objet.bieresArchives {
   width: 7.5em;
   z-index: 897;
   left: 61em;
   bottom: 0em;
 }
+
 
 .objet.bieresArchives2 {
   width: 7.5em;
@@ -2233,12 +2443,14 @@ a.bt-popup {
   bottom: 12em;
 }
 
+
 .objet.bieresArchives3 {
   width: 7.5em;
   z-index: 99;
   left: 41em;
   bottom: 13em;
 }
+
 
 .objet.caissesBieresArchives {
   z-index: 99;
@@ -2247,12 +2459,14 @@ a.bt-popup {
   left: 3em;
 }
 
+
 .objet.filleSaoule {
   width: 35em;
   z-index: 99;
   left: 27em;
   bottom: 4em;
 }
+
 
 .objet.stagiaireArchive {
   width: 15em;
@@ -2261,11 +2475,13 @@ a.bt-popup {
   bottom: 1em;
 }
 
+
 .objet.stagiaireArchive a.bt-popup {
   left: 3.75em;
   height: 5em;
   width: 5em;
 }
+
 
 .objet.tiVomi {
   width: 7em;
@@ -2274,6 +2490,7 @@ a.bt-popup {
   bottom: 6em;
 }
 
+
 .objet.beerBroke {
   width: 8em;
   z-index: 99;
@@ -2281,7 +2498,9 @@ a.bt-popup {
   bottom: 3em;
 }
 
+
 /*Toilettes*/
+
 
 .objet.shireMotos {
   width: 75em;
@@ -2290,6 +2509,7 @@ a.bt-popup {
   bottom: -1em;
 }
 
+
 .objet.motos {
   width: 75em;
   z-index: 970;
@@ -2297,7 +2517,9 @@ a.bt-popup {
   bottom: -1em;
 }
 
+
 /*404*/
+
 
 .objet.beerBroke {
   width: 6em;
@@ -2306,12 +2528,14 @@ a.bt-popup {
   bottom: 5em;
 }
 
+
 .objet.poubEnFeu {
   width: 8em;
   z-index: 99;
   left: 35.5em;
   bottom: 7em;
 }
+
 
 .objet.stickers {
   width: 35em;
@@ -2320,12 +2544,14 @@ a.bt-popup {
   bottom: 21em;
 }
 
+
 .objet.chichi {
   width: 13em;
   z-index: 970;
   left: 51em;
   bottom: 5em;
 }
+
 
 .objet.feuPoub {
   width: 11em;
@@ -2334,6 +2560,7 @@ a.bt-popup {
   bottom: 15em;
   opacity: 0.95;
 }
+
 
 .objet.edc404 {
   width: 29em;
@@ -2418,7 +2645,7 @@ a.bt-popup {
   bottom: 11em;
   width: 7em;
   z-index: 20;
-  left: 31em;
+  left: 30em;
 }
 
 
@@ -3138,6 +3365,10 @@ a.bt-popup {
   #zone-menu .objet.retour {
     font-size: 70%;
     top: 3.5em;
+  }
+
+  #zone-chatroom {
+    font-size: 75%;
   }
 
 }

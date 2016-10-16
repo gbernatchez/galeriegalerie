@@ -1,16 +1,8 @@
 <?php 
 /*
-* Template name: Entrée Chatroom
+* Template name: Entrée Chatroom vernissage fini
 */
 get_header(); ?>
-
-<?php echo get_template_part('chatroom'); ?>
-
-<div class="ambiance">
-	<div class="dark"></div>
-	<div class="lum rouge"></div>
-	<div class="lum bleu"></div>
-</div>
 
 <div class="mur gauche sorti">
 	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_flechecorriige.png">
@@ -23,31 +15,31 @@ get_header(); ?>
 	</div>
 </div>
 
-
 <div id="mur-fond">
 
 	<div class="tous">
 
-		<h1 class="visuallyhidden">Exposition Collective</h1>
-
-		<div class="inntro">
-			☆ Exposition à venir ☆ <br>
-			♡ 27 octobre 2016 ♡
-		</div>
+		<h1 class="titre-expo">
+			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/siliconvallee.png">
+			<span class="visuallyhidden">Silicon Vallée</span>
+		</h1>
 
 		<div class="objet enseigne">
-			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/enseigne.png">
+			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/neon_logo_rose.png">
 		</div>
 
 		<div id="porte1" class="objet porte click">
+			<h2>Marie Darsigny</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte1.jpg" alt="">
 		</div>
 
 		<div id="porte2" class="objet porte click">
+			<h2>Jess Mac</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte2.jpg" alt="">
 		</div>
 
 		<div id="porte3" class="objet porte click">
+			<h2>Émilie Gervais <br>& Laure Bardou</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg" alt="">
 		</div>
 

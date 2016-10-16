@@ -1,8 +1,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/chatroom.css">
 
-<div id="zone-chatroom">
+<div class="bt-chatroom">Ouvrir le chat roume</div>
 
-	<div class="bt-chatroom">CHAT ROUME</div>
+<div id="zone-chatroom">
 
 	<div class="content entry-content">
 

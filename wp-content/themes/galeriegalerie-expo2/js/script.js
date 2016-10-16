@@ -46,10 +46,13 @@ jQuery(document).ready(function(){
 
     jQuery('.bt-chatroom').click(function(){
         jQuery('#zone-chatroom').toggleClass('visible');
+        var text = jQuery('.bt-chatroom').text();
+        jQuery('.bt-chatroom').text(text == "Fermer le chat roume" ? "Ouvrir le chat roume" : "Fermer le chat roume");
     });
 
     if(jQuery('body').hasClass('logged-in')) {
-        jQuery('#zone-chatroom').addClass('visible');
+       // jQuery('#zone-chatroom').addClass('visible');
+        //jQuery('.bt-chatroom').text("Fermer le chat roume");
     }
 
 });
