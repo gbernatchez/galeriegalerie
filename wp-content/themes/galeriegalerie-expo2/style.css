@@ -893,7 +893,7 @@ a.login_button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
 
 }
 
@@ -944,7 +944,25 @@ a.login_button {
   display: block;
 }
 
-.page-template-page-photobooth {
+.page-template-page-expo-jess-mac {
+  background-image: url('images/ciel.gif');
+  background-repeat: repeat;
+  overflow: scroll;
+
+}
+
+.page-template-page-expo-jess-mac .img {
+  width: 40%;
+  margin: 6em 5%;
+  float: left;
+}
+
+.page-template-page-expo-jess-mac .img img {
+  width: 100%;
+  height: auto;
+}
+
+.page-template-page-party-roume {
   overflow: scroll;
   -webkit-animation: bgVernissage 5s ease infinite;
   -moz-animation: bgVernissage 5s ease infinite;
@@ -952,18 +970,25 @@ a.login_button {
 
 }
 
-.page-template-page-photobooth #content {
+.page-template-page-party-roume #content {
   padding: 2em 10em;
+  height: 100em;
+  overflow: scroll;
 }
 
-.page-template-page-photobooth .missy {
+.page-template-page-party-roume #content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.page-template-page-party-roume .missy {
   position: fixed;
   width: 10%;
-  top: 4em;
+  top: 8em;
   z-index: 999;
 }
 
-.page-template-page-photobooth .stagiaire {
+.page-template-page-party-roume .stagiaire {
   position: fixed;
   width: 14%;
   bottom: 1em;
@@ -971,7 +996,7 @@ a.login_button {
   z-index: 999;
 }
 
-.page-template-page-photobooth .intro-photobooth {
+.page-template-page-party-roume .intro-photobooth {
   position: relative;
   bottom: inherit;
   width: 75%;
@@ -979,42 +1004,42 @@ a.login_button {
   z-index: 99;
 }
 
-.page-template-page-photobooth .intro-photobooth .entry-content {
+.page-template-page-party-roume .intro-photobooth .entry-content {
   padding: 1.25em;
   font-size: 89%;
 }
 
-.page-template-page-photobooth .intro-photobooth .entry-content .texte {
+.page-template-page-party-roume .intro-photobooth .entry-content .texte {
   height: auto !important;
 }
 
-.page-template-page-photobooth .wdi_feed_info {
+.page-template-page-party-roume .titre-expo {
+  width: 75%;
+  margin: 2em auto;
+}
+
+.page-template-page-party-roume .titre-expo img {
+  width: 100%;
+  height: auto;
+}
+
+.page-template-page-party-roume .wdi_feed_info {
   display: none;
 }
 
-.page-template-page-photobooth #wdi_feed_0 .wdi_feed_container, .page-template-page-photobooth #wdi_feed_0 .wdi_feed_wrapper, .page-template-page-photobooth #wdi_feed_0 .wdi_photo_wrap_inner {
+.page-template-page-party-roume #wdi_feed_0 .wdi_feed_container, .page-template-page-party-roume #wdi_feed_0 .wdi_feed_wrapper, .page-template-page-party-roume #wdi_feed_0 .wdi_photo_wrap_inner {
   background-color: transparent !important;
   border: none !important;
 }
 
-.page-template-page-photobooth #wdi_feed_0 .wdi_photo_wrap {
+.page-template-page-party-roume #wdi_feed_0 .wdi_photo_wrap {
   padding: 0;
   width: 96%;
   margin-bottom: 1em;
 }
 
-.page-template-page-photobooth #wdi_feed_0 .wdi_feed_item {
+.page-template-page-party-roume #wdi_feed_0 .wdi_feed_item {
   width: 33%;
-}
-
-.page-template-page-photobooth .titre-expo {
-  width: 75%;
-  margin: 2em auto;
-}
-
-.page-template-page-photobooth .titre-expo img {
-  width: 100%;
-  height: auto;
 }
 
 .logged-in #zone-chatroom .login-zone {
@@ -1027,6 +1052,45 @@ a.login_button {
 
 .logged-in #zone-chatroom .wcMessages, .logged-in #zone-chatroom .wcUsersList {
   height: calc(100% - 100px) !important;
+}
+
+.logged-in #zone-chatroom .login-zone {
+  padding: 1em;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  line-height: 1.75;
+  font-family: VT323;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-bottom: thin dashed #b911a9;
+}
+
+/*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+
+.logged-in #zone-chatroom .login-zone a {
+  border-bottom: none;
+}
+
+.logged-in #zone-chatroom .login-zone .edit-profil, .logged-in #zone-chatroom .login-zone .logout {
+  position: absolute;
+  font-family: VT323;
+  letter-spacing: 1px;
+  color: #b911a9;
+  text-transform: uppercase;
+  //text-shadow: 1px 1px 1px #000;
+  font-size: 15px;
+  top: -1px;
+  text-decoration: none;
+}
+
+.logged-in #zone-chatroom .login-zone .edit-profil {
+  right: 5px;
+}
+
+.logged-in #zone-chatroom .login-zone .logout {
+  left: 5px;
 }
 
 .bt-chatroom {
@@ -1061,15 +1125,112 @@ a.login_button {
   background-image: url('images/ipadchat.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
+  //bottom: -2em;
 
 }
 
 #zone-chatroom #login, #zone-chatroom #register {
   position: absolute;
   width: 100%;
-  background-color: rgba(255, 0, 0, 0.83);
-  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em 2em;
   height: 88.6%;
+}
+
+#zone-chatroom #login p, #zone-chatroom #register p {
+  width: 75%;
+  margin: 0 auto 2.5em auto;
+}
+
+#zone-chatroom #login .text-link, #zone-chatroom #register .text-link {
+  text-align: center;
+}
+
+#zone-chatroom #login .button, #zone-chatroom #register .button {
+  border-radius: 8px;
+  box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+  transition: box-shadow .1s ease-in-out;
+  color: #fff;
+  width: 15em;
+  margin: 0 auto 2em auto;
+}
+
+#zone-chatroom #login .button input, #zone-chatroom #register .button input {
+  border: none;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  background-color: #ec528d;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+  background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  border-radius: 8px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+  font-family: 'Princess Sofia', cursive;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+  transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+  font-size: 1.75em;
+  width: 100%;
+}
+
+#zone-chatroom #login .button:hover input, #zone-chatroom #register .button:hover input {
+  background-color: #ec6a9c;
+  text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+}
+
+#zone-chatroom #login h2, #zone-chatroom #login label, #zone-chatroom #register h2, #zone-chatroom #register label {
+  font-family: 'Princess Sofia', cursive;
+}
+
+#zone-chatroom #login h2, #zone-chatroom #register h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+#zone-chatroom #login p.status, #zone-chatroom #register p.status {
+  margin: 0;
+  position: absolute;
+  color: #b911a9;
+  top: 4.25em;
+  text-align: center;
+  width: 100%;
+  left: 0;
+}
+
+#zone-chatroom #login label, #zone-chatroom #register label {
+  font-size: 1.4em;
+}
+
+#zone-chatroom #login label.error, #zone-chatroom #register label.error {
+  position: absolute;
+  font-family: arial;
+  font-size: 1em;
+  color: #b911a9;
+}
+
+#zone-chatroom #login input[type="text"], #zone-chatroom #login input[type="password"], #zone-chatroom #login input[type="email"], #zone-chatroom #register input[type="text"], #zone-chatroom #register input[type="password"], #zone-chatroom #register input[type="email"] {
+  padding: 0.25em;
+  border: thin dashed #b911a9;
+  background-color: #fff;
+  font-size: 2em;
+  width: 100%;
+  height: 1.5em;
+  box-sizing: border-box;
+}
+
+#zone-chatroom #login input[type="text"]:focus, #zone-chatroom #login input[type="password"]:focus, #zone-chatroom #login input[type="email"]:focus, #zone-chatroom #register input[type="text"]:focus, #zone-chatroom #register input[type="password"]:focus, #zone-chatroom #register input[type="email"]:focus {
+  outline: 0;
+}
+
+#zone-chatroom #login input:-webkit-autofill, #zone-chatroom #register input:-webkit-autofill {
+  background: #fff !important;
+}
+
+#zone-chatroom #login input[type="password"], #zone-chatroom #register input[type="password"] {
+  -webkit-text-security: square;
 }
 
 #zone-chatroom.visible {
@@ -1094,8 +1255,10 @@ a.login_button {
   background-color: white;
   position: relative;
   box-sizing: border-box;
-  margin: 9.5% 28.5% 0% 8.75%;
-  height: 72%;
+  margin: 9% 28.5% 0% 8.75%;
+  height: 72.5%;
+  border: thin dashed #b911a9;
+  overflow: scroll;
 }
 
 #zone-chatroom .login-zone {
@@ -1103,19 +1266,59 @@ a.login_button {
   font-size: 0.7em;
   text-transform: uppercase;
   line-height: 1.75;
-  font-family: arial black;
+  font-family: VT323;
   letter-spacing: 0.5px;
   text-align: center;
+  //color: #fff;
+  font-size: 15px;
+  color: #b911a9;
+}
+
+/*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+
+#zone-chatroom .login-zone p {
+  line-height: 1.25;
+  position: relative;
+  top: -3px;
+}
+
+#zone-chatroom .login-zone a {
+  font-family: VT323;
+  letter-spacing: 1px;
+  color: #b911a9;
+  text-transform: uppercase;
+  //text-shadow: 1px 1px 1px #000;
+  font-size: 15px;
+  text-decoration: none;
+  border-bottom: thin dashed #b911a9;
 }
 
 #zone-chatroom .wcWindowTitle, #zone-chatroom .wcUsersCounter, #zone-chatroom .wcCustomizeButton {
   display: none;
 }
 
+#zone-chatroom .wcContainer .wcMessages .wcMessage, #zone-chatroom .wcContainer .wcUsersList {/*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    border: none;
+    background-size: auto 100%;*/
+  background-color: #fff;
+}
+
+#zone-chatroom .wcContainer .wcMessages .wcMessage {
+  border-top: thin dashed #b911a9;
+}
+
+#zone-chatroom .wcMessage .wcImage {
+  display: block;
+  margin-top: 5px;
+}
+
 #zone-chatroom .wcCustomizationsPanel {
   display: block !important;
   background-color: transparent;
-  padding-top: 10px;
+  padding: 5px 0 0 0;
 }
 
 #zone-chatroom .wcMessages {
@@ -1133,14 +1336,125 @@ a.login_button {
 }
 
 #zone-chatroom .wcUsersList {
-  border-left: 1px solid red !important;
+  border-left: 1px dashed #b911a9 !important;
   padding: 0.5em;
+}
+
+#zone-chatroom input[type="text"] {
+  height: 31px;
+  line-height: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+  text-decoration: none;
+  color: #b911a9;
+  font-size: 1.25em;
+  letter-spacing: 1px;
+  font-family: VT323;
+  //text-shadow: 1px 1px 1px #000;
+}
+
+#zone-chatroom .wcControlsButtonsIncluded input.wcSubmitButton, #zone-chatroom .wcControlsButtonsIncluded a.wcToolButton, #zone-chatroom .wcContainer a.wcInsertEmoticonButton {
+  //position: relative;
+  //top: 35px;
+  border-radius: 0;
+  font-size: 18px;
+  //margin-left: 7px;
+  color: #b911a9;
+  letter-spacing: 1px;
+  font-family: VT323;
+  //text-shadow: 1px 1px 1px #000;
+  border: thin dashed #b911a9;
+}
+
+#zone-chatroom .wcControlsButtonsIncluded input.wcSubmitButton {
+  background: transparent;
+}
+
+#zone-chatroom .wcControlsButtonsIncluded a.wcAddImageAttachment {
+  background: url('images/camera.png') center center no-repeat;
+  //border: none;
+}
+
+#zone-chatroom .wcControlsButtonsIncluded a.wcInsertEmoticonButton {
+  background: url('images/emoticon.png') center center no-repeat;
+  //border: none;
+}
+
+#zone-chatroom .wcControlsButtonsIncluded .wcInputContainer {
+  //width: 92%;
+  //position: absolute;
+}
+
+#zone-chatroom .wcCustomizationsProperty {
+  //position: relative;
+  //top: 2.75em;
+}
+
+#zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageUser {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: VT323;
+  font-size: 1.25em;
+  letter-spacing: 1px;
+  color: #b911a9;
+  //text-shadow: 1px 1px 1px #000;
+}
+
+#zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeHour, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeDate, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageContent, #zone-chatroom .wcContainer .wcUsersList .wcUserInChannel {
+  color: #b911a9;
+  font-family: VT323;
+  font-size: 16px;
+}
+
+#zone-chatroom .wcContainer .wcMessages .avatar {
+  width: 20%;
+  float: left;
+}
+
+#zone-chatroom .wcContainer .wcMessages .avatar img {
+  width: 90%;
+  height: auto;
+}
+
+#zone-chatroom .wcContainer .wcMessages .reste {
+  width: 80%;
+  float: right;
 }
 
 #zone-chatroom .wcControls {
   height: 100px;
   padding-top: 10px;
   box-sizing: border-box;
+  font-family: VT323;/*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+  padding: 1em;
+  width: 100%;
+  z-index: 20;
+  color: #b911a9;
+  border-top: none;
+  background: linear-gradient(to bottom,  #ffffff 0%,rgba(185, 17, 169, 0.19) 100%);
+  border-top: thin dashed #b911a9;
+  //box-shadow: inset 0.1em 0.1em 1em -0.1em #b911a9;
+}
+
+#zone-chatroom .wcControls .wcCurrentUserName, #zone-chatroom .wcControls .wcCustomizations label {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #b911a9;
+  font-family: VT323;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  //text-shadow: 1px 1px 1px #000;
+}
+
+#zone-chatroom .wcControls .wcCustomizations label {
+  font-size: 1em;
+  font-weight: lighter;
 }
 
 #zone-menu.visible .menu-content {
@@ -2011,6 +2325,14 @@ a.bt-popup {
 
 .titre-pdf:hover {
   opacity: 1;
+}
+
+
+.objet.ballons {
+  left: 11.5em;
+  top: -24em;
+  width: 6em;
+  z-index: 999;
 }
 
 

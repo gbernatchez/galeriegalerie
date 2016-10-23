@@ -677,6 +677,7 @@ a.login_button {
     width: 8em;
     z-index: 99;
   }
+
   .cake {
     bottom: 11em;
     left: 39em;
@@ -779,7 +780,7 @@ a.login_button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.3);
 
   .lum {
     width: 0;
@@ -828,7 +829,25 @@ a.login_button {
 
 }
 
-.page-template-page-photobooth {
+.page-template-page-expo-jess-mac {
+  background-image: url('images/ciel.gif');
+  background-repeat: repeat;
+  overflow: scroll;
+
+  .img {
+    width: 40%;
+    margin: 6em 5%;
+    float: left;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+.page-template-page-party-roume {
   overflow: scroll;
   -webkit-animation: bgVernissage 5s ease infinite;
   -moz-animation: bgVernissage 5s ease infinite;
@@ -836,12 +855,19 @@ a.login_button {
 
   #content {
     padding: 2em 10em;
+    height: 100em;
+    overflow: scroll;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .missy {
     position: fixed;
     width: 10%;
-    top: 4em;
+    top: 8em;
     z-index: 999;
   }
   .stagiaire {
@@ -867,6 +893,15 @@ a.login_button {
     }
   }
 
+  .titre-expo {
+    width: 75%;
+    margin: 2em auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .wdi_feed_info {
     display: none;
   }
@@ -888,15 +923,6 @@ a.login_button {
     width: 33%;
   }
 
-  .titre-expo {
-    width: 75%;
-    margin: 2em auto;
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
 }
 
 .logged-in #zone-chatroom {
@@ -912,6 +938,41 @@ a.login_button {
   .wcMessages,
   .wcUsersList {
     height: calc(100% - 100px) !important;
+  }
+
+  .login-zone {
+    padding: 1em;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    line-height: 1.75;
+    font-family: VT323;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    border-bottom: thin dashed #b911a9;
+
+    /*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+
+    a {
+      border-bottom: none;
+    }
+
+    .edit-profil, .logout {
+      position: absolute;
+      font-family: VT323;
+      letter-spacing: 1px;
+      color: #b911a9;
+      text-transform: uppercase;
+      //text-shadow: 1px 1px 1px #000;
+      font-size: 15px;
+      top: -1px;
+      text-decoration: none;
+    }
+
+    .edit-profil { right: 5px; }
+    .logout { left: 5px; }
   }
 
 }
@@ -948,13 +1009,112 @@ a.login_button {
   background-image: url('images/ipadchat.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
+  //bottom: -2em;
 
   #login, #register {
     position: absolute;
     width: 100%;
-    background-color: rgba(255, 0, 0, 0.83);
-    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1em 2em;
     height: 88.6%;
+
+    p {
+      width: 75%;
+      margin: 0 auto 2.5em auto;
+    }
+
+    .text-link {
+      text-align: center;
+    }
+
+    .button {
+      border-radius: 8px;
+      box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+      transition: box-shadow .1s ease-in-out;
+      color: #fff;
+      width: 15em;
+      margin: 0 auto 2em auto;
+
+      input {
+        border: none;
+        color: #fff;
+        display: inline-block;
+        padding: 0.5em 0.75em;
+        background-color: #ec528d;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+        background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+        background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+        background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+        border-radius: 8px;
+        box-shadow: inset 0 -1px 1px rgba(255, 255, 255, .15);
+        font-family: 'Princess Sofia', cursive;
+        line-height: 1;
+        text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+        transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+        font-size: 1.75em;
+        width: 100%;
+      }
+
+      &:hover input {
+        background-color: #ec6a9c;
+        text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+      }
+    }
+
+
+    h2, label {
+      font-family: 'Princess Sofia', cursive;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-align: center;
+    }
+
+    p.status {
+      margin: 0;
+      position: absolute;
+      color: #b911a9;
+      top: 4.25em;
+      text-align: center;
+      width: 100%;
+      left: 0;
+    }
+
+    label {
+      font-size: 1.4em;
+    }
+
+    label.error {
+      position: absolute;
+      font-family: arial;
+      font-size: 1em;
+      color: #b911a9;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+      padding: 0.25em;
+      border: thin dashed #b911a9;
+      background-color: #fff;
+      font-size: 2em;
+      width: 100%;
+      height: 1.5em;
+      box-sizing: border-box;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    input:-webkit-autofill {
+      background: #fff !important;
+    }
+
+    input[type="password"] {
+      -webkit-text-security: square;
+    }
+
   }
 
   &.visible {
@@ -979,8 +1139,10 @@ a.login_button {
     background-color: white;
     position: relative;
     box-sizing: border-box;
-    margin: 9.5% 28.5% 0% 8.75%;
-    height: 72%;
+    margin: 9% 28.5% 0% 8.75%;
+    height: 72.5%;
+    border: thin dashed #b911a9;
+    overflow: scroll;
   }
 
   .login-zone {
@@ -988,19 +1150,61 @@ a.login_button {
     font-size: 0.7em;
     text-transform: uppercase;
     line-height: 1.75;
-    font-family: arial black;
+    font-family: VT323;
     letter-spacing: 0.5px;
     text-align: center;
+    //color: #fff;
+    font-size: 15px;
+    color: #b911a9;
+
+    /*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+
+    p {
+      line-height: 1.25;
+      position: relative;
+      top: -3px;
+    }
+
+    a {
+      font-family: VT323;
+      letter-spacing: 1px;
+      color: #b911a9;
+      text-transform: uppercase;
+      //text-shadow: 1px 1px 1px #000;
+      font-size: 15px;
+      text-decoration: none;
+      border-bottom: thin dashed #b911a9;
+    }
   }
 
   .wcWindowTitle, .wcUsersCounter, .wcCustomizeButton {
     display: none;
   }
 
+  .wcContainer .wcMessages .wcMessage,
+  .wcContainer .wcUsersList {
+    /*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    border: none;
+    background-size: auto 100%;*/
+    background-color: #fff;
+  }
+
+  .wcContainer .wcMessages .wcMessage {
+    border-top: thin dashed #b911a9;
+  }
+
+  .wcMessage .wcImage {
+    display: block;
+    margin-top: 5px;
+  }
+
   .wcCustomizationsPanel {
     display: block !important;
     background-color: transparent;
-    padding-top: 10px;
+    padding: 5px 0 0 0;
   }
 
   .wcMessages {
@@ -1019,14 +1223,134 @@ a.login_button {
   }
 
   .wcUsersList {
-    border-left: 1px solid red !important;
+    border-left: 1px dashed #b911a9 !important;
     padding: 0.5em;
+  }
+
+  input[type="text"] {
+    height: 31px;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    text-decoration: none;
+    color: #b911a9;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    font-family: VT323;
+    //text-shadow: 1px 1px 1px #000;
+  }
+
+  .wcControlsButtonsIncluded input.wcSubmitButton,
+  .wcControlsButtonsIncluded a.wcToolButton,
+  .wcContainer a.wcInsertEmoticonButton {
+    //position: relative;
+    //top: 35px;
+    border-radius: 0;
+    font-size: 18px;
+    //margin-left: 7px;
+    color: #b911a9;
+    letter-spacing: 1px;
+    font-family: VT323;
+    //text-shadow: 1px 1px 1px #000;
+    border: thin dashed #b911a9;
+  }
+
+
+  .wcControlsButtonsIncluded input.wcSubmitButton {
+    background: transparent;
+  }
+
+  .wcControlsButtonsIncluded a.wcAddImageAttachment {
+    background: url('images/camera.png') center center no-repeat;
+    //border: none;
+  }
+
+  .wcControlsButtonsIncluded a.wcInsertEmoticonButton {
+    background: url('images/emoticon.png') center center no-repeat;
+    //border: none;
+  }
+
+  .wcControlsButtonsIncluded .wcInputContainer {
+    //width: 92%;
+    //position: absolute;
+  }
+
+  .wcCustomizationsProperty {
+    //position: relative;
+    //top: 2.75em;
+  }
+
+  .wcContainer .wcMessages .wcMessage .wcMessageUser {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: VT323;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    color: #b911a9;
+    //text-shadow: 1px 1px 1px #000;
+  }
+
+  .wcContainer .wcMessages .wcMessage .wcMessageTimeHour,
+  .wcContainer .wcMessages .wcMessage .wcMessageTimeDate,
+  .wcContainer .wcMessages .wcMessage .wcMessageContent,
+  .wcContainer .wcUsersList .wcUserInChannel {
+    color: #b911a9;
+    font-family: VT323;
+    font-size: 16px;
+  }
+
+  .wcContainer .wcMessages {
+    .avatar {
+      width: 20%;
+      float: left;
+      img {
+        width: 90%;
+        height: auto;
+      }
+    }
+    .reste {
+        width: 80%;
+        float: right;
+    }
   }
 
   .wcControls {
     height: 100px;
     padding-top: 10px;
     box-sizing: border-box;
+    font-family: VT323;
+    /*background-image: url('images/gradient-dialogue.jpg');
+    background-repeat: repeat-x;
+    background-size: auto 100%;*/
+    padding: 1em;
+    width: 100%;
+    z-index: 20;
+    color: #b911a9;
+    border-top: none;
+    background: linear-gradient(to bottom,  #ffffff 0%,rgba(185, 17, 169, 0.19) 100%);
+    border-top: thin dashed #b911a9;
+    //box-shadow: inset 0.1em 0.1em 1em -0.1em #b911a9;
+
+    .wcCurrentUserName,
+    .wcCustomizations label {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #b911a9;
+      font-family: VT323;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      //text-shadow: 1px 1px 1px #000;
+    }
+
+    .wcCustomizations label {
+      font-size: 1em;
+      font-weight: lighter;
+    }
+
   }
 
 }
@@ -1890,6 +2214,13 @@ a.bt-popup {
 
 
 .objet {
+
+  &.ballons {
+    left: 11.5em;
+    top: -24em;
+    width: 6em;
+    z-index: 999;
+  }
 
   &.magicien {
     z-index: 99;

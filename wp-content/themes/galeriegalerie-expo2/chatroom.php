@@ -9,11 +9,11 @@
 		<div class="login-zone">
 
 			<?php if (is_user_logged_in()) { ?>
-				<a href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a>
-
+				<a class="logout" href="<?php echo wp_logout_url( get_permalink() ); ?>">Déconnexion</a>
+				<a target="_blank" class="edit-profil" href="<?php echo get_edit_user_link(); ?>">Modifier mon profil</a>
 			<?php } else { get_template_part('ajax', 'auth'); ?>            	
-				Tu veux te joindre au chat ? <a class="login_button" id="show_login" href="">Connecte toi</a>, ou 
-				<a class="login_button" id="show_signup" href="">inscrit toi</a> ! Tu vas voir, c'est facile ;)
+				<p>Tu veux te joindre au chat ? <a class="login_button" id="show_login" href="">Connecte toi</a>, ou 
+				<a class="login_button" id="show_signup" href="">inscrit toi</a> ! Tu vas voir, c'est facile ;)</p>
 			<?php } ?>
 
 		</div>
@@ -21,30 +21,48 @@
 		<div class="form-chat">
 		  
 			<form id="login" class="ajax-auth group" action="login" method="post">
-	   			<h1>Login</h1>
+	   			<h2>Connexion</h2>
 	    		<p class="status"></p>  
 	   			<?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
-				<label for="username">Username</label>
-				<input id="username" type="text" class="required" name="username">
-				<label for="password">Password</label>
-				<input id="password" type="password" class="required" name="password">
-				<a class="text-link" href="<?php echo wp_lostpassword_url(); ?>">Lost password?</a>
-	    		<input class="submit_button" type="submit" value="LOGIN"> 
+				<p>
+					<label for="username">Username</label>
+					<input id="username" type="text" class="required" name="username">
+				</p>
+				<p>
+					<label for="password">Mot de passe</label>
+					<input id="password" type="password" class="required" name="password">
+				</p>
+				<p class="button">
+	    			<input class="submit_button" type="submit" value="Connexion">
+	    		</p>
+	    		<p style="text-align:center">
+	    			<a target="_blank" class="text-link" href="<?php echo wp_lostpassword_url(); ?>">Mot de passe oublié ?</a>
+				</p>
 			</form>
 	 
 			<form id="register" class="ajax-auth group"  action="register" method="post">
-			    <h1>Signup</h1>
+			    <h2>Création de compte</h2>
 			    <p class="status"></p>
 			    <?php wp_nonce_field('ajax-register-nonce', 'signonsecurity'); ?>         
-			    <label for="signonname">Username</label>
-			    <input id="signonname" type="text" name="signonname" class="required">
-			    <label for="email">Email</label>
-			    <input id="email" type="text" class="required email" name="email">
-			    <label for="signonpassword">Password</label>
-			    <input id="signonpassword" type="password" class="required" name="signonpassword" >
-			    <label for="password2">Confirm Password</label>
-			    <input type="password" id="password2" class="required" name="password2">
-			    <input class="submit_button" type="submit" value="SIGNUP">   
+			    <p>
+			    	<label for="signonname">Username</label>
+			    	<input id="signonname" type="text" name="signonname" class="required">
+			   	</p>
+			   	<p>
+			    	<label for="email">Courriel</label>
+			    	<input id="email" type="text" class="required email" name="email">
+			    </p>
+			    <p>
+			    	<label for="signonpassword">Mot de passe</label>
+			    	<input id="signonpassword" type="password" class="required" name="signonpassword" >
+			    </p>
+			    <p>
+			    	<label for="password2">Confirmer le mot de passe</label>
+			    	<input type="password" id="password2" class="required" name="password2">
+			    </p>
+			    <p class="button">
+			    	<input class="submit_button" type="submit" value="Créer mon compte">   
+				</p>
 			</form>
 
 		</div>

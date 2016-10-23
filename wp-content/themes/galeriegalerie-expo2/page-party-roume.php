@@ -1,6 +1,6 @@
 <?php 
 /*
-* Template name: Photobooth
+* Template name: Party Roume
 */
 get_header(); 
 ?>
@@ -26,7 +26,7 @@ get_header();
 
 	<div id="content">
 
-	<?php echo wdi_feed(array('id'=>'1')); ?>
+		<?php echo wdi_feed(array('id'=>'1')); ?>
 
 	</div><!-- #content -->
 

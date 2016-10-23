@@ -242,6 +242,34 @@ button, input[type=button] {
   transition: left .75s ease;
 }
 
+
+.marie {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.marie .bt-ok,
+.marie .bt-cancel {
+  background-color: rgba(255, 0, 0, 0.5);
+  width: 12%;
+  height: 7%;
+  display: block;
+  position: absolute;
+  top: 45%;
+}
+
+.marie .bt-ok {
+  left: 26%;
+}
+
+.marie .bt-cancel {
+  right: 28%;
+}
+
+
 @media screen and (max-width: 1024px) {
 
   #zone-menu .menu-content {

@@ -4,6 +4,14 @@
 */
 get_header(); ?>
 
+<?php echo get_template_part('chatroom'); ?>
+
+<div class="ambiance">
+	<div class="dark"></div>
+	<div class="lum bleu"></div>
+	<div class="lum rouge"></div>
+</div>
+
 <div class="mur gauche sorti">
 	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
 	<a title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>"></a>

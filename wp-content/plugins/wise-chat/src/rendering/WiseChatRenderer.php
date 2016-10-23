@@ -5,6 +5,7 @@
  *
  * @author Marcin Ławrowski <marcin@kaine.pl>
  */
+require_once ABSPATH . '/wp-content/plugins/avatar-manager/avatar-manager.php';
 class WiseChatRenderer {
 	
 	/**
@@ -145,6 +146,7 @@ class WiseChatRenderer {
 			'showBanButton' => $this->options->isOptionEnabled('enable_message_actions') && $this->usersDAO->hasCurrentWpUserRight('ban_user'),
 			'messageTimeUTC' => gmdate('c', $message->getTime()),
 			'renderedUserName' => $this->getRenderedUserName($message),
+			'renderedAvatar' => $this->getRenderedAvatar($message),
 			'messageContent' => $this->getRenderedMessageContent($message),
 			'isTextColorSet' => $this->options->isOptionEnabled('allow_change_text_color') &&
 								$message->getUser() !== null &&
@@ -272,6 +274,16 @@ class WiseChatRenderer {
 	 */
 	public function getRenderedUserName($message) {
 		return $this->getRenderedUserNameInternal($message->getUserName(), $message->getWordPressUserId(), $message->getUser());
+	}
+
+
+	public function getRenderedAvatar($message) {
+		//return $this->getRenderedUserNameInternal($message->getUserName(), $message->getWordPressUserId(), $message->getUser());
+		//$args = get_avatar_data( $message->getWordPressUserId() );
+
+  		//$args = get_avatar($message->getWordPressUserId());
+  		$args = get_avatar($message->getWordPressUserId());
+    	return $args;
 	}
 	
 	/**

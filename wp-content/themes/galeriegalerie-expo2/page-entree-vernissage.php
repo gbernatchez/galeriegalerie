@@ -13,8 +13,8 @@ get_header(); ?>
 </div>
 
 <div class="mur gauche sorti">
-	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_flechecorriige.png">
-	<a title="<?php echo get_the_title(11); ?>" href="<?php echo get_permalink(11); ?>"></a>
+	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/partyroume-fleche.png">
+	<a title="<?php echo get_the_title(503); ?>" href="<?php echo get_permalink(503); ?>"></a>
 </div>
 
 <div class="tous">
@@ -90,11 +90,13 @@ get_header(); ?>
 	<a title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>"></a>
 </div>
 
-
-
 <div id="sol" class="coin-gauche coin-droit">
 
 	<div class="tous">
+
+		<div class="objet ballons">
+			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/balloon-rose.gif">
+		</div>
 
 		<div class="objet plante">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/plante.png" alt="">
@@ -104,8 +106,8 @@ get_header(); ?>
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/chaise.png">
 		</div>
 
-		<a href="http://www.galeriegalerieweb.com/siliconvallee.pdf" target="_blank" title="Visionner le pamphlet" class="objet pamphlet click">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/expo_encours_02.gif" alt="">
+		<a href="http://www.galeriegalerieweb.com/silicon_vallee.pdf" target="_blank" title="Visionner le pamphlet" class="objet pamphlet click">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/silicon_vallee.gif" alt="Silicon Vallée">
 			<img alt="" class="titre-pdf" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
 		</a>
 

@@ -2,10 +2,15 @@
 <html lang="fr-CA">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
+<?php if (is_page(503)): ?>
+<meta http-equiv="refresh" content="15">
+<?php endif; ?>
+
 <title><?php wp_title(); ?></title>
 <meta name="viewport" content="width=device-width, user-scalable=yes">
 <meta name="google-site-verification" content="j3ROK83z7hREDudn60BKYnAWmWStZwhNN1dMEcYRH3o" />
 <link href='https://fonts.googleapis.com/css?family=Signika:600,300%7CVT323' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <!--[if lt IE 9]>
   <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
@@ -49,6 +54,12 @@ if ( function_exists('yoast_breadcrumb') ) {
 
     <?php if(is_page(40)) : ?>
       <a class="objet retour click" title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/retourflehce.png">
+      </a>
+    <?php endif; ?>
+
+    <?php if(is_page(503)) : ?>
+      <a class="objet retour click" title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>">
         <img src="<?php echo get_template_directory_uri(); ?>/images/retourflehce.png">
       </a>
     <?php endif; ?>

@@ -51,8 +51,10 @@ jQuery(document).ready(function(){
     });
 
     if(jQuery('body').hasClass('logged-in')) {
-       // jQuery('#zone-chatroom').addClass('visible');
-        //jQuery('.bt-chatroom').text("Fermer le chat roume");
+        jQuery('#zone-chatroom').addClass('visible');
+        jQuery('.bt-chatroom').text("Fermer le chat roume");
+        jQuery('#zone-chatroom input[type="text"].wcInput').focus();
+
     }
 
 });
