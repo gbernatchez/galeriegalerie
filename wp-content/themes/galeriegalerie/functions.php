@@ -9,6 +9,34 @@ function setup() {
 	
 }
 
+if(is_admin()){
+    //if(!current_user_can('administrator')) {
+        remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+        add_action( 'personal_options', 'prefix_hide_personal_options' );
+    //}
+}
+function prefix_hide_personal_options() {
+?>
+<script type="text/javascript">
+jQuery('#wpwrap').css('opacity', 0);
+  jQuery(document).ready(function( $ ){
+    jQuery("#adminmenumain").hide();
+    jQuery('#wpcontent, #wpfooter').css('margin-left', 0);
+    jQuery("#your-profile .user-url-wrap").hide();
+    jQuery("#your-profile .user-description-wrap").hide();
+    jQuery("#your-profile .show-admin-bar").hide();
+    jQuery("#screen-meta-links").hide();
+    jQuery('#user-profile-picture .desciption').hide();
+    jQuery("#wp-admin-bar-wp-logo").hide();
+    jQuery('#your-profile .user-sessions-wrap').hide();
+    jQuery('#avatar-manager tbody tr:first').hide();
+    jQuery("#wpfooter").hide();
+    jQuery("#wpwrap").css('opacity', 1);
+  });
+</script>
+<?php
+}
+
 add_action( 'init', 'init' );
 function init() {
 	register_nav_menus( array( 'navigation' => 'Navigation' ) );
@@ -70,4 +98,30 @@ function init() {
 
 }
 
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/Matisse_01.gif);
+            padding-bottom: 30px;
+            height: 104px;
+            width: 160px;
+            background-size: 160px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+function is_child($page_id_or_slug) { 
+    global $post; 
+    if(!is_int($page_id_or_slug)) {
+        $page = get_page_by_path($page_id_or_slug);
+        $page_id_or_slug = $page->ID;
+    } 
+    if(is_page() && $post->post_parent == $page_id_or_slug ) {
+            return true;
+    } else { 
+            return false; 
+    }
+}
 

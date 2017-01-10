@@ -28,12 +28,12 @@ get_header(); ?>
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/neon_logo_rose.png">
 		</div>
 
-		<a href="<?php echo get_permalink(496); ?>" id="porte1" class="objet porte click">
+		<a href="http://www.galeriegalerieweb.com/marie-darsigny/felicitations" id="porte1" class="objet porte click">
 			<h2>Marie Darsigny</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte1.jpg" alt="">
 		</a>
 
-		<a href="<?php echo get_permalink(527); ?>" id="porte2" class="objet porte click">
+		<a href="http://www.galeriegalerieweb.com/jess-mac" id="porte2" class="objet porte click">
 			<h2>Jess Mac</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte2.jpg" alt="">
 		</a>
@@ -41,7 +41,7 @@ get_header(); ?>
 		<a onClick="MyWindow=window.open('http://backdoortrojan.net','Backdoortrojan.net', 'location=no,top=100,status=no,menubar=no,left=50,width=1000,height=1000'); return false;" href="http://backdoortrojan.net" id="porte3" class="objet porte click">
 			<h2>Émilie Gervais <br>& Laure Bardou</h2>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/porte3.jpg" alt="">
-		</div>
+		</a>
 
 	</div>
 
@@ -54,7 +54,7 @@ get_header(); ?>
 
 <div id="sol" class="coin-gauche coin-droit">
 
-	<div class="tous">
+	<div class="collectonme tous">
 
 		<div class="objet ballons">
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/balloon-rose.gif">
@@ -69,7 +69,7 @@ get_header(); ?>
 		</div>
 
 		<a href="http://www.galeriegalerieweb.com/silicon_vallee.pdf" target="_blank" title="Visionner le pamphlet" class="objet pamphlet click">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/silicon_vallee.gif" alt="Silicon Vallée">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/iconepdf.png" alt="Silicon Vallée">
 			<img alt="" class="titre-pdf" src="<?php echo get_template_directory_uri(); ?>/images/flece_solo.png">
 		</a>
 

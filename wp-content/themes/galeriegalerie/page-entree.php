@@ -23,9 +23,10 @@ get_header(); ?>
 		<h1 class="visuallyhidden">Exposition Collective</h1>
 
 		<div class="inntro">
-			♡☆ Exposition à venir, fin octobre 2016 ☆♡
+			B34U D3551N<br>
+			<div id="getting-started"></div>
 		</div>
-
+		
 		<div class="objet enseigne">
 			<img alt="" src="<?php echo get_template_directory_uri(); ?>/images/enseigne.png">
 		</div>

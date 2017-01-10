@@ -43,7 +43,7 @@ public function display(){
 			<div class="clear"></div>
 			<?php switch($feed_row['feed_display_view']){
 			case 'load_more_btn':{
-				?><div class="wdi_load_more"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Load More',"wdi");?></div></div></div></div></div><?php
+				?><div class="wdi_load_more"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Plusssss',"wdi");?></div></div></div></div></div><?php
 				break;
 			}
 			case 'pagination':{

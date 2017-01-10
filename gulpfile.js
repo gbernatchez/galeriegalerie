@@ -14,7 +14,7 @@ var preprocessor = [
 
 var path = {
 	//styles_theme: 'wp-content/themes/galeriegalerie/',
-    styles_theme: 'wp-content/themes/galeriegalerie-expo2/',
+    styles_theme: 'wp-content/themes/galeriegalerie/',
 }
 
 gulp.task('styles', function() {

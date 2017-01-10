@@ -169,7 +169,7 @@ function WiseChatMessages(options, messagesHistory, messageAttachments, dateAndT
 	function setIdleState() {
 		submitButton.attr('disabled', null);
 		submitButton.attr('readonly', null);
-		messagesInput.attr('placeholder', options.messages.hint_message);
+		messagesInput.attr('placeholder', 'À quoi tu penses ?');
 		messagesInput.attr('readonly', null);
 		progressBar.hide();
 	};
@@ -388,7 +388,7 @@ function WiseChatMessages(options, messagesHistory, messageAttachments, dateAndT
 		var textarea = jQuery('<textarea />');
 		textarea.hide();
 		textarea.addClass('wcInput');
-		textarea.attr('placeholder', options.messages.hint_message);
+		textarea.attr('placeholder', 'À quoi tu penses ?');
 		textarea.attr('maxlength', options.messageMaxLength);
 		textarea.css('overflow-y', 'hidden');
 		textarea.keypress(onInputKeyPress);
@@ -415,7 +415,7 @@ function WiseChatMessages(options, messagesHistory, messageAttachments, dateAndT
 		var input = jQuery('<input />');
 		input.hide();
 		input.addClass('wcInput');
-		input.attr('placeholder', options.messages.hint_message);
+		input.attr('placeholder', 'À quoi tu penses ?');
 		input.attr('maxlength', options.messageMaxLength);
 		input.attr('type', 'text');
 		input.attr('title', options.messages.messageInputTitle);

@@ -3,7 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <?php if (is_page(503)): ?>
-<meta http-equiv="refresh" content="15">
+<meta http-equiv="refresh" content="30">
 <?php endif; ?>
 
 <title><?php wp_title(); ?></title>
@@ -11,12 +11,14 @@
 <meta name="google-site-verification" content="j3ROK83z7hREDudn60BKYnAWmWStZwhNN1dMEcYRH3o" />
 <link href='https://fonts.googleapis.com/css?family=Signika:600,300%7CVT323' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet">
+<link href="<?php echo get_template_directory_uri(); ?>/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <!--[if lt IE 9]>
   <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
 <?php 
 wp_enqueue_script('jquery');
+wp_enqueue_script('snowfall', get_template_directory_uri() . '/js/snowfall.jquery.js');
 //wp_enqueue_script('movingText', get_template_directory_uri() . '/js/movingText.js');
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js');
 wp_head(); 
@@ -33,11 +35,11 @@ wp_head();
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<?php if(!is_page('accueil') && !is_home() && !(is_page_template('page.php'))) : ?>
+<?php/* if(!is_page('accueil') && !is_home() && !(is_page_template('page.php'))) : ?>
 
   <div class="landscape-gif"><img alt="rotate" src="<?php echo get_template_directory_uri(); ?>/images/rotate.gif"></div>
 
-<?php endif; ?>
+<?php endif;*/ ?>
 
 <?php
 if ( function_exists('yoast_breadcrumb') ) {
@@ -58,8 +60,14 @@ if ( function_exists('yoast_breadcrumb') ) {
       </a>
     <?php endif; ?>
 
-    <?php if(is_page(503)) : ?>
+    <?php if(is_page(734) || is_page(713) || is_page(702) || is_page(703) || is_page(704) || is_page(705) || is_page(706)) : ?>
       <a class="objet retour click" title="<?php echo get_the_title(7); ?>" href="<?php echo get_permalink(7); ?>">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/retourflehce.png">
+      </a>
+    <?php endif; ?>
+
+    <?php if(is_child('archives')) : ?>
+      <a class="objet retour click" title="<?php echo get_the_title(7); ?>" href="/archives">
         <img src="<?php echo get_template_directory_uri(); ?>/images/retourflehce.png">
       </a>
     <?php endif; ?>
@@ -71,5 +79,8 @@ if ( function_exists('yoast_breadcrumb') ) {
   </div><!-- #zone-menu -->
 
 <?php endif; ?>
+
+<div class="test-container">
+  
 
 <div id="page">

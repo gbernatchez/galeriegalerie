@@ -216,6 +216,28 @@ body, html {
   100%{top: 7em;}
 }
 
+@-webkit-keyframes flecheparty {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@-moz-keyframes flecheparty {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@keyframes flecheparty { 
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+
+.party-fleche {
+  -webkit-animation: flecheparty 2.5s ease infinite;
+  -moz-animation: flecheparty 2.5s ease infinite;
+  animation: flecheparty 2.5s ease infinite;
+}
+
 @-webkit-keyframes big {
   0%{background-size: 90% auto }
   50%{background-size: 75% auto }
@@ -392,6 +414,12 @@ body, html {
   100%{background-color: #ededed;}
 }
 
+.snowfall-flakes {
+  box-shadow: rgba(85, 85, 85, 0.75) 1px 1px 1px !important;
+}
+
+.test-container { position:absolute; top:0; }
+
 html.scene.mobile {
   height: calc(100% + 30px);
 }
@@ -419,7 +447,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body.page-template-default, body.page-template-page-finder {
+body.page-template-default, body.page-template-page-archives, body.page-template-page-archive-single, body.page-template-page-revue-de-presse {
   background-size: contain;
   height: auto;
   position: relative;
@@ -430,8 +458,8 @@ body.page-template-default {
   background-image: url('images/carreaumarbre300px.jpg');
 }
 
-body.page-template-page-finder {
-  background-image: url('images/marbre.jpg');
+body.page-template-page-archives, body.page-template-page-archive-single, body.page-template-page-revue-de-presse {
+  background-image: url('images/marbre-noir.png');
 }
 
 body.page-template-page-expo-anna {
@@ -888,7 +916,7 @@ a.login_button {
 .ambiance {
   pointer-events: none;
   position: absolute;
-  z-index: 980;
+  z-index: 977;
   top: 0;
   left: 0;
   width: 100%;
@@ -955,6 +983,7 @@ a.login_button {
   width: 40%;
   margin: 6em 5%;
   float: left;
+  height: 22em;
 }
 
 .page-template-page-expo-jess-mac .img img {
@@ -962,51 +991,132 @@ a.login_button {
   height: auto;
 }
 
+.guirlande {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 970;
+    background-image: url(images/guirlandes.gif);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 6em;
+    margin-top: 2em;
+    background-size: auto 100%;
+
+}
+
 .page-template-page-party-roume {
   overflow: scroll;
   -webkit-animation: bgVernissage 5s ease infinite;
   -moz-animation: bgVernissage 5s ease infinite;
   animation: bgVernissage 5s ease infinite;
+  position: relative;
+
+
 
 }
 
 .page-template-page-party-roume #content {
-  padding: 2em 10em;
-  height: 100em;
-  overflow: scroll;
+  padding: 2em 10%;
 }
 
-.page-template-page-party-roume #content iframe {
-  width: 100%;
-  height: 100%;
+.page-template-page-party-roume .objet {
+  z-index: 979;
 }
 
-.page-template-page-party-roume .missy {
-  position: fixed;
-  width: 10%;
-  top: 8em;
-  z-index: 999;
+.page-template-page-party-roume .objet.gabi-party {
+  width: 14em;
+  top: 20em;
 }
 
-.page-template-page-party-roume .stagiaire {
-  position: fixed;
-  width: 14%;
-  bottom: 1em;
+.page-template-page-party-roume .objet.missy {
+  width: 9em;
+  top: 10em;
+}
+
+.page-template-page-party-roume .objet.stagiaire-party {
+  width: 13em;
+  top: 15em;
   right: 1em;
-  z-index: 999;
+}
+
+.page-template-page-party-roume .objet.squelette-party {
+  width: 13em;
+  top: 85em;
+  right: 13em;
+}
+
+.page-template-page-party-roume .objet.pizza-party {
+  width: 8em;
+  top: 3em;
+  right: 4em;
+}
+
+.page-template-page-party-roume .objet.drink1-party {
+  width: 8em;
+  top: 63em;
+  right: 1em;
+}
+
+.page-template-page-party-roume .objet.drink2-party {
+  width: 8em;
+  top: 98em;
+  right: 1em;
+}
+
+.page-template-page-party-roume .objet.drink3-party {
+  width: 8em;
+  top: 61em;
+  left: 13em;
+}
+
+.page-template-page-party-roume .objet.ovni-party {
+  width: 8em;
+  top: 2em;
+  left: 5em;
+}
+
+.page-template-page-party-roume .objet.dragon-party {
+  width: 15em;
+  top: 45em;
+  right: 5em;
+}
+
+.page-template-page-party-roume .objet.potion-party {
+  width: 7em;
+  top: 32em;
+  right: 11em;
+}
+
+.page-template-page-party-roume .objet.lune-party {
+  width: 7em;
+  top: 109em;
+  left: 4em;
+}
+
+.page-template-page-party-roume .objet.lisa {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  width: 15em;
+  top: 68em;
+  left: 0em;
 }
 
 .page-template-page-party-roume .intro-photobooth {
   position: relative;
   bottom: inherit;
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
   z-index: 99;
 }
 
 .page-template-page-party-roume .intro-photobooth .entry-content {
   padding: 1.25em;
-  font-size: 89%;
+  font-size: 90%;
 }
 
 .page-template-page-party-roume .intro-photobooth .entry-content .texte {
@@ -1014,7 +1124,7 @@ a.login_button {
 }
 
 .page-template-page-party-roume .titre-expo {
-  width: 75%;
+  width: 65%;
   margin: 2em auto;
 }
 
@@ -1041,6 +1151,34 @@ a.login_button {
 .page-template-page-party-roume #wdi_feed_0 .wdi_feed_item {
   width: 33%;
 }
+
+.page-template-page-party-roume #wdi_feed_0 .wdi_load_more, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner {
+  background-color: transparent;
+}
+
+.page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_load_more_wrap, .page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_spinner_wrap, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_load_more_wrap, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_spinner_wrap {
+  border: 4px solid #b911a9;
+  color: #b911a9;
+}
+
+.page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_load_more_wrap .fa-spinner:before, .page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_spinner_wrap .fa-spinner:before, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_load_more_wrap .fa-spinner:before, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_spinner_wrap .fa-spinner:before {
+  color: #b911a9;
+}
+
+.page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_load_more_wrap .wdi_load_more_text, .page-template-page-party-roume #wdi_feed_0 .wdi_load_more .wdi_spinner_wrap .wdi_load_more_text, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_load_more_wrap .wdi_load_more_text, .page-template-page-party-roume #wdi_feed_0 .wdi_spinner .wdi_spinner_wrap .wdi_load_more_text {
+  color: #b911a9;
+  font-family: VT323;
+  text-transform: uppercase;
+}
+
+.music-party {
+  position: absolute;
+  z-index: -1;
+}
+
+  .wcErrorMessage {
+    display: none !important;
+  }
 
 .logged-in #zone-chatroom .login-zone {
   height: 25px;
@@ -1078,11 +1216,17 @@ a.login_button {
   font-family: VT323;
   letter-spacing: 1px;
   color: #b911a9;
+  cursor: pointer;
   text-transform: uppercase;
   //text-shadow: 1px 1px 1px #000;
   font-size: 15px;
   top: -1px;
   text-decoration: none;
+}
+
+.logged-in #zone-chatroom .login-zone .edit-profil:hover, .logged-in #zone-chatroom .login-zone .logout:hover {
+  color: #580a51;
+  border-bottom: none;
 }
 
 .logged-in #zone-chatroom .login-zone .edit-profil {
@@ -1094,19 +1238,41 @@ a.login_button {
 }
 
 .bt-chatroom {
-  background-color: pink;
-  padding: 0.5em 1em 0.5em 1em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
+  display: block;
   position: fixed;
   bottom: 0em;
   right: 15em;
-  z-index: 999;
-  font-family: arial black;
-  font-size: 0.75em;
-  width: 19em;
+  z-index: 979;
   text-align: center;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  width: 15em;
+  margin: 0 auto 0em auto;
+
+}
+
+.bt-chatroom span {
+  border: none;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  background-color: #ec528d;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+  background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+  border-radius: 8px 8px 0 0;
+  font-family: 'Princess Sofia', cursive;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+  transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+  font-size: 1.25em;
+  width: 100%;
+}
+
+.bt-chatroom:hover span {
+  background-color: #ec6a9c;
+  text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
 }
 
 #zone-chatroom {
@@ -1116,7 +1282,7 @@ a.login_button {
   bottom: -44em;
   right: 0;
   //width: 49%;
-  z-index: 998;
+  z-index: 978;
   transition: bottom 1s ease;
 
   height: 44em;
@@ -1127,6 +1293,36 @@ a.login_button {
   background-size: auto 100%;
   //bottom: -2em;
 
+}
+
+#zone-chatroom.turnup {
+  -webkit-transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform: rotate(-90deg);
+  -moz-transform-origin: 50% 50%;
+  -o-transform: rotate(-90deg);
+  -o-transform-origin: 50% 50%;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  right: 0;
+  top: -11em;
+  font-size: 60%;
+}
+
+#zone-chatroom .close-login {
+  position: absolute;
+  right: .75em;
+  top: 0em;
+  text-decoration: none;
+  font-size: 2.5em;
+  color: #c5376d;
+  font-weight: bold;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+#zone-chatroom .close-login:hover {
+  transform: rotate(360deg);
 }
 
 #zone-chatroom #login, #zone-chatroom #register {
@@ -1269,14 +1465,10 @@ a.login_button {
   font-family: VT323;
   letter-spacing: 0.5px;
   text-align: center;
-  //color: #fff;
   font-size: 15px;
   color: #b911a9;
+  background: linear-gradient(to bottom, rgba(185, 17, 169, 0.19) 0%, #fff 100%);
 }
-
-/*background-image: url('images/gradient-dialogue.jpg');
-    background-repeat: repeat-x;
-    background-size: auto 100%;*/
 
 #zone-chatroom .login-zone p {
   line-height: 1.25;
@@ -1293,6 +1485,12 @@ a.login_button {
   font-size: 15px;
   text-decoration: none;
   border-bottom: thin dashed #b911a9;
+  transition: color 0.5s ease;
+}
+
+#zone-chatroom .login-zone a:hover {
+  color: #580a51;
+  border-bottom: none;
 }
 
 #zone-chatroom .wcWindowTitle, #zone-chatroom .wcUsersCounter, #zone-chatroom .wcCustomizeButton {
@@ -1307,7 +1505,7 @@ a.login_button {
 }
 
 #zone-chatroom .wcContainer .wcMessages .wcMessage {
-  border-top: thin dashed #b911a9;
+  border-bottom: thin dashed #b911a9;
 }
 
 #zone-chatroom .wcMessage .wcImage {
@@ -1322,11 +1520,11 @@ a.login_button {
 }
 
 #zone-chatroom .wcMessages {
-  width: 75% !important;
+  width: 70% !important;
 }
 
 #zone-chatroom .wcUsersList {
-  width: 25% !important;
+  width: 30% !important;
 }
 
 #zone-chatroom .wcMessages, #zone-chatroom .wcUsersList {
@@ -1354,19 +1552,14 @@ a.login_button {
   font-size: 1.25em;
   letter-spacing: 1px;
   font-family: VT323;
-  //text-shadow: 1px 1px 1px #000;
 }
 
 #zone-chatroom .wcControlsButtonsIncluded input.wcSubmitButton, #zone-chatroom .wcControlsButtonsIncluded a.wcToolButton, #zone-chatroom .wcContainer a.wcInsertEmoticonButton {
-  //position: relative;
-  //top: 35px;
   border-radius: 0;
   font-size: 18px;
-  //margin-left: 7px;
   color: #b911a9;
   letter-spacing: 1px;
   font-family: VT323;
-  //text-shadow: 1px 1px 1px #000;
   border: thin dashed #b911a9;
 }
 
@@ -1396,18 +1589,34 @@ a.login_button {
 
 #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageUser {
   font-weight: bold;
-  text-transform: uppercase;
   font-family: VT323;
   font-size: 1.25em;
   letter-spacing: 1px;
   color: #b911a9;
-  //text-shadow: 1px 1px 1px #000;
 }
 
-#zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeHour, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeDate, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageContent, #zone-chatroom .wcContainer .wcUsersList .wcUserInChannel {
+#zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeHour, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeDate, #zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageContent, #zone-chatroom .wcContainer .wcUsersList .wcUserInChannel, #zone-chatroom .wcContainer .wcUsersList .wcUsersListCity {
   color: #b911a9;
   font-family: VT323;
   font-size: 16px;
+}
+
+#zone-chatroom .wcContainer .wcUsersList .wcUserInChannel {
+  margin-bottom: 5px;
+  display: block;
+  border-top: thin solid #b911a9;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+#zone-chatroom .wcContainer .wcUsersList .wcUserInChannel:first-child {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+#zone-chatroom .wcContainer .wcMessages .wcMessage .wcMessageTimeDate {
+  display: none;
 }
 
 #zone-chatroom .wcContainer .wcMessages .avatar {
@@ -1429,9 +1638,7 @@ a.login_button {
   height: 100px;
   padding-top: 10px;
   box-sizing: border-box;
-  font-family: VT323;/*background-image: url('images/gradient-dialogue.jpg');
-    background-repeat: repeat-x;
-    background-size: auto 100%;*/
+  font-family: VT323;
   padding: 1em;
   width: 100%;
   z-index: 20;
@@ -1439,17 +1646,15 @@ a.login_button {
   border-top: none;
   background: linear-gradient(to bottom,  #ffffff 0%,rgba(185, 17, 169, 0.19) 100%);
   border-top: thin dashed #b911a9;
-  //box-shadow: inset 0.1em 0.1em 1em -0.1em #b911a9;
 }
 
 #zone-chatroom .wcControls .wcCurrentUserName, #zone-chatroom .wcControls .wcCustomizations label {
   font-weight: bold;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   color: #b911a9;
   font-family: VT323;
   font-size: 1.5em;
   letter-spacing: 1px;
-  //text-shadow: 1px 1px 1px #000;
 }
 
 #zone-chatroom .wcControls .wcCustomizations label {
@@ -1577,14 +1782,52 @@ a.login_button {
   width: 100%;
 }
 
-.page-template-page-finder .content {
+.revues a {
+  display: block;
+  padding: 1em;
+  color: #fff;
+  background-color: #494949;
+  width: 75%;
+  margin: 0 auto 1em auto;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  font-size: 85%;
+}
+
+.revues a:hover {
+  background-color: #393939;
+}
+
+.revues a span.fa {
+  margin-right: 0.5em;
+}
+
+.revues a h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.revues a span.date {
+  font-size: 1em;
+}
+
+.revues a h3 {
+  font-size: 1em;
+}
+
+.revues a p {
+  margin-bottom: 0;
+  font-size: 0.875em;
+}
+
+.page-template-page-archives .content, .page-template-page-archive-single .content, .page-template-page-revue-de-presse .content {
   width: 90%;
   margin: 0 auto;
   padding: 2em 0;
 }
 
-.page-template-page-finder h1 {
-  font-size: 5em;
+.page-template-page-archives h1, .page-template-page-archive-single h1, .page-template-page-revue-de-presse h1 {
+  font-size: 3em;
   text-align: center;
   margin-bottom: 0.5em;
   color: rgb(255,255,255);
@@ -1592,32 +1835,111 @@ a.login_button {
   text-shadow: 1px 1px 1px rgb(0,0,0);
 }
 
-.page-template-page-finder .dossiers .dossier {
-  display: block;
-  float: left;
-  padding: 1em;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(255,255,255);
-  width: 12em;
+.page-template-page-archives .entry-content, .page-template-page-archive-single .entry-content, .page-template-page-revue-de-presse .entry-content {
+  color: #fff;
+  font-size: 1.5em;
+  font-family: 'VT323';
+  font-weight: bold;
+}
+
+.page-template-page-archives .entry-content .gallery img, .page-template-page-archive-single .entry-content .gallery img, .page-template-page-revue-de-presse .entry-content .gallery img {
+  border: none !important;
+  padding: 0.5em;
+  height: auto;
+}
+
+.page-template-page-archives .entry-content p a, .page-template-page-archives .entry-content ol a, .page-template-page-archives .entry-content ul a, .page-template-page-archives .entry-content td a, .page-template-page-archives .entry-content pre a, .page-template-page-archive-single .entry-content p a, .page-template-page-archive-single .entry-content ol a, .page-template-page-archive-single .entry-content ul a, .page-template-page-archive-single .entry-content td a, .page-template-page-archive-single .entry-content pre a, .page-template-page-revue-de-presse .entry-content p a, .page-template-page-revue-de-presse .entry-content ol a, .page-template-page-revue-de-presse .entry-content ul a, .page-template-page-revue-de-presse .entry-content td a, .page-template-page-revue-de-presse .entry-content pre a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.page-template-page-archives .entry-content h1, .page-template-page-archives .entry-content h2, .page-template-page-archives .entry-content h3, .page-template-page-archives .entry-content h4, .page-template-page-archives .entry-content h5, .page-template-page-archives .entry-content h6, .page-template-page-archive-single .entry-content h1, .page-template-page-archive-single .entry-content h2, .page-template-page-archive-single .entry-content h3, .page-template-page-archive-single .entry-content h4, .page-template-page-archive-single .entry-content h5, .page-template-page-archive-single .entry-content h6, .page-template-page-revue-de-presse .entry-content h1, .page-template-page-revue-de-presse .entry-content h2, .page-template-page-revue-de-presse .entry-content h3, .page-template-page-revue-de-presse .entry-content h4, .page-template-page-revue-de-presse .entry-content h5, .page-template-page-revue-de-presse .entry-content h6 {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif;
+  font-weight: bold;
   text-shadow: 1px 1px 1px rgb(0,0,0);
 }
 
-.page-template-page-finder .dossiers img {
-  margin-bottom: 0.75em;
-  width: 50%;
-}
-
-.page-template-page-finder .dossiers h2 {
+.page-template-page-archives .desc, .page-template-page-archive-single .desc, .page-template-page-revue-de-presse .desc {
   font-size: 1.5em;
-  margin-bottom: 0.25em;
+  text-align: center;
+  margin-bottom: 1em;
+  color: rgb(255,255,255);
   font-weight: bold;
+  text-shadow: 1px 1px 1px rgb(0,0,0);
 }
 
-.page-template-page-finder .dossiers .date {
+.page-template-page-archives .dossiers, .page-template-page-archive-single .dossiers, .page-template-page-revue-de-presse .dossiers {
+  background-color: #fff;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.page-template-page-archives .dossiers li:nth-child(odd) a, .page-template-page-archive-single .dossiers li:nth-child(odd) a, .page-template-page-revue-de-presse .dossiers li:nth-child(odd) a {
+  background-color: #f5f5f5;
+}
+
+.page-template-page-archives .dossiers li:nth-child(odd) a:hover, .page-template-page-archive-single .dossiers li:nth-child(odd) a:hover, .page-template-page-revue-de-presse .dossiers li:nth-child(odd) a:hover {
+  background-color: #2168d6;
+}
+
+.page-template-page-archives .dossiers li a:hover:before, .page-template-page-archive-single .dossiers li a:hover:before, .page-template-page-revue-de-presse .dossiers li a:hover:before {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 1em;
+  left: 0.7em;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+  //border-left: 1.25em solid #8c8c8c;
+  border-left: 1.25em solid #fff;
+  font-size: 90%;
+}
+
+.page-template-page-archives .dossiers li a:hover, .page-template-page-archive-single .dossiers li a:hover, .page-template-page-revue-de-presse .dossiers li a:hover {
+  background-color: #2168d6;
+  color: #fff;
+}
+
+.page-template-page-archives .dossiers li a:hover .date, .page-template-page-archive-single .dossiers li a:hover .date, .page-template-page-revue-de-presse .dossiers li a:hover .date {
+  color: #fff;
+}
+
+.page-template-page-archives .dossiers a.dossier, .page-template-page-archive-single .dossiers a.dossier, .page-template-page-revue-de-presse .dossiers a.dossier {
+  position: relative;
+  margin: 0;
+  display: block;
+  padding: 0.5em 1em 0.5em 2.5em;
+  color: #000;
+  font-family: Helvetica Neue, Arial, Sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.page-template-page-archives .dossiers a.dossier img, .page-template-page-archive-single .dossiers a.dossier img, .page-template-page-revue-de-presse .dossiers a.dossier img {
+  width: 3em;
+  float: left;
+  margin-right: 0.25em;
+}
+
+.page-template-page-archives .dossiers h2, .page-template-page-archive-single .dossiers h2, .page-template-page-revue-de-presse .dossiers h2 {
   font-size: 1em;
-  font-weight: bold;
+  padding: 0.75em 0.25em 0.25em 0.5em;
+  float: left;
+  //padding: #242424;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.page-template-page-archives .dossiers .date, .page-template-page-archive-single .dossiers .date, .page-template-page-revue-de-presse .dossiers .date {
+  font-size: 0.875em;
+  padding: 1em 0 0 0;
+  float: right;
+  color: #8c8c8c;
+  width: 11em;
 }
 
 .cutie {
@@ -1638,8 +1960,6 @@ a.login_button {
   margin: 2em 2%;
   position: relative;
   width: 60%;
-
-
 }
 
 .feuille .top {
@@ -1688,7 +2008,7 @@ a.login_button {
   background-size: auto 100%;
   margin: 1em auto;
   padding: 1em;
-  width: 18em;
+  width: 19em;
   z-index: 20;
   box-sizing: border-box;
   border-radius: 1em;
@@ -2208,6 +2528,14 @@ a.bt-popup {
   cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
 }
 
+.noel .click.bt-popup-sophie, .noel .click.bt-popup-gabrielle {
+  top: 0.25em;
+}
+
+.noel .click.bt-popup-stagiaire {
+  top: 3em;
+}
+
 .click {
   //pointer-events: auto;
 }
@@ -2316,6 +2644,7 @@ a.bt-popup {
   position: absolute;
   transform: rotate(90deg);
   top: 7em;
+  left: 0;
   opacity: 0.7;
   transition: opacity 0.5s ease;
   -webkit-animation: fleche 2s ease infinite;
@@ -2328,11 +2657,99 @@ a.bt-popup {
 }
 
 
-.objet.ballons {
-  left: 11.5em;
-  top: -24em;
+.objet.neige1 {
+  z-index: 99;
+  left: 3em;
+  bottom: 2em;
+  width: 9em;
+}
+
+
+.objet.neige2 {
+  z-index: 99;
+  left: 51em;
+  bottom: 7em;
+  width: 10em;
+}
+
+
+.objet.neige3 {
+  z-index: 99;
+  left: 36em;
+  bottom: 0em;
+  width: 8em;
+}
+
+
+.objet.neige4 {
+  z-index: 99;
+  left: 16em;
+  bottom: 0.5em;
+  width: 8em;
+}
+
+
+.objet.neige5 {
+  z-index: 99;
+  left: 20em;
+  bottom: 12em;
+  width: 8em;
+}
+
+
+.objet.neige6 {
+  z-index: 99;
+  left: 66em;
+  bottom: 5em;
+  width: 10em;
+}
+
+
+.objet.neige7 {
+  z-index: 99;
+  left: 39em;
+  bottom: 0em;
   width: 6em;
+}
+
+
+.objet.neige8 {
+  z-index: 970;
+  left: 23em;
+  bottom: 0.5em;
+  width: 8em;
+}
+
+
+.objet.neige9 {
+  z-index: 99;
+  left: 20em;
+  bottom: 12em;
+  width: 8em;
+}
+
+
+.objet.neige10 {
+  z-index: 99;
+  left: 66em;
+  bottom: 5em;
+  width: 10em;
+}
+
+
+.objet.sapin {
   z-index: 999;
+  right: 1em;
+  bottom: 0em;
+  width: 17em;
+}
+
+
+.objet.ange {
+  z-index: 99;
+  left: 35.5em;
+  top: 2em;
+  width: 10em;
 }
 
 
@@ -2711,6 +3128,47 @@ a.bt-popup {
 /*Archives*/
 
 
+.objet.lisa-party {
+  width: 15em;
+  top: 22em;
+  left: 28em;
+  z-index: 99;
+}
+
+
+.objet.lisa-archive {
+  position: absolute;
+  width: 16em;
+  left: 41em;
+  z-index: 976;
+  top: 20em;
+}
+
+
+.objet.potion-archive {
+  position: absolute;
+  width: 5em;
+  left: 41em;
+  z-index: 976;
+  top: 33em;
+}
+
+
+.objet.titefille {
+  position: absolute;
+  width: 13em;
+  left: 21em;
+  z-index: 976;
+  top: 28em;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+
 .objet.sticker {
   width: 2em;
   z-index: 99;
@@ -2912,6 +3370,14 @@ a.bt-popup {
 }
 
 
+.objet.ballons {
+  left: 11.5em;
+  top: -24em;
+  width: 6em;
+  z-index: 999;
+}
+
+
 .objet.poub {
   width: 12em;
   z-index: 98;
@@ -2965,7 +3431,7 @@ a.bt-popup {
 
 .objet.pamphlet {
   bottom: 11em;
-  width: 7em;
+  width: 4.5em;
   z-index: 20;
   left: 30em;
 }
@@ -3005,6 +3471,24 @@ a.bt-popup {
 }
 
 
+.objet.table .globe {
+  width: 5em;
+  z-index: 25;
+  top: 2em;
+  position: relative;
+  left: 6em;
+}
+
+
+.objet.table .zelda {
+  width: 8em;
+  z-index: 25;
+  top: 2em;
+  position: relative;
+  left: 3em;
+}
+
+
 .objet.chaise {
   bottom: 9em;
   left: 44em;
@@ -3017,6 +3501,15 @@ a.bt-popup {
   left: 10em;
   width: 6.875em;
   z-index: 5;
+}
+
+
+.objet.plante .boucle {
+  left: 0.5em;
+  width: 6em;
+  z-index: 5;
+  position: absolute;
+  top: 1em;
 }
 
 
@@ -3042,6 +3535,29 @@ a.bt-popup {
   top: 7em;
   width: 11em;
   z-index: 3;
+}
+
+
+.objet.pere-noel {
+  bottom: 1em;
+  left: 3em;
+  width: 20em;
+  z-index: 99;
+}
+
+
+.objet.renne {
+  bottom: 1em;
+  left: 49em;
+  width: 16em;
+  z-index: 10;
+}
+
+
+.objet.decorating-tree {
+  bottom: 10.3em;
+  left: 53em;
+  width: 19em;
 }
 
 
@@ -3621,8 +4137,29 @@ a.bt-popup {
     height: 12em;
   }
 
-  #zone-menu .menu-content {
+  #zone-menu .menu-content
+  .page-template-page-archives .dossiers h2 {
     font-size: 90%;
+  }
+
+  .page-template-page-archives .dossiers {
+    width: 100%;
+  }
+
+  .page-template-page-archives .dossiers .date {
+    position: absolute;
+    top: -0.5em;
+    font-size: 0.75em;
+    text-align: right;
+    right: 0.5em;
+  }
+
+  .page-template-page-archives, .page-template-page-archive-single, .page-template-page-revue-de-presse {
+    font-size: 85%;
+  }
+
+  .entry-content .gallery .gallery-item {
+    width: 33% !important;
   }
 }
 
@@ -3671,6 +4208,17 @@ a.bt-popup {
     float: none;
   }
 
+  .page-template-page-party-roume .intro-photobooth .entry-content {
+    font-size: 65%;
+  }
+  .page-template-page-party-roume #wdi_feed_0 .wdi_feed_item {
+    width: 50%;
+  }
+
+  .revues a {
+    width: 95%;
+  }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -3691,6 +4239,19 @@ a.bt-popup {
 
   #zone-chatroom {
     font-size: 75%;
+    right: -8em;
+  }
+  .bt-chatroom {
+    right: 6em;
+  }
+
+  .page-template-page-archives, .page-template-page-archive-single, .page-template-page-revue-de-presse {
+    font-size: 75%;
+    padding: 0 1em;
+  }
+
+  .entry-content .gallery .gallery-item {
+    width: 50% !important;
   }
 
 }
@@ -3710,6 +4271,10 @@ a.bt-popup {
 
   .page-template-page-new-accueil .entre .gros-entre {
     height: 6em;
+  }
+
+  .page-template-page-archives .dossiers a.dossier, .page-template-page-archive-single .dossiers a.dossier {
+    font-size: 80%;
   }
 
 }

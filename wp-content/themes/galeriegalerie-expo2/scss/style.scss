@@ -87,6 +87,28 @@ body, html {
   100%{top: 7em;}
 }
 
+@-webkit-keyframes flecheparty {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@-moz-keyframes flecheparty {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@keyframes flecheparty { 
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+
+.party-fleche {
+  -webkit-animation: flecheparty 2.5s ease infinite;
+  -moz-animation: flecheparty 2.5s ease infinite;
+  animation: flecheparty 2.5s ease infinite;
+}
+
 @-webkit-keyframes big {
   0%{background-size: 90% auto }
   50%{background-size: 75% auto }
@@ -263,6 +285,12 @@ body, html {
   100%{background-color: #ededed;}
 }
 
+.snowfall-flakes {
+  box-shadow: rgba(85, 85, 85, 0.75) 1px 1px 1px !important;
+}
+
+.test-container { position:absolute; top:0; }
+
 html.scene.mobile {
   height: calc(100% + 30px);
 
@@ -291,7 +319,9 @@ body {
 }
 
 body.page-template-default,
-body.page-template-page-finder {
+body.page-template-page-archives,
+body.page-template-page-archive-single,
+body.page-template-page-revue-de-presse {
   background-size: contain;
   height: auto;
   position: relative;
@@ -302,8 +332,10 @@ body.page-template-default {
   background-image: url('images/carreaumarbre300px.jpg');
 }
 
-body.page-template-page-finder {
-  background-image: url('images/marbre.jpg');
+body.page-template-page-archives,
+body.page-template-page-archive-single,
+body.page-template-page-revue-de-presse {
+  background-image: url('images/marbre-noir.png');
 }
 
 body.page-template-page-expo-anna {
@@ -775,7 +807,7 @@ a.login_button {
 .ambiance {
   pointer-events: none;
   position: absolute;
-  z-index: 980;
+  z-index: 977;
   top: 0;
   left: 0;
   width: 100%;
@@ -838,6 +870,7 @@ a.login_button {
     width: 40%;
     margin: 6em 5%;
     float: left;
+    height: 22em;
 
     img {
       width: 100%;
@@ -847,46 +880,116 @@ a.login_button {
 
 }
 
+.guirlande {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 970;
+    background-image: url(images/guirlandes.gif);
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 6em;
+    margin-top: 2em;
+    background-size: auto 100%;
+
+}
+
 .page-template-page-party-roume {
   overflow: scroll;
   -webkit-animation: bgVernissage 5s ease infinite;
   -moz-animation: bgVernissage 5s ease infinite;
   animation: bgVernissage 5s ease infinite;
+  position: relative;
 
   #content {
-    padding: 2em 10em;
-    height: 100em;
-    overflow: scroll;
+    padding: 2em 10%;
 
-    iframe {
-      width: 100%;
-      height: 100%;
+  }
+
+  .objet {
+    z-index: 979;
+
+    &.gabi-party {
+      width: 14em;
+      top: 20em;
     }
-  }
+    &.missy {
+      width: 9em;
+      top: 10em;
+    }
+    &.stagiaire-party {
+      width: 13em;
+      top: 15em;
+      right: 1em;
+    }
+    &.squelette-party {
+      width: 13em;
+      top: 85em;
+      right: 13em;
+    }
+    &.pizza-party {
+      width: 8em;
+      top: 3em;
+      right: 4em;
+    }
+    &.drink1-party {
+      width: 8em;
+      top: 63em;
+      right: 1em;
+    }
+    &.drink2-party {
+      width: 8em;
+      top: 98em;
+      right: 1em;
+    }
+    &.drink3-party {
+      width: 8em;
+      top: 61em;
+      left: 13em;
+    }
+    &.ovni-party {
+      width: 8em;
+      top: 2em;
+      left: 5em;
+    }
+    &.dragon-party {
+      width: 15em;
+      top: 45em;
+      right: 5em;
+    }
+    &.potion-party {
+      width: 7em;
+      top: 32em;
+      right: 11em;
+    }
+    &.lune-party {
+      width: 7em;
+      top: 109em;
+      left: 4em;
+    }
+    &.lisa {
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
 
-  .missy {
-    position: fixed;
-    width: 10%;
-    top: 8em;
-    z-index: 999;
-  }
-  .stagiaire {
-    position: fixed;
-    width: 14%;
-    bottom: 1em;
-    right: 1em;
-    z-index: 999;
+      width: 15em;
+      top: 68em;
+      left: 0em;
+    }
   }
 
   .intro-photobooth {
     position: relative;
     bottom: inherit;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     z-index: 99;
     .entry-content {
       padding: 1.25em;
-      font-size: 89%;
+      font-size: 90%;
       .texte {
         height: auto !important;
       }
@@ -894,7 +997,7 @@ a.login_button {
   }
 
   .titre-expo {
-    width: 75%;
+    width: 65%;
     margin: 2em auto;
     img {
       width: 100%;
@@ -923,7 +1026,37 @@ a.login_button {
     width: 33%;
   }
 
+  #wdi_feed_0 .wdi_load_more, 
+  #wdi_feed_0 .wdi_spinner {
+    background-color: transparent;
+
+    .wdi_load_more_wrap, 
+    .wdi_spinner_wrap {
+      border: 4px solid #b911a9;
+      color: #b911a9;
+      .fa-spinner:before {
+        color: #b911a9;
+      }
+      .wdi_load_more_text {
+        color: #b911a9;
+        font-family: VT323;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+
+
 }
+
+.music-party {
+  position: absolute;
+  z-index: -1;
+}
+
+  .wcErrorMessage {
+    display: none !important;
+  }
 
 .logged-in #zone-chatroom {
 
@@ -964,11 +1097,16 @@ a.login_button {
       font-family: VT323;
       letter-spacing: 1px;
       color: #b911a9;
+      cursor: pointer;
       text-transform: uppercase;
       //text-shadow: 1px 1px 1px #000;
       font-size: 15px;
       top: -1px;
       text-decoration: none;
+      &:hover {
+        color: #580a51;
+        border-bottom: none;
+      }
     }
 
     .edit-profil { right: 5px; }
@@ -978,19 +1116,42 @@ a.login_button {
 }
 
 .bt-chatroom {
-  background-color: pink;
-  padding: 0.5em 1em 0.5em 1em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
+  display: block;
   position: fixed;
   bottom: 0em;
   right: 15em;
-  z-index: 999;
-  font-family: arial black;
-  font-size: 0.75em;
-  width: 19em;
+  z-index: 979;
   text-align: center;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  width: 15em;
+  margin: 0 auto 0em auto;
+
+
+    span {
+    border: none;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5em 0.75em;
+    background-color: #ec528d;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(338, 90%, 80%, .8)), to(hsla(338, 90%, 70%, .2)));
+    background-image: -webkit-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -moz-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    background-image: -o-linear-gradient(hsla(338, 90%, 80%, .8), hsla(338, 90%, 70%, .2));
+    border-radius: 8px 8px 0 0;
+    font-family: 'Princess Sofia', cursive;
+    line-height: 1;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .7);
+    transition: background-color .2s ease-in-out, transform .1s ease-in-out;
+    font-size: 1.25em;
+    width: 100%;
+  }
+
+  &:hover span {
+    background-color: #ec6a9c;
+    text-shadow: 0 -1px 1px rgba(175, 49, 95, .9), 0 0 5px rgba(255, 255, 255, .8);
+  }
+
 }
 
 #zone-chatroom {
@@ -1000,7 +1161,7 @@ a.login_button {
   bottom: -44em;
   right: 0;
   //width: 49%;
-  z-index: 998;
+  z-index: 978;
   transition: bottom 1s ease;
 
   height: 44em;
@@ -1010,6 +1171,36 @@ a.login_button {
   background-repeat: no-repeat;
   background-size: auto 100%;
   //bottom: -2em;
+
+  &.turnup {
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform: rotate(-90deg);
+    -moz-transform-origin: 50% 50%;
+    -o-transform: rotate(-90deg);
+    -o-transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    right: 0;
+    top: -11em;
+    font-size: 60%;
+  }
+
+  .close-login {
+    position: absolute;
+    right: .75em;
+    top: 0em;
+    text-decoration: none;
+    font-size: 2.5em;
+    color: #c5376d;
+    font-weight: bold;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+  }
+
+  .close-login:hover {
+    transform: rotate(360deg);
+  }
 
   #login, #register {
     position: absolute;
@@ -1153,13 +1344,9 @@ a.login_button {
     font-family: VT323;
     letter-spacing: 0.5px;
     text-align: center;
-    //color: #fff;
     font-size: 15px;
     color: #b911a9;
-
-    /*background-image: url('images/gradient-dialogue.jpg');
-    background-repeat: repeat-x;
-    background-size: auto 100%;*/
+    background: linear-gradient(to bottom, rgba(185, 17, 169, 0.19) 0%, #fff 100%);
 
     p {
       line-height: 1.25;
@@ -1176,6 +1363,11 @@ a.login_button {
       font-size: 15px;
       text-decoration: none;
       border-bottom: thin dashed #b911a9;
+      transition: color 0.5s ease;
+      &:hover {
+        color: #580a51;
+        border-bottom: none;
+      }
     }
   }
 
@@ -1193,7 +1385,7 @@ a.login_button {
   }
 
   .wcContainer .wcMessages .wcMessage {
-    border-top: thin dashed #b911a9;
+    border-bottom: thin dashed #b911a9;
   }
 
   .wcMessage .wcImage {
@@ -1208,11 +1400,11 @@ a.login_button {
   }
 
   .wcMessages {
-    width: 75% !important;
+    width: 70% !important;
   }
 
   .wcUsersList {
-    width: 25% !important;
+    width: 30% !important;
   }
 
   .wcMessages,
@@ -1241,21 +1433,16 @@ a.login_button {
     font-size: 1.25em;
     letter-spacing: 1px;
     font-family: VT323;
-    //text-shadow: 1px 1px 1px #000;
   }
 
   .wcControlsButtonsIncluded input.wcSubmitButton,
   .wcControlsButtonsIncluded a.wcToolButton,
   .wcContainer a.wcInsertEmoticonButton {
-    //position: relative;
-    //top: 35px;
     border-radius: 0;
     font-size: 18px;
-    //margin-left: 7px;
     color: #b911a9;
     letter-spacing: 1px;
     font-family: VT323;
-    //text-shadow: 1px 1px 1px #000;
     border: thin dashed #b911a9;
   }
 
@@ -1286,21 +1473,38 @@ a.login_button {
 
   .wcContainer .wcMessages .wcMessage .wcMessageUser {
     font-weight: bold;
-    text-transform: uppercase;
     font-family: VT323;
     font-size: 1.25em;
     letter-spacing: 1px;
     color: #b911a9;
-    //text-shadow: 1px 1px 1px #000;
   }
 
   .wcContainer .wcMessages .wcMessage .wcMessageTimeHour,
   .wcContainer .wcMessages .wcMessage .wcMessageTimeDate,
   .wcContainer .wcMessages .wcMessage .wcMessageContent,
-  .wcContainer .wcUsersList .wcUserInChannel {
+  .wcContainer .wcUsersList .wcUserInChannel,
+  .wcContainer .wcUsersList .wcUsersListCity {
     color: #b911a9;
     font-family: VT323;
     font-size: 16px;
+  }
+
+  .wcContainer .wcUsersList .wcUserInChannel {
+    margin-bottom: 5px;
+    display: block;
+    border-top: thin solid #b911a9;
+    padding-top: 5px;
+    margin-top: 5px;
+  }
+
+  .wcContainer .wcUsersList .wcUserInChannel:first-child {
+    padding-top: 0;
+    margin-top: 0;
+    border-top: none;
+  }
+
+  .wcContainer .wcMessages .wcMessage .wcMessageTimeDate {
+    display: none;
   }
 
   .wcContainer .wcMessages {
@@ -1323,9 +1527,6 @@ a.login_button {
     padding-top: 10px;
     box-sizing: border-box;
     font-family: VT323;
-    /*background-image: url('images/gradient-dialogue.jpg');
-    background-repeat: repeat-x;
-    background-size: auto 100%;*/
     padding: 1em;
     width: 100%;
     z-index: 20;
@@ -1333,17 +1534,15 @@ a.login_button {
     border-top: none;
     background: linear-gradient(to bottom,  #ffffff 0%,rgba(185, 17, 169, 0.19) 100%);
     border-top: thin dashed #b911a9;
-    //box-shadow: inset 0.1em 0.1em 1em -0.1em #b911a9;
 
     .wcCurrentUserName,
     .wcCustomizations label {
       font-weight: bold;
-      text-transform: uppercase;
+      //text-transform: uppercase;
       color: #b911a9;
       font-family: VT323;
       font-size: 1.5em;
       letter-spacing: 1px;
-      //text-shadow: 1px 1px 1px #000;
     }
 
     .wcCustomizations label {
@@ -1486,7 +1685,50 @@ a.login_button {
   width: 100%;
 }
 
-.page-template-page-finder {
+.revues {
+
+  a {
+    display: block;
+    padding: 1em;
+    color: #fff;
+    background-color: #494949;
+    width: 75%;
+    margin: 0 auto 1em auto;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    font-size: 85%;
+    &:hover {
+      background-color: #393939;
+    }
+
+    span.fa {
+      margin-right: 0.5em;
+    }
+
+    h2 {
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+
+    span.date {
+      font-size: 1em;
+    }
+
+    h3 {
+      font-size: 1em;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 0.875em;
+    }
+
+  }
+}
+
+.page-template-page-archives,
+.page-template-page-archive-single,
+.page-template-page-revue-de-presse {
 
   .content {
     width: 90%;
@@ -1495,7 +1737,7 @@ a.login_button {
   }
 
   h1 {
-    font-size: 5em;
+    font-size: 3em;
     text-align: center;
     margin-bottom: 0.5em;
     color: rgb($blanc);
@@ -1503,35 +1745,117 @@ a.login_button {
     text-shadow: 1px 1px 1px rgb($noir);
   }
 
-  .dossiers {
+  .entry-content {
+    color: #fff;
+    font-size: 1.5em;
+    font-family: 'VT323';
+    font-weight: bold;
 
-    .dossier {
-      display: block;
-      float: left;
-      padding: 1em;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: rgb($blanc);
-      width: 12em;
+    .gallery img {
+      border: none !important;
+      padding: 0.5em;
+      height: auto;
+    }
+
+    p a, 
+    ol a, 
+    ul a, 
+    td a, 
+    pre a {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', Sans-serif;
+      font-weight: bold;
       text-shadow: 1px 1px 1px rgb($noir);
     }
 
-    img {
-      margin-bottom: 0.75em;
-      width: 50%;
+  }
+
+
+  .desc {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+    color: rgb($blanc);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgb($noir);
+  }
+
+  .dossiers {
+
+    background-color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+
+    li:nth-child(odd) a {
+      background-color: #f5f5f5;
+      &:hover {
+        background-color: #2168d6;
+      }
+    }
+
+
+    li a:hover {
+      &:before {
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 1em;
+        left: 0.7em;
+        border-top: 1em solid transparent;
+        border-bottom: 1em solid transparent;
+        //border-left: 1.25em solid #8c8c8c;
+        border-left: 1.25em solid #fff;
+        font-size: 90%;
+      }  
+    }
+
+    li a:hover {
+      background-color: #2168d6;
+      color: #fff;
+      .date { color: #fff; }
+    }
+
+    a.dossier {
+      position: relative;
+      margin: 0;
+      display: block;
+      padding: 0.5em 1em 0.5em 2.5em;
+      color: #000;
+      font-family: Helvetica Neue, Arial, Sans-serif;
+      letter-spacing: 0.5px;
+
+      img {
+        width: 3em;
+        float: left;
+        margin-right: 0.25em;
+      }
     }
 
     h2 {
-      font-size: 1.5em;
-      margin-bottom: 0.25em;
-      font-weight: bold;
+      font-size: 1em;
+      padding: 0.75em 0.25em 0.25em 0.5em;
+      float: left;
+      //padding: #242424;
+
+      width: 60%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      box-sizing: border-box;
     } 
 
     .date {
-      font-size: 1em;
-      font-weight: bold;
-
+      font-size: 0.875em;
+      padding: 1em 0 0 0;
+      float: right;
+      color: #8c8c8c;
+      width: 11em;
     }
   }
 }
@@ -1591,8 +1915,6 @@ a.login_button {
       top: -0.8em;
     }
   }
-
-
 }
 
 
@@ -1602,7 +1924,7 @@ a.login_button {
   background-size: auto 100%;
   margin: 1em auto;
   padding: 1em;
-  width: 18em;
+  width: 19em;
   z-index: 20;
   box-sizing: border-box;
   border-radius: 1em;
@@ -2111,6 +2433,12 @@ a.bt-popup {
   cursor: url('http://www.galeriegalerieweb.com/wp-content/uploads/2016/07/Pointer_gauntlet_32x32.png'), auto !important;
 }
 
+.noel .click {
+  &.bt-popup-sophie,
+  &.bt-popup-gabrielle { top: 0.25em; }
+  &.bt-popup-stagiaire { top: 3em; } 
+}
+
 .click {
   //pointer-events: auto;
 
@@ -2201,6 +2529,7 @@ a.bt-popup {
   position: absolute;
   transform: rotate(90deg);
   top: 7em;
+  left: 0;
   opacity: 0.7;
   transition: opacity 0.5s ease;
   -webkit-animation: fleche 2s ease infinite;
@@ -2215,12 +2544,91 @@ a.bt-popup {
 
 .objet {
 
-  &.ballons {
-    left: 11.5em;
-    top: -24em;
-    width: 6em;
-    z-index: 999;
+
+  &.neige1 {
+    z-index: 99;
+    left: 3em;
+    bottom: 2em;
+    width: 9em;
   }
+
+  &.neige2 {
+    z-index: 99;
+    left: 51em;
+    bottom: 7em;
+    width: 10em;
+  }
+
+  &.neige3 {
+    z-index: 99;
+    left: 36em;
+    bottom: 0em;
+    width: 8em;
+  }
+
+  &.neige4 {
+    z-index: 99;
+    left: 16em;
+    bottom: 0.5em;
+    width: 8em;
+  }
+
+  &.neige5 {
+    z-index: 99;
+    left: 20em;
+    bottom: 12em;
+    width: 8em;
+  }
+
+  &.neige6 {
+    z-index: 99;
+    left: 66em;
+    bottom: 5em;
+    width: 10em;
+  }
+
+  &.neige7 {
+    z-index: 99;
+    left: 39em;
+    bottom: 0em;
+    width: 6em;
+  }
+
+  &.neige8 {
+    z-index: 970;
+    left: 23em;
+    bottom: 0.5em;
+    width: 8em;
+  }
+
+  &.neige9 {
+    z-index: 99;
+    left: 20em;
+    bottom: 12em;
+    width: 8em;
+  }
+
+  &.neige10 {
+    z-index: 99;
+    left: 66em;
+    bottom: 5em;
+    width: 10em;
+  }
+
+  &.sapin {
+    z-index: 999;
+    right: 1em;
+    bottom: 0em;
+    width: 17em;
+  }
+
+  &.ange {
+    z-index: 99;
+    left: 35.5em;
+    top: 2em;
+    width: 10em;
+  }
+
 
   &.magicien {
     z-index: 99;
@@ -2518,6 +2926,42 @@ a.bt-popup {
 
   /*Archives*/
 
+  &.lisa-party {
+    width: 15em;
+    top: 22em;
+    left: 28em;
+    z-index: 99;
+    }
+
+  &.lisa-archive {
+    position: absolute;
+    width: 16em;
+    left: 41em;
+    z-index: 976;
+    top: 20em;
+  }
+  &.potion-archive {
+    position: absolute;
+    width: 5em;
+    left: 41em;
+    z-index: 976;
+    top: 33em;
+  }
+
+  &.titefille {
+    position: absolute;
+    width: 13em;
+    left: 21em;
+    z-index: 976;
+    top: 28em;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+
   &.sticker {
     width: 2em;
     z-index: 99;
@@ -2683,6 +3127,13 @@ a.bt-popup {
     //pointer-events: none;
   }
 
+  &.ballons {
+    left: 11.5em;
+    top: -24em;
+    width: 6em;
+    z-index: 999;
+  }
+
   &.poub {
     width: 12em;
     z-index: 98;
@@ -2728,7 +3179,7 @@ a.bt-popup {
 
   &.pamphlet {
     bottom: 11em;
-    width: 7em;
+    width: 4.5em;
     z-index: 20;
     left: 30em;
   }
@@ -2741,7 +3192,7 @@ a.bt-popup {
     display: none;
   }
 
-  &.table {
+   &.table {
     bottom: 2em;
     left: 0;
     margin-left: auto;
@@ -2759,6 +3210,20 @@ a.bt-popup {
       position: relative;
       left: 5em;
     }
+    .globe {
+      width: 5em;
+      z-index: 25;
+      top: 2em;
+      position: relative;
+      left: 6em;
+    }
+    .zelda {
+      width: 8em;
+      z-index: 25;
+      top: 2em;
+      position: relative;
+      left: 3em;
+    }
   }
 
   &.chaise {
@@ -2772,6 +3237,15 @@ a.bt-popup {
     left: 10em;
     width: 6.875em;
     z-index: 5;
+
+    .boucle {
+      left: 0.5em;
+      width: 6em;
+      z-index: 5;
+      position: absolute;
+      top: 1em;
+    }
+
   }
 
   &.fontaine {
@@ -2795,6 +3269,27 @@ a.bt-popup {
     width: 11em;
     z-index: 3;
   }
+
+  &.pere-noel {
+    bottom: 1em;
+    left: 3em;
+    width: 20em;
+    z-index: 99;
+  }
+
+  &.renne {
+    bottom: 1em;
+    left: 49em;
+    width: 16em;
+    z-index: 10;
+  }
+
+  &.decorating-tree {
+    bottom: 10.3em;
+    left: 53em;
+    width: 19em;
+  }
+
 
   /*BUREAU*/
 
@@ -3337,8 +3832,31 @@ a.bt-popup {
     .texte { height: 12em; }
   }
 
-  #zone-menu .menu-content {
+  #zone-menu .menu-content
+  .page-template-page-archives .dossiers h2 {
     font-size: 90%;
+  }
+
+  .page-template-page-archives .dossiers {
+    width: 100%;
+  }
+
+  .page-template-page-archives .dossiers .date {
+    position: absolute;
+    top: -0.5em;
+    font-size: 0.75em;
+    text-align: right;
+    right: 0.5em;
+  }
+
+  .page-template-page-archives, 
+  .page-template-page-archive-single,
+  .page-template-page-revue-de-presse {
+    font-size: 85%;
+  }
+
+  .entry-content .gallery .gallery-item {
+    width: 33% !important;
   }
 }
 
@@ -3388,6 +3906,20 @@ a.bt-popup {
     }
   }
 
+  .page-template-page-party-roume .intro-photobooth .entry-content {
+    font-size: 65%;
+  }
+  .page-template-page-party-roume #wdi_feed_0 .wdi_feed_item {
+    width: 50%;
+  }
+
+  .revues {
+
+    a {
+      width: 95%;
+    }
+  }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -3408,6 +3940,21 @@ a.bt-popup {
 
   #zone-chatroom {
     font-size: 75%;
+    right: -8em;
+  }
+  .bt-chatroom {
+    right: 6em;
+  }
+
+  .page-template-page-archives, 
+  .page-template-page-archive-single,
+  .page-template-page-revue-de-presse {
+    font-size: 75%;
+    padding: 0 1em;
+  }
+
+  .entry-content .gallery .gallery-item {
+    width: 50% !important;
   }
 
 }
@@ -3424,6 +3971,11 @@ a.bt-popup {
   .page-template-page-new-accueil {
     .content { font-size: 80%; }
     .entre .gros-entre { height: 6em; }
+  }
+
+  .page-template-page-archives .dossiers a.dossier, 
+  .page-template-page-archive-single .dossiers a.dossier {
+    font-size: 80%;
   }
 
 }

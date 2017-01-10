@@ -49,7 +49,7 @@ public function display(){
 			case 'load_more_btn':{
 				?>
 				<style>.wdi_hidden{display: none;}</style>
-				<div class="wdi_load_more wdi_hidden"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Load More',"wdi");?></div></div></div></div></div>
+				<div class="wdi_load_more wdi_hidden"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Plussss',"wdi");?></div></div></div></div></div>
 				<div class="wdi_spinner "><div class="wdi_spinner_container"><div class="wdi_spinner_wrap"><div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner fa fa-spinner"></i></div></div></div></div>	
 				<?php
 				break;

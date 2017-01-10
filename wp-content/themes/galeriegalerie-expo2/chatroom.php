@@ -1,6 +1,8 @@
+<iframe class="music-party" width="560" height="315" src="https://www.youtube.com/embed/LOZuxwVk7TU?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe>
+
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/css/chatroom.css">
 
-<div class="bt-chatroom">Ouvrir le chat roume</div>
+<a href="#" class="bt-chatroom"><span>Ouvrir le chat roume</span></a>
 
 <div id="zone-chatroom">
 
@@ -12,8 +14,8 @@
 				<a class="logout" href="<?php echo wp_logout_url( get_permalink() ); ?>">Déconnexion</a>
 				<a target="_blank" class="edit-profil" href="<?php echo get_edit_user_link(); ?>">Modifier mon profil</a>
 			<?php } else { get_template_part('ajax', 'auth'); ?>            	
-				<p>Tu veux te joindre au chat ? <a class="login_button" id="show_login" href="">Connecte toi</a>, ou 
-				<a class="login_button" id="show_signup" href="">inscrit toi</a> ! Tu vas voir, c'est facile ;)</p>
+				<p>Tu veux te joindre au chat ? <a onClick="" class="login_button" id="show_login" href="#">Connecte toi</a> ou 
+				<a onClick="" class="login_button" id="show_signup" href="#">inscris toi</a> ! Tu vas voir, c'est facile ;)</p>
 			<?php } ?>
 
 		</div>
@@ -21,6 +23,7 @@
 		<div class="form-chat">
 		  
 			<form id="login" class="ajax-auth group" action="login" method="post">
+				<a class="close-login" href="">x</a>
 	   			<h2>Connexion</h2>
 	    		<p class="status"></p>  
 	   			<?php wp_nonce_field('ajax-login-nonce', 'security'); ?>  
@@ -41,6 +44,7 @@
 			</form>
 	 
 			<form id="register" class="ajax-auth group"  action="register" method="post">
+				<a class="close-login" href="">x</a>
 			    <h2>Création de compte</h2>
 			    <p class="status"></p>
 			    <?php wp_nonce_field('ajax-register-nonce', 'signonsecurity'); ?>         
