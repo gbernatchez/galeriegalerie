@@ -49,7 +49,7 @@ public function display(){
 			case 'load_more_btn':{
 				?>
 				<style>.wdi_hidden{display: none;}</style>
-				<div class="wdi_load_more wdi_hidden"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Plussss',"wdi");?></div></div></div></div></div>
+				<div class="wdi_load_more wdi_hidden"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Load More',"wdi");?></div></div></div></div></div>
 				<div class="wdi_spinner "><div class="wdi_spinner_container"><div class="wdi_spinner_wrap"><div class="wdi_spinner_wrap_inner"><i class="wdi_load_more_spinner fa fa-spinner"></i></div></div></div></div>	
 				<?php
 				break;
@@ -169,9 +169,7 @@ public function generate_feed_styles($feed_row){
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_header_hashtag h3{
 		margin-top: <?php echo (intval($style['user_img_width']) - intval($style['users_text_font_size']))/2?>px;
 	}
-	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_header_hashtag .wdi_media_info{
-		display: none;
-	}
+	
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_followers,
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_posts {
     	display: inline-block;
@@ -298,6 +296,7 @@ public function generate_feed_styles($feed_row){
 	    position: relative;
 	    width: calc(100% - 2*<?php echo $style['th_photo_wrap_padding']?>);
 	    display: inline-block;
+		  box-sizing:content-box;
 	    overflow: hidden;
 	}
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_photo_wrap:after{
@@ -478,11 +477,15 @@ public function generate_feed_styles($feed_row){
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_load_more_container{
 		display: inline-block;
 	}
-	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active{
-	  background-color: <?php echo $style['active_filter_bg_color'];?>;
+	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active_bg{
+		background-color: <?php echo $style['active_filter_bg_color'];?>;
+	}
+	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active_col{
+		color: <?php echo $style['active_filter_bg_color'];?>;
+		border-color: <?php echo $style['active_filter_bg_color'];?>;
 	}
 
-	
+
 
 	<?php  if($feed_row['disable_mobile_layout']=="0"){
 		?>

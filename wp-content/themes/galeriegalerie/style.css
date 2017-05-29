@@ -1,5 +1,5 @@
 /*
-Theme Name: Galerie Galerie Expo 2
+Theme Name: Galerie Galerie
 Description:
 Author: Gabi & Sophie & Marie-Charlotte
 Author URI: http://www.galeriegalerieweb.com
@@ -238,6 +238,50 @@ body, html {
   animation: flecheparty 2.5s ease infinite;
 }
 
+@-webkit-keyframes flechegauche {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@-moz-keyframes flechegauche {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@keyframes flechegauche { 
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+
+@-webkit-keyframes flechedroite {
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+@-moz-keyframes flechedroite {
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+@keyframes flechedroite { 
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+
+.fleche-gauche {
+  -webkit-animation: flechegauche 2.5s ease infinite;
+  -moz-animation: flechegauche 2.5s ease infinite;
+  animation: flechegauche 2.5s ease infinite;
+}
+
+.fleche-droite {
+  -webkit-animation: flechedroite 2.5s ease infinite;
+  -moz-animation: flechedroite 2.5s ease infinite;
+  animation: flechedroite 2.5s ease infinite;
+}
+
 @-webkit-keyframes glow {
   0%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 1), inset 0 0 1.5em 0px rgba(148, 68, 187, 1); }
   50%{ box-shadow: 0 0 1.5em 0px rgba(148, 68, 187, 0), inset 0 0 1.5em 0px rgba(148, 68, 187, 0); }
@@ -472,6 +516,109 @@ body.page-template-default {
 }
 
 
+body.page-template-page-entree-beau-dessin .titre-expo {
+  width: 50%;
+  margin: 1.5em auto 2em auto;
+}
+
+
+body.page-template-page-entree-beau-dessin .titre-expo img {
+  width: 100%;
+  height: auto;
+}
+
+
+body.page-template-page-entree-beau-dessin .old-porte {
+  display: none;
+}
+
+
+body.page-template-page-entree-beau-dessin .objet.glitter {
+  display: none;
+  z-index: 5;
+  width: 40em;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  bottom: -2em;
+  pointer-events: none;
+}
+
+
+body.page-template-page-entree-beau-dessin .new-porte {
+  //display: none;
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  margin: 0 20%;
+}
+
+
+body.page-template-page-entree-beau-dessin .new-porte>a {
+  display: inline-block;
+  width: 12em;
+  height: 6em;
+  background-color: green;
+  margin: 1em;
+}
+
+
+body.page-template-page-entree-beau-dessin .new-porte #porte1 {}
+
+
+body.page-template-page-entree-beau-dessin .new-porte #porte2 {}
+
+
+body.page-template-page-entree-beau-dessin .new-porte #porte3 {}
+
+
+body.page-template-page-entree-beau-dessin .new-porte #porte4 {}
+
+
+body.page-template-page-entree-beau-dessin .new-porte #porte5 {}
+
+
+body.page-template-page-entree-beau-dessin .objet.enseigne {
+  top: 5em;
+  width: 10em;
+  right: 7em;
+}
+
+
+body.page-template-page-entree-beau-dessin #sol {
+  height: 35%;
+}
+
+
+body.page-template-page-entree-beau-dessin .mur.droit.sorti, body.page-template-page-entree-beau-dessin .mur.gauche.sorti {
+  bottom: 3.5%;
+}
+
+
+body.page-template-page-entree-beau-dessin #mur-fond {
+  height: 65%;
+}
+
+
+body.page-template-page-entree-beau-dessin .objet.plante {
+  bottom: 12em;
+}
+
+
+body.page-template-page-entree-beau-dessin .objet.chaise {
+  bottom: 2em;
+  left: 54em;
+  width: 7.5625em;
+  z-index: 99;
+}
+
+
+body.page-template-page-entree-beau-dessin .objet.pamphlet {
+  width: 6.5em;
+}
+
+
 body.page-template-page-expo-anna {
   -webkit-animation: annaBg 15s ease infinite;
   -moz-animation: annaBg 15s ease infinite;
@@ -636,6 +783,11 @@ iframe.fullsize {
   width: 5em;
   left: 0em;
   top: 3em;
+}
+
+
+#zone-menu .retour:hover {
+  transform: rotate(360deg);
 }
 
 

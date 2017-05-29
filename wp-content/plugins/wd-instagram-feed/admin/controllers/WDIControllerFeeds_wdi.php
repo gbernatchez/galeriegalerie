@@ -107,6 +107,10 @@ class WDIControllerFeeds_wdi {
             '%s',//'conditional_filter_type' => 'string'
             '%d',/*show_username_on_thumb*/
             '%d',//'conditional_filter_enable'=>'0',
+            '%s',//'liked_feed' => 'string'
+            '%d',//'mobile_breakpoint'=>'640',
+            
+
             );
   }
   private function display() {
@@ -448,6 +452,9 @@ private function check_settings($settings){
       if($settings['conditional_filter_enable'] == '1'){
         $settings['conditional_filter_enable'] = '0';
       }
+  if($settings['liked_feed'] == 'liked'){
+    $settings['liked_feed'] = 'userhash';
+  }
     return $settings;
 }
 

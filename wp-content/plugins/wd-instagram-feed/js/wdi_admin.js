@@ -1219,6 +1219,14 @@ wdi_controller.updateConditionalFiltersUi = function(){
  * Updates Conditinal filter source
  */
 wdi_controller.updateFilterSource = function(){
+
+	if(jQuery('input[name="wdi_feed_settings[liked_feed]"]:checked').val() == 'liked'){
+		var sourceDiv = jQuery('#wdi_filter_source').html('');
+		var singleUserHtml = "<div class='wdi_source_user'><span class='wdi_source_username'>Media I liked</span></div>";
+		sourceDiv.html(sourceDiv.html() + singleUserHtml);
+		return;
+	}
+
 	var users = [],
 		username,
 		userThumb;

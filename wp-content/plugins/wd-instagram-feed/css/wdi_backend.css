@@ -338,3 +338,8 @@ padding: 5px;
 	padding: 0 5px;
 	font-weight: bold;
 }
+
+#login_with_instagram > a:focus{
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}

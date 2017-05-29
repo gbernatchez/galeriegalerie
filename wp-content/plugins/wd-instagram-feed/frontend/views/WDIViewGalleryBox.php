@@ -453,6 +453,9 @@ class WDIViewGalleryBox {
         -ms-user-select: none;
         user-select: none;
       }
+      .wdi_embed_frame{
+        text-align:center;
+      }
       .wdi_comment_wrap {
         bottom: 0;
         left: 0;
@@ -973,7 +976,9 @@ class WDIViewGalleryBox {
         //sanitizing image description
         $instaDesc = $image_row->description;
         $instaDesc = preg_replace('/\\\\/', esc_html('&#92;'), $instaDesc);
-        $instaDesc = str_replace(array("\r\n", "\n", "\r",' '), esc_html(''), str_replace('"','\"',$instaDesc));
+
+        /*last two are ZWSP and P-SEP*/
+        $instaDesc = str_replace(array("\r\n", "\n", "\r",' ', ' '), esc_html(''), str_replace('"','\"',$instaDesc));
         $instaDesc = str_replace('#', ' #', $instaDesc);
         ?>
         

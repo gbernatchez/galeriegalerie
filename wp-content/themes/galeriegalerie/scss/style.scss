@@ -1,5 +1,5 @@
 /*
-Theme Name: Galerie Galerie Expo 2
+Theme Name: Galerie Galerie
 Description:
 Author: Gabi & Sophie & Marie-Charlotte
 Author URI: http://www.galeriegalerieweb.com
@@ -107,6 +107,50 @@ body, html {
   -webkit-animation: flecheparty 2.5s ease infinite;
   -moz-animation: flecheparty 2.5s ease infinite;
   animation: flecheparty 2.5s ease infinite;
+}
+
+@-webkit-keyframes flechegauche {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@-moz-keyframes flechegauche {
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+@keyframes flechegauche { 
+  0%{left: 37%;}
+  50%{left: 44%;}
+  100%{left: 37%;}
+}
+
+@-webkit-keyframes flechedroite {
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+@-moz-keyframes flechedroite {
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+@keyframes flechedroite { 
+  0%{left: -10%;}
+  50%{left: -3%;}
+  100%{left: -10%;}
+}
+
+.fleche-gauche {
+  -webkit-animation: flechegauche 2.5s ease infinite;
+  -moz-animation: flechegauche 2.5s ease infinite;
+  animation: flechegauche 2.5s ease infinite;
+}
+
+.fleche-droite {
+  -webkit-animation: flechedroite 2.5s ease infinite;
+  -moz-animation: flechedroite 2.5s ease infinite;
+  animation: flechedroite 2.5s ease infinite;
 }
 
 @-webkit-keyframes glow {
@@ -346,6 +390,94 @@ body.page-template-default {
 }
 
 
+body.page-template-page-entree-beau-dessin {
+
+  .titre-expo {
+    width: 50%;
+    margin: 1.5em auto 2em auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .old-porte {
+    display: none;
+  }
+
+  .objet.glitter {
+    display: none;
+    z-index: 5;
+    width: 40em;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    bottom: -2em;
+    pointer-events: none;
+  }
+
+  .new-porte {
+    //display: none;
+    position: absolute;
+    text-align: center;
+    width: 60%;
+    margin: 0 20%;
+
+    &>a {
+      display: inline-block;
+      width: 12em;
+      height: 6em;
+      background-color: green;
+      margin: 1em;
+    }
+
+    #porte1 {}
+    #porte2 {}
+    #porte3 {}
+    #porte4 {}
+    #porte5 {}
+
+  }
+
+  .objet.enseigne {
+    top: 5em;
+    width: 10em;
+    right: 7em;
+  }
+
+  #sol {
+    height: 35%;
+  }
+
+  .mur.droit.sorti,
+  .mur.gauche.sorti {
+    bottom: 3.5%;
+  }
+
+  #mur-fond {
+    height: 65%;
+  }
+
+  .objet.plante {
+    bottom: 12em;
+  }
+
+  .objet.chaise {
+    bottom: 2em;
+    left: 54em;
+    width: 7.5625em;
+    z-index: 99;
+  }
+
+  .objet.pamphlet {
+    width: 6.5em;
+  }
+
+
+}
+
+
 body.page-template-page-expo-anna {
   -webkit-animation: annaBg 15s ease infinite;
   -moz-animation: annaBg 15s ease infinite;
@@ -509,6 +641,7 @@ iframe.fullsize {
     width: 5em;
     left: 0em;
     top: 3em;
+    &:hover { transform: rotate(360deg); }
   }
 
   .menu-content {

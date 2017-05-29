@@ -19,7 +19,6 @@
 <?php 
 wp_enqueue_script('jquery');
 wp_enqueue_script('countdown', get_template_directory_uri() . '/js/jquery.countdown.min.js');
-//wp_enqueue_script('movingText', get_template_directory_uri() . '/js/movingText.js');
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js');
 wp_head(); 
 ?>

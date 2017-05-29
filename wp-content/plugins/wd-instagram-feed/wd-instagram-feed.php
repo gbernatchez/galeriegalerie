@@ -3,7 +3,7 @@
 Plugin Name: Instagram Feed WD
 Plugin URI: https://web-dorado.com/products/wordpress-instagram-feed-wd.html
 Description: WD Instagram Feed is a user-friendly tool for displaying user or hashtag-based feeds on your website. You can create feeds with one of the available layouts. It allows displaying image metadata, open up images in lightbox, download them and even share in social networking websites.
-Version: 1.1.11
+Version: 1.1.19
 Author: WebDorado
 Author URI: https://web-dorado.com
 License: GPLv2 or later
@@ -20,7 +20,7 @@ define("WDI_META", "_".WDI_VAR."_meta");
 //define("wdi",'wdi');
 define('WDI_FEED_TABLE','wdi_feeds');
 define('WDI_THEME_TABLE','wdi_themes');
-define('WDI_VERSION','1.1.11');
+define('WDI_VERSION','1.1.19');
 define('WDI_IS_PRO','false');
 
 
@@ -55,6 +55,10 @@ add_action('wp_ajax_WDIGalleryBox', 'wdi_ajax_frontend');
 add_action('wp_ajax_nopriv_WDIGalleryBox', 'wdi_ajax_frontend');
 function wdi_ajax_frontend() {
 
+  /* reset from user to site locale*/
+  if(function_exists('switch_to_locale')){
+    switch_to_locale( get_locale() );
+  }
 
   require_once(WDI_DIR . '/framework/WDILibrary.php');
   $page = WDILibrary::get('action');
@@ -100,7 +104,6 @@ function wdi_instagram_activate($networkwide) {
     }
   }
  // wdi_activate();
-
   wdi_install();
 }
 
@@ -159,7 +162,7 @@ function WDI_instagram_menu() {
    add_submenu_page('wdi_feeds',__('Settings',"wdi"),__('Settings',"wdi"),'manage_options','wdi_settings','WDI_instagram_settings_page');
    add_submenu_page('wdi_feeds',__('Featured Themes',"wdi"),__('Featured Themes',"wdi"),$min_feeds_capability,'wdi_featured_themes','wdi_featured_themes');
    add_submenu_page('wdi_feeds',__('Featured Plugins',"wdi"),__('Featured Plugins',"wdi"),$min_feeds_capability,'wdi_featured_plugins','wdi_featured_plugins');
-   add_submenu_page('wdi_feeds',__('Buy Pro',"wdi"),__('Buy Pro',"wdi"),$min_feeds_capability,'wdi_licensing','WDI_instagram_licensing_page');
+   add_submenu_page('wdi_feeds',__('Upgrade to Pro',"wdi"),__('Upgrade to Pro',"wdi"),$min_feeds_capability,'wdi_licensing','WDI_instagram_licensing_page');
 
 }
 
@@ -405,5 +408,23 @@ add_action( 'init', 'wdi_load_textdomain' );
 function wdi_load_textdomain() {
   load_plugin_textdomain( "wdi", false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
   
+}
+
+add_action('init', 'wdi_check_silent_update');
+
+function wdi_check_silent_update(){
+  $current_version = WDI_VERSION;
+  $saved_version = get_option('wdi_version');
+
+  wdi_get_options();
+  global $wdi_options;
+  if(isset($wdi_options['wdi_plugin_uninstalled']) && $wdi_options['wdi_plugin_uninstalled']=='true') {
+    /*we uninstalled plugin, do not create DB tables again*/
+    return;
+  }
+  if($current_version  != $saved_version ){
+
+    wdi_install();
+  }
 }
 

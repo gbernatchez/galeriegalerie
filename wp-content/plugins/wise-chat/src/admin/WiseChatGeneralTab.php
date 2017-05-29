@@ -10,6 +10,12 @@ class WiseChatGeneralTab extends WiseChatAbstractTab {
 	public function getFields() {
 		return array(
 			array('_section', 'General Settings'),
+			array('mode', 'Mode', 'selectCallback', 'string',
+				'Overall chat mode.<br />
+				<strong>Classic chat:</strong> Displays a classic chat embedded in the content of the page<br />
+                <strong>Facebook-like chat:</strong> Displays users list and chat windows aligned to the right edge of the window',
+				self::getAllModes()
+			),
 			array('access_mode', 'Disable Anonymous Users', 'booleanFieldCallback', 'boolean', 'Only regular WP users are allowed to enter the chat. Choose user roles below. '),
 			array('access_roles', 'Access For Roles', 'checkboxesCallback', 'multivalues', 'Access only for these user roles', self::getRoles()),
 			array('force_user_name_selection', 'Force Username Selection', 'booleanFieldCallback', 'boolean', 'Blocks access to the chat until an user enters his/her name.'),
@@ -19,6 +25,10 @@ class WiseChatGeneralTab extends WiseChatAbstractTab {
 				'Selected roles have read-only access to the chat.', self::getRoles()
 			),
             array('collect_user_stats', 'Collect User Statistics', 'booleanFieldCallback', 'boolean', 'Collects various statistics of users, including country, city, etc.'),
+			array(
+				'enable_buddypress', 'Enable BuddyPress', 'booleanFieldCallback', 'boolean',
+				'Enables BuddyPress integration features.<br />'
+			),
 			array('user_actions', 'Actions', 'adminActionsCallback', 'void'),
 			array('_section', 'Chat Opening Hours and Days', 'Server UTC date and time is taken into account. It is currently: '.date('Y-m-d H:i:s')),
 			array('enable_opening_control', 'Enable Opening Control', 'booleanFieldCallback', 'boolean', 'Allows to specify when the chat is available for users.'),
@@ -41,6 +51,13 @@ class WiseChatGeneralTab extends WiseChatAbstractTab {
 			'read_only_for_roles' => array()
 		);
 	}
+
+	public static function getAllModes() {
+		return array(
+			'' => 'Classic chat',
+			'_DISABLED_pro_fb' => 'Facebook-like chat (available in Wise Chat Pro 1.4)',
+		);
+	}
 	
 	public function getParentFields() {
 		return array(
@@ -48,6 +65,10 @@ class WiseChatGeneralTab extends WiseChatAbstractTab {
 			'opening_hours' => 'enable_opening_control',
 			'access_roles' => 'access_mode',
 		);
+	}
+
+	public function getProFields() {
+		return array('enable_buddypress');
 	}
 	
 	public function resetAnonymousCounterAction() {

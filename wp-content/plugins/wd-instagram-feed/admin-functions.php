@@ -168,6 +168,9 @@ function wdi_install(){
     conditional_filter_type varchar(32) NOT NULL,
     show_username_on_thumb varchar(32) NOT NULL,
     conditional_filter_enable varchar(1) NOT NULL,
+    liked_feed varchar(30) NOT NULL,
+    mobile_breakpoint varchar(10) NOT NULL,
+    
     UNIQUE KEY id (id)
   ) $charset_collate;";
   

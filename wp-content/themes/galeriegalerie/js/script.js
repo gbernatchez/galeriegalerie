@@ -65,11 +65,12 @@ jQuery(document).ready(function(){
         event.preventDefault();
     });
 
-    jQuery("#getting-started").countdown("2017/01/26", function(event) {
-    jQuery(this).text(
-      event.strftime('dans %D jours %H:%M:%S')
-    );
+    jQuery("#getting-started").countdown("2017/06/08 20:00:00", function(event) {
+        jQuery(this).text(
+            event.strftime('dans %D jours %H:%M:%S')
+        );
   });
+
 
 });
 

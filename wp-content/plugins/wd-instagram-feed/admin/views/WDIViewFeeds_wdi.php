@@ -208,6 +208,7 @@ public function getFormElements($current_id=''){
     $elements = array(
       'feed_name' => array('name'=>'feed_name','title'=>__('Feed Name',"wdi"),'type'=>'input','tooltip'=>__('The name of your feed which can be displayed in feed\'s header section',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'theme_id' => array('switched'=>'off','label'=>array('place'=>'after','class'=>'wdi_pro_only','text'=>__("Changing Theme is Available Only in PRO version","wdi"),'br'=>'true'),'name' =>'theme_id', 'title'=>__('Theme',"wdi"),'valid_options'=>$themes,'type'=>'select','tooltip'=>__('The theme of your feed, you can create themes in themes menu',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
+      'liked_feed' => array('switched'=>'off', 'disabled_options'=>array('liked'=>__('Feed of liked media is Available in PRO version'),'br'=>'true'), 'name'=>'liked_feed','title'=>__('User/Hashtag feed or liked media',"wdi"),'type'=>'radio','valid_options'=>array('userhash'=>__('Username/Hashtag',"wdi"),'liked'=>__('Media I liked',"wdi")),'break'=>'false','hide_ids'=>array('liked'=>'feed_users,thumb_user'),'tooltip'=>__('Show the media I liked instead of showing user or hashtag feed',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'feed_users' => array('name'=>'feed_users','title'=>__('Feed Usernames and Hashtags',"wdi"),'type'=>'input','input_type'=>'hidden','tooltip'=>__('Enter usernames or hashtags to your feed, hashtags must start with #, username\'s shouldn\'t start with @',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'thumb_user' => array('name' =>'thumb_user', 'title'=>__('Featured Image',"wdi"),'valid_options'=>array(),'type'=>'select','tooltip'=>__('Select Featured Image For Header Section',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'feed_display_view' => array('name'=>'feed_display_view','title'=>__('Feed Display Type',"wdi"),'type'=>'radio','valid_options'=>array('pagination'=>__('Pagination',"wdi"),'load_more_btn'=>__('Load More Button',"wdi"),'infinite_scroll'=>__('Infinite Scroll',"wdi")),'disabled_options'=>array('infinite_scroll'=>__('This Feature is Available in PRO version'),'br'=>'true'),'break'=>'true','hide_ids'=>array('pagination'=>'number_of_photos,load_more_number,resort_after_load_more','load_more_btn'=>'pagination_per_page_number,pagination_preload_number','infinite_scroll'=>'pagination_per_page_number,pagination_preload_number'),'tooltip'=>__('How to load and display new images',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style'))),
@@ -232,6 +233,7 @@ public function getFormElements($current_id=''){
       'display_user_post_follow_number' => array('name'=>'display_user_post_follow_number','title'=>__('Display User Posts and Followers count',"wdi"),'type'=>'checkbox','tooltip'=>'','attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'show_full_description' => array('name'=>'show_full_description','title'=>__('Show Full Description',"wdi"),'type'=>'checkbox','tooltip'=>__('Discription will be shown no matter how long it is',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'masonry'))),
       'disable_mobile_layout' => array('name'=>'disable_mobile_layout','title'=>__('Disable Mobile Layout',"wdi"),'type'=>'checkbox','tooltip'=>__('Column number stays the same in all screens',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry'))),
+      'mobile_breakpoint' => array('name'=>'mobile_breakpoint','title'=>__('Window width breakpoint for small size media',"wdi"),'type'=>'input','input_type'=>'number','tooltip'=>__('Load media of smaller size from Instagram if browser width is smaller than this value. Faster loading in mobile devices. Set the value about 320px to always load large-size media.',"wdi"),'attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       'feed_item_onclick' => array('name'=>'feed_item_onclick','title'=>__('Image Onclick',"wdi"),'type'=>'radio','valid_options'=>array('lightbox'=>__('Open Lightbox',"wdi"),'instagram'=>__('Redirect To Instagram',"wdi"),'none'=>__('Do Nothing',"wdi")),'break'=>'true','tooltip'=>'','attr'=>array(array('name'=>'tab','value'=>'feed_settings'),array('name'=>'section','value'=>'thumbnails,masonry,blog_style,image_browser'))),
       //lightbox settings
       'popup_fullscreen' => array('name'=>'popup_fullscreen','title'=>__('Full width lightbox',"wdi"),'type'=>'radio','valid_options'=>array('1'=>__('Yes',"wdi"),'0'=>__('No',"wdi")),'tooltip'=>'','attr'=>array(array('name'=>'tab','value'=>'lightbox_settings'))),
@@ -461,16 +463,17 @@ private function buildField($element,$feed_row=''){
 
   ?>
   <script>
+    jQuery(document).ready(function(){
     wdi_controller.instagram = new WDIInstagram();
     wdi_controller.feed_users = [];
     wdi_controller.instagram.addToken(<?php echo '"'.$wdi_options['wdi_access_token'].'"'; ?>);
-    jQuery(document).ready(function(){
+
     wdi_controller.updateFeaturedImageSelect(<?php echo '"'.$wdi_options['wdi_user_name'].'"'; ?>,'add','selected');
-    }); 
+
   <?php foreach ($users as $user) : ?>
     wdi_controller.makeInstagramUserRequest(<?php echo '"'.$user->username.'"'?>,true);
   <?php endforeach; ?>
-
+    });
   </script>
    <?php
  

@@ -43,7 +43,7 @@ public function display(){
 			<div class="clear"></div>
 			<?php switch($feed_row['feed_display_view']){
 			case 'load_more_btn':{
-				?><div class="wdi_load_more"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Plusssss',"wdi");?></div></div></div></div></div><?php
+				?><div class="wdi_load_more"><div class="wdi_load_more_container"><div class="wdi_load_more_wrap"><div class="wdi_load_more_wrap_inner"><div class="wdi_load_more_text"><?php echo __('Load More',"wdi");?></div></div></div></div></div><?php
 				break;
 			}
 			case 'pagination':{
@@ -159,9 +159,7 @@ public function generate_feed_styles($feed_row){
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_header_hashtag h3{
 		margin-top: <?php echo (intval($style['user_img_width']) - intval($style['users_text_font_size']))/2?>px;
 	}
-	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_header_hashtag .wdi_media_info{
-		display: none;
-	}
+	
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_followers,
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_posts {
     	display: inline-block;
@@ -285,7 +283,7 @@ public function generate_feed_styles($feed_row){
 
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_photo_wrap {
 	    padding: <?php echo $style['image_browser_photo_wrap_padding']?>; /*photo_wrap_padding*/
-	    
+			box-sizing:content-box;
 	    overflow: hidden;
 	}
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_photo_wrap_inner{
@@ -406,8 +404,12 @@ public function generate_feed_styles($feed_row){
 	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_load_more_container{
 		display: inline-block;
 	}
-	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active{
-	  background-color: <?php echo $style['active_filter_bg_color'];?>;
+	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active_bg{
+		background-color: <?php echo $style['active_filter_bg_color'];?>;
+	}
+	#wdi_feed_<?php echo $wdi_feed_counter?> .wdi_filter_active_col{
+		color: <?php echo $style['active_filter_bg_color'];?>;
+		border-color: <?php echo $style['active_filter_bg_color'];?>;
 	}
 	<?php if($feed_row['disable_mobile_layout']=="0"){
 		?>

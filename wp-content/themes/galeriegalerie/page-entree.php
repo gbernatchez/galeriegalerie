@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div class="mur gauche sorti">
-	<img alt="" class="titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_flechecorriige.png">
+	<img alt="" class="titre-porte fleche-gauche" src="<?php echo get_template_directory_uri(); ?>/images/archives_flechecorriige.png">
 	<a title="<?php echo get_the_title(11); ?>" href="<?php echo get_permalink(11); ?>"></a>
 </div>
 
@@ -23,7 +23,8 @@ get_header(); ?>
 		<h1 class="visuallyhidden">Exposition Collective</h1>
 
 		<div class="inntro">
-			B34U D3551N<br>
+			<strong>INSTA</strong><br>
+			Sarah L'Hérault et Mathieu Cardin<br>
 			<div id="getting-started"></div>
 		</div>
 		
@@ -56,7 +57,7 @@ get_header(); ?>
 </div><!-- #mur-fond -->
 
 <div class="mur droit sorti">
-	<img alt="" class="archive titre-porte" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche.png">
+	<img alt="" class="archive titre-porte fleche-droite" src="<?php echo get_template_directory_uri(); ?>/images/archives_fleche.png">
 	<a title="<?php echo get_the_title(9); ?>" href="<?php echo get_permalink(9); ?>"></a>
 </div>
 

@@ -71,6 +71,7 @@ define('SECURE_AUTH_SALT', ',H+UO+G&k)1[uy{.8J~(+!=|?ovkaw8EnA%cN._8q?H6.|d9}XvK
 define('LOGGED_IN_SALT',   '(3<[jk%w+Wr8W*+PtcvXWm;hkR#x*:H<v|L&(U)-HNw53z1l`3@(=Tpd9%#n6RUY');
 define('NONCE_SALT',       'Q{}])[j#||f([nCPWx+=jZ>1;#O4K$bZG8PKpxEYp8vV1I(P$h{>dTxV&IM,I8eh');
 
+
 /**#@-*/
 
 /**
@@ -95,6 +96,7 @@ $table_prefix  = 'wp_';
  */
 
 define ('WPLANG', 'fr_CA');
+
 
 /* That's all, stop editing! Happy blogging. */
 

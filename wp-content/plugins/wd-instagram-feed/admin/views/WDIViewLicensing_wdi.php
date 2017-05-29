@@ -40,6 +40,7 @@ class WDIViewLicensing_wdi {
 
 
         <span><?php _e("Conditional Filters", 'wdi'); ?></span>
+        <span><?php _e("Feed based on liked media", 'wdi'); ?></span>
         <span><?php _e("Image On Hover Effects", 'wdi'); ?></span>
         <span><?php _e("Infinite Scroll Load More", 'wdi'); ?></span>
         <span><?php _e("Full Style Customization With Themes", 'wdi'); ?></span>
@@ -78,6 +79,7 @@ class WDIViewLicensing_wdi {
         <span class="no"></span>
         <span class="no"></span>
         <span class="no"></span>
+        <span class="no"></span>
         <span> <?php _e('Only Bug Fixes',"wdi"); ?> </span>
       </div>
       <div id="featurs_table3">
@@ -93,6 +95,7 @@ class WDIViewLicensing_wdi {
         <span class="yes"></span>
         <span class="yes"></span>
         <span>15</span>
+        <span class="yes"></span>
         <span class="yes"></span>
         <span class="yes"></span>
         <span class="yes"></span>

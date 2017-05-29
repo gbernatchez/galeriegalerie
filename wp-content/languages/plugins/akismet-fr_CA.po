@@ -1,5 +1,5 @@
-# Translation of Stable (latest release) in French (Canada)
-# This file is distributed under the same license as the Stable (latest release) package.
+# Translation of Plugins - Akismet - Stable (latest release) in French (Canada)
+# This file is distributed under the same license as the Plugins - Akismet - Stable (latest release) package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-04-13 01:21:26+0000\n"
@@ -7,19 +7,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
-"Project-Id-Version: Stable (latest release)\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: fr_CA\n"
+"Project-Id-Version: Plugins - Akismet - Stable (latest release)\n"
 
-#: views/config.php:204
+#: views/config.php:224
 msgid "Upgrade"
 msgstr "Mise à jour"
 
-#: class.akismet-admin.php:86 class.akismet-admin.php:209
-#: class.akismet-admin.php:602 views/config.php:56 views/stats.php:2
+#: class.akismet-admin.php:88 class.akismet-admin.php:218
+#: class.akismet-admin.php:631 views/config.php:60
 msgid "Settings"
 msgstr "Paramètres"
 
-#: class.akismet-admin.php:221 views/config.php:161
+#: class.akismet-admin.php:230 views/config.php:179
 msgid "Account"
 msgstr "Compte"
 
@@ -27,11 +28,11 @@ msgstr "Compte"
 msgid "Title:"
 msgstr "Titre&nbsp;:"
 
-#: class.akismet-admin.php:225 views/config.php:173
+#: class.akismet-admin.php:234 views/config.php:194
 msgid "Status"
 msgstr "État"
 
-#: views/config.php:178
+#: views/config.php:199
 msgid "Cancelled"
 msgstr "Annulé"
 
@@ -39,10 +40,10 @@ msgstr "Annulé"
 msgid "Automattic"
 msgstr "Automattic"
 
-#: views/config.php:117
+#: views/config.php:138
 msgid "Note:"
 msgstr "Note:"
 
-#: views/config.php:186
+#: views/config.php:207
 msgid "Active"
 msgstr "Actif"

@@ -141,6 +141,8 @@ class WDIModelFeeds_wdi {
     'conditional_filter_type' => 'none',
     'show_username_on_thumb'=>'0',
     'conditional_filter_enable'=>'0',
+    'liked_feed' => 'userhash',
+    'mobile_breakpoint' => '640',
     );
   return $settings;
 }
@@ -208,7 +210,9 @@ class WDIModelFeeds_wdi {
     
     'conditional_filters' => 'string',
     'conditional_filter_enable'=>'number',
-    'conditional_filter_type' => 'string'
+    'conditional_filter_type' => 'string',
+    'liked_feed' => 'string',
+    'mobile_breakpoint' => 'number',
     );
   return $sanitize_types;
 }

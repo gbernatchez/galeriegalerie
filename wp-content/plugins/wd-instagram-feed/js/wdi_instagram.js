@@ -15,13 +15,13 @@
  *    searchForUsersByName = function( username, args ) : Get a list of users matching the query.
  *      searchForTagsByName = function(tagname, args) : Search for tags by name.
  *      getTagRecentMedia = function(tagname, args) : Gets recent media based on tagname
- *      
+ *
  */
 
 
 
 /**
- * example of arg 
+ * example of arg
  * @type {Object}
  */
 // var args = {
@@ -38,7 +38,6 @@
 // }
 
 
-
 /**
  * WDIInstagram object constructor
  * @param {Object} args
@@ -47,12 +46,13 @@
  * @param {Array}           [args.filters] [array of object defining filters]
  * @param {Object}          [args.filters[i] ] [ filter object which contain 'where' : 'what' pair ]
  * @param {String}          [args.filters.filter[i].where] [name of function where filter must be applied]
- * @param {String or Array} [args.filters.filter[i].what] [name of filtering function, 
- *                       if function is in global scope then it should be name of the funtion 
- *                         else if function in method of some object then it should be an array 
+ * @param {String or Array} [args.filters.filter[i].what] [name of filtering function,
+ *                       if function is in global scope then it should be name of the funtion
+ *                         else if function in method of some object then it should be an array
  *                                ['parent_object_name','filtering_function_name']]
  */
-function WDIInstagram(args) {
+function WDIInstagram(args)
+{
 
   this.access_tokens = [];
   this.filters = [];
@@ -73,19 +73,21 @@ function WDIInstagram(args) {
    * @type {Object}
    */
   this.statusCode = {
-    429 : function(){
-      console.log(' 429: Too many requests try after one hour' );
+    429: function ()
+    {
+      console.log(' 429: Too many requests. Try after one hour');
     },
   }
 
   /**
    * gets filter function defined for specific method
    * this function is internal function and cannot be called outside of this object
-   * 
+   *
    * @param  {String} methodName   [name of WDIInstagram method]
    * @return {Function}            [filtering function for {methodName}]
    */
-  this.getFilter = function(methodName) {
+  this.getFilter = function (methodName)
+  {
     var filters = _this.filters;
     if (typeof filters == "undefined") {
       return false;
@@ -100,21 +102,24 @@ function WDIInstagram(args) {
               return window[filters[i].what[0]][filters[i].what[1]];
             }
           }
-        } else if (typeof filters[i].what == 'string') {
-          if (typeof window[filters[i].what] == 'function') {
-            return window[filters[i].what];
-          }
-        } else if (typeof filters[i].what == 'function') {
-          return filters[i].what;
-        } else {
-          return false;
-        }
+        } else
+          if (typeof filters[i].what == 'string') {
+            if (typeof window[filters[i].what] == 'function') {
+              return window[filters[i].what];
+            }
+          } else
+            if (typeof filters[i].what == 'function') {
+              return filters[i].what;
+            } else {
+              return false;
+            }
       }
     }
     return false;
   }
 
-  function getAccessToken() {
+  function getAccessToken()
+  {
     var access_tokens = _this.access_tokens,
       index = parseInt(Math.random(0, 1) * access_tokens.length);
     return access_tokens[index];
@@ -125,7 +130,8 @@ function WDIInstagram(args) {
    * non string values are not allowed
    * @param {String} token [Instagram API access token]
    */
-  this.addToken = function(token) {
+  this.addToken = function (token)
+  {
     if (typeof token == 'string') {
       _this.access_tokens.push(token);
     }
@@ -156,11 +162,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded media
    */
-  this.getTagRecentMedia = function(tagname, args) {
+  this.getTagRecentMedia = function (tagname, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -168,8 +175,8 @@ function WDIInstagram(args) {
       errorFlag = false,
       argFlag = false,
       filter = this.getFilter('getTagRecentMedia'),
-      
-    baseUrl = 'https://api.instagram.com/v1/tags/' + tagname + '/media/recent?access_token=' + getAccessToken();
+
+      baseUrl = 'https://api.instagram.com/v1/tags/' + tagname + '/media/recent?access_token=' + getAccessToken();
 
 
     if (typeof args == 'undefined' || args.length === 0) {
@@ -179,16 +186,16 @@ function WDIInstagram(args) {
       if ('success' in args) {
         successFlag = true;
       }
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
       if ('error' in args) {
         errorFlag = true;
       }
 //
-      if ( 'args' in args ){
+      if ('args' in args) {
         argFlag = true;
-      }else{
+      } else {
         args.args = {};
       }
 //
@@ -216,51 +223,57 @@ function WDIInstagram(args) {
       type: 'POST',
       url: baseUrl,
       dataType: 'jsonp',
-      success: function(response) {
-        if( typeof response["data"] === "undefined" ) response["data"] = [];
+      success: function (response)
+      {
+        if (typeof response["data"] === "undefined") response["data"] = [];
 
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments, args.args);
+                  response = filter(response, instagram.filterArguments, args.args);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
 
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments, args.args);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments, args.args);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
     });
 
   }
@@ -284,17 +297,18 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded media
    */
 
-  this.searchForTagsByName = function(tagname, args) {
+  this.searchForTagsByName = function (tagname, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
       statusCode = this.statusCode;
-      errorFlag = false;
+    errorFlag = false;
     filter = this.getFilter('searchForTagsByName');
 
     if (typeof args == 'undefined' || args.length === 0) {
@@ -306,7 +320,7 @@ function WDIInstagram(args) {
       if ('error' in args) {
         errorFlag = true;
       }
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -316,51 +330,56 @@ function WDIInstagram(args) {
       type: 'POST',
       url: 'https://api.instagram.com/v1/tags/search?q=' + tagname + '&access_token=' + getAccessToken(),
       dataType: 'jsonp',
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
       statusCode: statusCode
     });
   }
-
 
 
   /**
@@ -370,7 +389,7 @@ function WDIInstagram(args) {
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param username
    * @param args = {
    *       success: 'success_callback',
@@ -381,11 +400,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded users
    */
-  this.searchForUsersByName = function(username, args) {
+  this.searchForUsersByName = function (username, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -402,7 +422,7 @@ function WDIInstagram(args) {
       if ('error' in args) {
         errorFlag = true;
       }
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -412,55 +432,60 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: 'https://api.instagram.com/v1/users/search?q=' + username + '&access_token=' + getAccessToken(),
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 response.args = args;
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                response.args = args;
+                window[args.success](response);
               }
-              response.args = args;
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            response.args = args;
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                response.args = args;
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : this.statusCode
+      statusCode: this.statusCode
 
     });
   }
-
 
 
   /**
@@ -469,7 +494,7 @@ function WDIInstagram(args) {
    *
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
-   * @definition statusCode       => StatusCode object.            
+   * @definition statusCode       => StatusCode object.
    * @param args = {
    *       success: 'success_callback',
    *       error:   'error_callback',
@@ -479,18 +504,19 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
    *
    * @return object of founded media
    */
 
-  this.getRecentLikedMedia = function(args) {
+  this.getRecentLikedMedia = function (args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
       statusCode = this.statusCode,
       errorFlag = false,
-      filter = this.getFilter('getRecentLikedMedia');
+      filter = this.getFilter('getRecentLikedMedia'),
+      baseUrl = 'https://api.instagram.com/v1/users/self/media/liked?access_token=' + getAccessToken();
 
     if (typeof args == 'undefined' || args.length === 0) {
       noArgument = true;
@@ -501,66 +527,93 @@ function WDIInstagram(args) {
       if ('error' in args) {
         errorFlag = true;
       }
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
+      if ('args' in args) {
+        argFlag = true;
+      } else {
+        args.args = {};
+      }
+
+      if ('count' in args) {
+        args['count'] = parseInt(args['count']);
+        if (!Number.isInteger(args['count']) || args['count'] <= 0) {
+          args.count = 20;
+        }
+      } else {
+        args.count = 20;
+      }
+
+      baseUrl += '&count=' + args.count;
+
+      if ('next_max_like_id' in args) {
+        baseUrl += '&next_max_like_id=' + args.next_max_like_id;
+      }
+
+
     }
 
 
     jQuery.ajax({
       type: 'POST',
       dataType: 'jsonp',
-      url: 'https://api.instagram.com/v1/users/self/media/liked?access_token=' + getAccessToken(),
-      success: function(response) {
+      url: baseUrl,
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments, args.args);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
 
 
-
   /**
-   * Get the most recent media published by a user. 
+   * Get the most recent media published by a user.
    * This endpoint requires the public_content scope if the user-id is not the owner of the access_token.
    *
    *
@@ -570,7 +623,7 @@ function WDIInstagram(args) {
    * @definition min_id           => Return media before this min_id.
    * @definition max_id           => Return media after this max_id.
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback',
@@ -584,20 +637,23 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded media
    */
-  this.getUserRecentMedia = function(user_id, args) {
+  this.getUserRecentMedia = function (user_id, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
       argFlag = false,
-      //internal default object for statusCode handling
+    //internal default object for statusCode handling
       statusCode = this.statusCode,
       errorFlag = false,
       filter = this.getFilter('getUserRecentMedia'),
       baseUrl = 'https://api.instagram.com/v1/users/' + user_id + '/media/recent/?access_token=' + getAccessToken();
+
+
     if (typeof args == 'undefined' || args.length === 0) {
       noArgument = true;
     } else {
@@ -605,13 +661,13 @@ function WDIInstagram(args) {
         successFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
-      
-      if ( 'args' in args ){
+
+      if ('args' in args) {
         argFlag = true;
-      }else{
+      } else {
         args.args = {};
       }
 
@@ -644,47 +700,53 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: baseUrl,
-      success: function(response) {
-        if( typeof response["data"] === "undefined" ) response["data"] = [];
+      success: function (response)
+      {
+        if (typeof response["data"] === "undefined") response["data"] = [];
 
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments, args.args);
+                  response = filter(response, instagram.filterArguments, args.args);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments, args.args);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments, args.args);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
       statusCode: statusCode
@@ -692,7 +754,6 @@ function WDIInstagram(args) {
     });
 
   }
-
 
 
   /**
@@ -705,7 +766,7 @@ function WDIInstagram(args) {
    * @definition min_id           => Return media before this min_id.
    * @definition max_id           => Return media after this max_id.
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback',
@@ -713,22 +774,23 @@ function WDIInstagram(args) {
    *       min_id  : 'min_id'
    *     max_id  : 'max_id'
    *     statusCode : statusCode
-   *     
+   *
    *  }
    *
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded media
    */
-  this.getSelfRecentMedia = function(args) {
+  this.getSelfRecentMedia = function (args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
       statusCode = this.statusCode;
-      errorFlag = false,
+    errorFlag = false,
       filter = this.getFilter('getSelfRecentMedia'),
       baseUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + getAccessToken();
 
@@ -743,7 +805,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
 
@@ -771,63 +833,68 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: baseUrl,
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
 
 
-
   /**
-   * Get information about a user. 
+   * Get information about a user.
    * This endpoint requires the public_content scope if the user-id is not the owner of the access_token.
    *
    *
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback'
@@ -837,11 +904,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded info
    */
-  this.getUserInfo = function(user_id, args) {
+  this.getUserInfo = function (user_id, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -860,7 +928,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -868,52 +936,57 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: 'https://api.instagram.com/v1/users/' + user_id + '/?access_token=' + getAccessToken(),
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
-
 
 
   /**
@@ -923,7 +996,7 @@ function WDIInstagram(args) {
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback'
@@ -933,11 +1006,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded info
    */
-  this.getSelfInfo = function(args) {
+  this.getSelfInfo = function (args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -955,7 +1029,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -963,56 +1037,61 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: 'https://api.instagram.com/v1/users/self/?access_token=' + getAccessToken(),
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
 
 
-
   /**
-   * Get a list of recent comments on a media object. 
+   * Get a list of recent comments on a media object.
    * The public_content permission scope is required to get comments for a media
    * that does not belong to the owner of the access_token.
    *
@@ -1020,7 +1099,7 @@ function WDIInstagram(args) {
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback'
@@ -1030,11 +1109,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded comments
    */
-  this.getRecentMediaComments = function(media_id, args) {
+  this.getRecentMediaComments = function (media_id, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -1052,7 +1132,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -1060,52 +1140,57 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: 'https://api.instagram.com/v1/media/' + media_id + '/comments?access_token=' + getAccessToken(),
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
-
 
 
   /**
@@ -1115,7 +1200,7 @@ function WDIInstagram(args) {
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback'
@@ -1125,11 +1210,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded comments
    */
-  this.getRecentMediaLikes = function(media_id, args) {
+  this.getRecentMediaLikes = function (media_id, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -1148,7 +1234,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -1156,48 +1242,54 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: 'https://api.instagram.com/v1/media/' + media_id + '/likes?access_token=' + getAccessToken(),
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments);
+                  response = filter(response, instagram.filterArguments);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
   }
@@ -1210,7 +1302,7 @@ function WDIInstagram(args) {
    * @definition success_callback => which function to call in case of success
    * @definition error_callback   => which function to call in case of error
    * @definition statusCode       => StatusCode object.
-   * 
+   *
    * @param args = {
    *       success : 'success_callback',
    *       error   : 'error_callback',
@@ -1221,11 +1313,12 @@ function WDIInstagram(args) {
    *
    * if callback function is property of any other object just give it as array [ 'parent_object', 'callback_function']
    * or you can pass as callback function an anonymous function
-   * 
+   *
    *
    * @return object of founded media
    */
-  this.requestByUrl = function(requestUrl, args) {
+  this.requestByUrl = function (requestUrl, args)
+  {
     var instagram = this,
       noArgument = false,
       successFlag = false,
@@ -1256,9 +1349,9 @@ function WDIInstagram(args) {
         successFlag = true;
       }
 
-      if ( 'args' in args ){
+      if ('args' in args) {
         argFlag = true;
-      }else{
+      } else {
         args.args = {};
       }
 
@@ -1267,7 +1360,7 @@ function WDIInstagram(args) {
         errorFlag = true;
       }
 
-      if( 'statusCode' in args ){
+      if ('statusCode' in args) {
         statusCode = args['statusCode'];
       }
     }
@@ -1277,53 +1370,58 @@ function WDIInstagram(args) {
       type: 'POST',
       dataType: 'jsonp',
       url: requestUrl,
-      success: function(response) {
+      success: function (response)
+      {
         if (successFlag) {
           if (typeof args.success == 'object' && args.success.length == 2) {
             if (typeof window[args.success[0]] != 'undefined') {
               if (typeof window[args.success[0]][args.success[1]] == 'function') {
                 if (filter) {
-                  response = filter(response,instagram.filterArguments, args.args);
+                  response = filter(response, instagram.filterArguments, args.args);
                 }
                 window[args.success[0]][args.success[1]](response);
               }
             }
-          } else if (typeof args.success == 'string') {
-            if (typeof window[args.success] == 'function') {
-              if (filter) {
-                response = filter(response,instagram.filterArguments, args.args);
+          } else
+            if (typeof args.success == 'string') {
+              if (typeof window[args.success] == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                window[args.success](response);
               }
-              window[args.success](response);
-            }
-          } else if (typeof args.success == 'function') {
-            if (filter) {
-              response = filter(response,instagram.filterArguments, args.args);
-            }
-            args.success(response);
-          }
+            } else
+              if (typeof args.success == 'function') {
+                if (filter) {
+                  response = filter(response, instagram.filterArguments, args.args);
+                }
+                args.success(response);
+              }
         }
       },
-      error: function(response) {
+      error: function (response)
+      {
         if (errorFlag) {
           if (typeof args['error'] == 'object' && args['error'].length == 2) {
             if (typeof window[args['error'][0]][args['error'][1]] == 'function') {
               window[args['error'][0]][args['error'][1]](response);
             }
-          } else if (typeof args['error'] == 'string') {
-            if (typeof window[args['error']] == 'function') {
-              window[args['error']](response);
-            }
-          } else if (typeof args['error'] == 'function') {
-            args['error'](response);
-          }
+          } else
+            if (typeof args['error'] == 'string') {
+              if (typeof window[args['error']] == 'function') {
+                window[args['error']](response);
+              }
+            } else
+              if (typeof args['error'] == 'function') {
+                args['error'](response);
+              }
         }
       },
-      statusCode : statusCode
+      statusCode: statusCode
 
     });
 
   }
 }
-
 
 
